@@ -2,7 +2,7 @@
 const express = require('express');
 const api = express.Router();
 
-//require('./loginRoute')(api);
+require('./loginRoute')(api);
 //require('./registerRoute')(api);
 
 

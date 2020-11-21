@@ -6,6 +6,8 @@ const crypto = require("crypto");
 const sendEmail = require('../helpers/send-email');
 const db = require('../helpers/db');
 const Role = require('../helpers/role');
+const pool = require('../helpers/db');
+const userModel = require('../app/api/models/userModel');
 
 module.exports = {
     authenticate,
@@ -22,14 +24,32 @@ module.exports = {
 };
 
 async function authenticate({ email, password }) {
-    const account = await db.user.scope('withHash').findOne({ where: { email } });
+    console.log(email);
 
-    if (!account || !account.isVerified || !(await bcrypt.compare(password, account.passwordHash))) {
+    pool.getConnection()
+    .then(conn => {
+        conn.query(userModel.ReadOne(email))
+            .then((rows) => {
+                //console.log(rows);
+                conn.release();
+            })
+            .catch(err => {
+                //handle errori
+                console.log(err);
+                conn.release();
+            })
+    }).catch(err => {
+       console.log(err);
+    });
+
+    //const account = await db.user.scope('withHash').findOne({ where: { email } });
+
+    /*if (!account || !account.isVerified || !(await bcrypt.compare(password, account.passwordHash))) {
         throw 'Email or password is incorrect';
-    }
+    }*/
 
     // authentication successful so generate jwt and refresh tokens
-    const jwtToken = generateJwtToken(account);
+    /*const jwtToken = generateJwtToken(account);
     const refreshToken = generateRefreshToken(account, ipAddress);
 
     // save refresh token
@@ -40,7 +60,7 @@ async function authenticate({ email, password }) {
         ...basicDetails(account),
         jwtToken,
         refreshToken: refreshToken.token
-    };
+    };*/
 }
 
 async function refreshToken({ token, ipAddress }) {

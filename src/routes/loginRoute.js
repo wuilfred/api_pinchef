@@ -3,7 +3,7 @@ module.exports = (api) => {
     
 
 // Get Phone
-    api.post('/login', loginController.login);
+    api.post('/login', loginController.authenticate);
 
 };
 

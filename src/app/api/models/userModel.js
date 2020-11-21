@@ -23,8 +23,9 @@ class User {
         return this.rs;
     }
 
-    ReadOne(user){
-        this.rs = `SELECT * FROM user where email = '${user.email}' limit 1;`;
+    ReadOne(email){
+        this.rs = `SELECT * FROM user where email = '${email}' limit 1;`;
+       
         return this.rs;
     }
 
@@ -46,3 +47,7 @@ class User {
         return this.rs;
     }
 }
+
+
+let getUser= new User();
+module.exports = getUser;
