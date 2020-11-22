@@ -2,7 +2,6 @@ const config = require('../config/config.json');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const crypto = require("crypto");
-//const { Op } = require('sequelize');
 const sendEmail = require('../helpers/send-email');
 const db = require('../helpers/db');
 const Role = require('../helpers/role');
@@ -96,38 +95,48 @@ async function revokeToken({ token, ipAddress }) {
 }
 
 async function register(params, origin) {
-    // validate
-    if (await db.Account.findOne({ where: { email: params.email } })) {
-        // send already registered error in email to prevent account enumeration
+
+    const conn = await db.getConnection();
+    const user = await conn.query(userModel.UserExists(params.email));
+
+    if (user[0].userExists > 0) {
         return await sendAlreadyRegisteredEmail(params.email, origin);
     }
 
-    // create account object
-    const account = new db.Account(params);
+    const newUser = params;
+    
+    newUser.password =  await hash(params.password);
+    newUser.verificationToken = randomTokenString();
+    newUser.role = params.role;
 
-    // first registered account is an admin
-    const isFirstAccount = (await db.Account.count()) === 0;
-    account.role = isFirstAccount ? Role.Admin : Role.User;
-    account.verificationToken = randomTokenString();
-
-    // hash password
-    account.passwordHash = await hash(params.password);
-
-    // save account
-    await account.save();
-
-    // send email
-    await sendVerificationEmail(account, origin);
+    const userSave = await conn.query(userModel.Create(newUser));
+    
+    if(userSave[0].affectedRows === 1){
+        // send email
+        await sendVerificationEmail(newUser, origin);
+    }
 }
 
 async function verifyEmail({ token }) {
-    const account = await db.Account.findOne({ where: { verificationToken: token } });
 
-    if (!account) throw 'Verification failed';
+    const conn = await db.getConnection();
+    const user = await conn.query(userModel.VerifyEmail(token));
+    console.log(user[1][0].tokenExists);
+    if (user[1][0].tokenExists === 0) throw 'Verification failed';
 
-    account.verified = Date.now();
-    account.verificationToken = null;
-    await account.save();
+    if (user[1][0].tokenExists > 0) {
+        console.log(user);
+
+    }
+
+
+    // const account = await db.Account.findOne({ where: { verificationToken: token } });
+
+    // if (!account) throw 'Verification failed';
+
+    // account.verified = Date.now();
+    // account.verificationToken = null;
+    // await account.save();
 }
 
 async function forgotPassword({ email }, origin) {

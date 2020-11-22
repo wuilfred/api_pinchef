@@ -2,6 +2,8 @@
 const express = require('express');
 var bodyParser = require('body-parser');
 const errorHandler = require('./src/middleware/error-handler');
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
 var app = express();
 var routes = require('./src/routes/MainRoute');
 
@@ -20,6 +22,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json(
     {limit:'50mb'}
 ));
+app.use(cookieParser());
+
+// allow cors requests from any origin and with credentials
+app.use(cors({ origin: (origin, callback) => callback(null, true), credentials: true }));
 
 app.use('/api', routes);
 

@@ -8,12 +8,9 @@ class User {
 
     Create(user) {
 
-        this.rs =   `INSERT INTO user (email, password, verificationToken, verified, resetToken, resetTokenExpires, role, acceptTerms, 
-                    passwordReset, created, updated, isVerified)
-                    VALUES ('${user.email}', '${user.password}', '${user.verificationToken}', verified='${user.verified}', 
-                    '${user.resetToken}', '${user.resetTokenExpires}', '${user.role}', '${user.acceptTerms}', '${user.passwordReset}',
-                    now(),  now()), '${user.iisVerified}';
-                    SELECT LAST_INSERT_ID() AS userId`;
+        this.rs =   `INSERT INTO user (email, password, verificationToken, verified, resetToken, resetTokenExpires, role, acceptTerms, passwordReset, created, updated, isVerified)
+        VALUES ('${user.email}', '${user.password}', '${user.verificationToken}','${user.verified}', '${user.resetToken}', '${user.resetTokenExpires}', '${user.role}', '${user.acceptTerms}', '${user.passwordReset}', now(),  now(), '${user.isVerified}');
+        SELECT LAST_INSERT_ID() AS userId`;
 
         return this.rs;
     }
@@ -25,6 +22,19 @@ class User {
 
     ReadOne(email){
         this.rs = `SELECT * FROM user where email = '${email}' limit 1;`;
+       
+        return this.rs;
+    }
+
+    UserExists(email){
+        this.rs = `SELECT COUNT(*) as userExists FROM user where email = '${email}' limit 1;`;
+       
+        return this.rs;
+    }
+
+    VerifyEmail(token){
+        this.rs = `SELECT * FROM user where verificationToken = '${token}' limit 1;
+                   SELECT COUNT(*) as tokenExists FROM user where verificationToken = '${token}' limit 1;`;
        
         return this.rs;
     }
