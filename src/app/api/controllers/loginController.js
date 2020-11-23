@@ -15,8 +15,7 @@ function authenticateSchema(req, res, next) {
 function authenticate(req, res, next) {
     const { email, password } = req.body;
     service.authenticate({ email, password })
-        .then(({ refreshToken, ...account }) => {
-            setTokenCookie(res, refreshToken);
+        .then(({ ...account }) => {
             res.json(account);
         })
         .catch(next);

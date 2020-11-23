@@ -32,10 +32,16 @@ class User {
         return this.rs;
     }
 
-    VerifyEmail(token){
+    GetVerificationToken(token){
         this.rs = `SELECT * FROM user where verificationToken = '${token}' limit 1;
                    SELECT COUNT(*) as tokenExists FROM user where verificationToken = '${token}' limit 1;`;
        
+        return this.rs;
+    }
+
+    VerifyEmail(user){
+        this.rs = `UPDATE user SET verificationToken='', verified=now(), isVerified='1' WHERE id_user = '${user.id_user}'`;
+
         return this.rs;
     }
 

@@ -3,7 +3,7 @@ module.exports = (api) => {
     
 
     // Authenticate
-    api.post('/login', loginController.authenticate);
+    api.post('/login', loginController.authenticateSchema, loginController.authenticate);
 
     // Register
     api.post('/register', loginController.registerSchema, loginController.register);
