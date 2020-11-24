@@ -23,43 +23,19 @@ module.exports = {
 };
 
 async function authenticate({ email, password }) {
-    console.log(email);
+    const conn = await db.getConnection();
+    const account =  await conn.query(userModel.ReadOne(email));
 
-    pool.getConnection()
-    .then(conn => {
-        conn.query(userModel.ReadOne(email))
-            .then((rows) => {
-                //console.log(rows);
-                conn.release();
-            })
-            .catch(err => {
-                //handle errori
-                console.log(err);
-                conn.release();
-            })
-    }).catch(err => {
-       console.log(err);
-    });
-
-    //const account = await db.user.scope('withHash').findOne({ where: { email } });
-
-    /*if (!account || !account.isVerified || !(await bcrypt.compare(password, account.passwordHash))) {
+    if (account.length === 0 || account[0].isVerified === 0 || !(await bcrypt.compare(password, account[0].password))) {
         throw 'Email or password is incorrect';
-    }*/
-
+    }
     // authentication successful so generate jwt and refresh tokens
-    /*const jwtToken = generateJwtToken(account);
-    const refreshToken = generateRefreshToken(account, ipAddress);
-
-    // save refresh token
-    await refreshToken.save();
-
+    const jwtToken = generateJwtToken(account[0]);
     // return basic details and tokens
     return {
-        ...basicDetails(account),
-        jwtToken,
-        refreshToken: refreshToken.token
-    };*/
+        ...basicDetails(account[0]),
+        jwtToken
+    };
 }
 
 async function refreshToken({ token, ipAddress }) {
@@ -120,23 +96,12 @@ async function register(params, origin) {
 async function verifyEmail({ token }) {
 
     const conn = await db.getConnection();
-    const user = await conn.query(userModel.VerifyEmail(token));
-    console.log(user[1][0].tokenExists);
+    const user = await conn.query(userModel.GetVerificationToken(token));
     if (user[1][0].tokenExists === 0) throw 'Verification failed';
 
-    if (user[1][0].tokenExists > 0) {
-        console.log(user);
-
+    if (user[1][0].tokenExists === 1 ) {
+        await conn.query(userModel.VerifyEmail(user[0][0]));
     }
-
-
-    // const account = await db.Account.findOne({ where: { verificationToken: token } });
-
-    // if (!account) throw 'Verification failed';
-
-    // account.verified = Date.now();
-    // account.verificationToken = null;
-    // await account.save();
 }
 
 async function forgotPassword({ email }, origin) {
@@ -240,8 +205,8 @@ async function hash(password) {
 }
 
 function generateJwtToken(account) {
-    // create a jwt token containing the account id that expires in 15 minutes
-    return jwt.sign({ sub: account.id, id: account.id }, config.secret, { expiresIn: '15m' });
+    // create a jwt token containing the account id that expires in 24h
+    return jwt.sign({ sub: account.id, id: account.id }, config.secret, { expiresIn: '24h' });
 }
 
 function generateRefreshToken(account, ipAddress) {
@@ -259,8 +224,8 @@ function randomTokenString() {
 }
 
 function basicDetails(account) {
-    const { id, title, firstName, lastName, email, role, created, updated, isVerified } = account;
-    return { id, title, firstName, lastName, email, role, created, updated, isVerified };
+    const { id, email, role, isVerified } = account;
+    return { id, email, role, isVerified };
 }
 
 async function sendVerificationEmail(account, origin) {
