@@ -1,23 +1,23 @@
-const postModel = require('../models/postModel');
 const pool = require("../../../helpers/db");
+const commentModel = require('../models/commentModel');
 const Joi = require("joi");
 
 module.exports = {
     create,
     update,
     detail,
-    getByProfile,
+    getByPost,
     delete: _delete,
-    getComment
-};
+}
 
 async function create(req, res, next) {
-    const id_user = req.params.id;
-    const post = req.body;
+    const id_post = req.params.id;
+    const comment = req.body;
+
     try {
-        await validatorPost(post);
+        await validatorComment(comment);
         const conn = await pool.getConnection();
-        const result = await conn.query(postModel.Create(id_user, post));
+        const result = await conn.query(commentModel.Create(id_post, comment));
         conn.release();
 
         res.status(200).json({
@@ -36,12 +36,13 @@ async function create(req, res, next) {
 }
 
 async function update(req, res, next) {
-    const id_post = req.params.id;
-    const post = req.body;
+    const id_comment = req.params.id;
+    const comment = req.body;
+
     try {
-        await validatorPost(post);
+        await validatorComment(comment);
         const conn = await pool.getConnection();
-        const result = await conn.query(postModel.Update(id_post, post));
+        const result = await conn.query(commentModel.Update(id_comment, comment));
         conn.release();
 
         res.status(200).json({
@@ -60,10 +61,10 @@ async function update(req, res, next) {
 }
 
 async function detail(req, res, next) {
-    const id_post = req.params.id;
+    const id_comment = req.params.id;
     try {
         const conn = await pool.getConnection();
-        const result = await conn.query(postModel.Detail(id_post));
+        const result = await conn.query(commentModel.Detail(id_comment));
         conn.release();
 
         res.status(200).json({
@@ -81,33 +82,11 @@ async function detail(req, res, next) {
     }
 }
 
-async function getByProfile(req, res, next) {
-    const id_user = req.params.id;
-    try {
-        const conn = await pool.getConnection();
-        const result = await conn.query(postModel.getByProfile(id_user));
-        conn.release();
-
-        res.status(200).json({
-            status: true,
-            message: result.length > 0 ? "Successful Operation" : "Not record found!",
-            data: result,
-        });
-
-    } catch (error) {
-        res.status(500).json({
-            status: false,
-            message: "Operation failed",
-            details: error.message,
-        });
-    }
-}
-
-async function getComment(req, res, next) {
+async function getByPost(req, res, next) {
     const id_post = req.params.id;
     try {
         const conn = await pool.getConnection();
-        const result = await conn.query(postModel.getComments(id_post));
+        const result = await conn.query(commentModel.GetByPost(id_post));
         conn.release();
 
         res.status(200).json({
@@ -123,14 +102,13 @@ async function getComment(req, res, next) {
             details: error.message,
         });
     }
-
 }
 
 async function _delete(req, res, next) {
-    const id_post = req.params.id;
+    const id_comment = req.params.id;
     try {
         const conn = await pool.getConnection();
-        const result = await conn.query(postModel.Delete(id_post));
+        const result = await conn.query(commentModel.Delete(id_comment));
         conn.release();
 
         res.status(200).json({
@@ -148,17 +126,12 @@ async function _delete(req, res, next) {
     }
 }
 
-async function validatorPost(post) {
+async function validatorComment(comment) {
     const schema = Joi.object({
-        name: Joi.string().required(),
-        description: Joi.string().required(),
-        photo: Joi.string().required(),
-        location: Joi.string().required(),
-        status: Joi.number(),
-        privacy: Joi.string().required(),
-        time_zone: Joi.string().required(),
-        id_profile: Joi.number().required()
+        comment: Joi.string().required(),
+        id_user: Joi.number().required(),
+        status: Joi.number()
     });
 
-    await schema.validateAsync(post);
+    await schema.validateAsync(comment);
 }

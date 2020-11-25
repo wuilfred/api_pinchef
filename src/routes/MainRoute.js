@@ -6,6 +6,7 @@ require('./loginRoute')(api);
 //require('./registerRoute')(api);
 require('./profileRoute')(api);
 require('./postRoute')(api);
-
+require('./likeRoute')(api);
+require('./commentRoute')(api);
 
 module.exports = api;

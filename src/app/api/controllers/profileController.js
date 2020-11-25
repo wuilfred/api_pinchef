@@ -46,9 +46,9 @@ async function create(req, res, next) {
                 message: "Successful Operation",
                 data: result,
             });
-        } else {
 
-            return res.status(400).json({
+        } else {
+            res.status(400).json({
                 status: false,
                 message: "Operation failed",
                 details: 'The profile already exists'
@@ -56,7 +56,7 @@ async function create(req, res, next) {
         }
 
     } catch (error) {
-        return res.status(500).json({
+        res.status(500).json({
             status: false,
             message: "Operation failed",
             details: error.message,
@@ -76,8 +76,9 @@ async function detail(req, res, next) {
             message: result.length > 0 ? "Successful Operation" : "Not record found!",
             data: result,
         });
+
     } catch (error) {
-        return res.status(500).json({
+        res.status(500).json({
             status: false,
             message: "Operation failed",
             details: error.message,
@@ -113,8 +114,9 @@ async function update(req, res, next) {
             message: "Successful Operation",
             data: result,
         });
+
     } catch (error) {
-        return res.status(500).json({
+        res.status(500).json({
             status: false,
             message: "Operation failed",
             details: error.message,
@@ -135,7 +137,7 @@ async function _delete(req, res, next) {
             data: result,
         });
     } catch (error) {
-        return res.status(500).json({
+        res.status(500).json({
             status: false,
             message: "Operation failed",
             details: error.message,
@@ -204,12 +206,7 @@ async function validatorProfile(profile) {
         address: Joi.string().required(),
     });
 
-    try {
-        const value = await schema.validateAsync(profile);
-        
-    } catch (err) {
-        throw new Error(err);
-    }
+    await schema.validateAsync(profile);
 }
 
 async function validatorAddress(address) {
@@ -224,11 +221,7 @@ async function validatorAddress(address) {
         about_info: Joi.string().required()
     });
 
-    try {
-        const value = await schema.validateAsync(address);
-    } catch (err) {
-        throw new Error(err);
-    }
+    await schema.validateAsync(address);
 }
 
 async function validatorChef(chef) {
@@ -245,10 +238,5 @@ async function validatorChef(chef) {
         banner: Joi.string().required(),
     });
 
-    try {
-        const value = await schema.validateAsync(chef);
-
-    } catch (error) {
-        throw new Error(error);
-    }
+    await schema.validateAsync(chef);
 }

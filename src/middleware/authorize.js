@@ -3,16 +3,19 @@ const { secret } = require('../config/config.json');
 
 module.exports = authorize;
 
-function authorize(req, res, next){
+function authorize(req, res, next) {
     const token = req.header('token');
-    if(!token) return res.status(400).send('Access denied!');
+    if (!token) return res.status(400).send({
+        status: false,
+        message: 'Access denied!'
+    });
 
-    try{
+    try {
         const verified = jwt.verify(token, secret);
         req.user = verified;
         next();
 
-    } catch(err){
+    } catch (err) {
         return res.status(400).send('Invalid token!');
     }
 
