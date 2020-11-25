@@ -7,7 +7,8 @@ module.exports = {
     update,
     detail,
     getByProfile,
-    delete: _delete
+    delete: _delete,
+    getComment
 };
 
 async function create(req, res, next) {
@@ -59,10 +60,69 @@ async function update(req, res, next) {
 }
 
 async function detail(req, res, next) {
+    const id_post = req.params.id;
+    try {
+        const conn = await pool.getConnection();
+        const result = await conn.query(postModel.Detail(id_post));
+        conn.release();
 
+        res.status(200).json({
+            status: true,
+            message: result.length > 0 ? "Successful Operation" : "Not record found!",
+            data: result,
+        });
+
+    } catch (error) {
+        return res.status(500).json({
+            status: false,
+            message: "Operation failed",
+            details: error.message,
+        });
+    }
 }
 
 async function getByProfile(req, res, next) {
+    const id_user = req.params.id;
+    try {
+        const conn = await pool.getConnection();
+        const result = await conn.query(postModel.getByProfile(id_user));
+        conn.release();
+
+        res.status(200).json({
+            status: true,
+            message: result.length > 0 ? "Successful Operation" : "Not record found!",
+            data: result,
+        });
+
+    } catch (error) {
+        return res.status(500).json({
+            status: false,
+            message: "Operation failed",
+            details: error.message,
+        });
+    }
+}
+
+async function getComment(req, res, next) {
+    const id_post = req.params.id;
+    try {
+        const conn = await pool.getConnection();
+        const result = await conn.query(postModel.getComments(id_post));
+        conn.release();
+
+        res.status(200).json({
+            status: true,
+            message: result.length > 0 ? "Successful Operation" : "Not record found!",
+            data: result,
+        });
+
+    } catch (error) {
+        return res.status(500).json({
+            status: false,
+            message: "Operation failed",
+            details: error.message,
+        });
+    }
 
 }
 
@@ -78,7 +138,7 @@ async function _delete(req, res, next) {
             message: "Successful Operation",
             data: result,
         });
-        
+
     } catch (error) {
         return res.status(500).json({
             status: false,

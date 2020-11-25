@@ -20,18 +20,46 @@ class Post {
         return this.rs;
     }
 
-    Detail(id_user) {
-        this.rs = `SELECT profile.id_profile, profile.name, profile.lastname, profile.birthday, profile.gender, profile.phone,
-                  profile.status, profile.photo, profile.address AS profile_address, profile.role, profile.user_id_user,
-                  chef.id_chef, chef.short_intro, chef.long_intro, chef.services_name, chef.service_availability, chef.price, chef.position,
-                  chef.languages, chef.address AS chef_address, chef.location_service, chef.banner, address_book.id_address,
-                  address_book.country, address_book.first_address,  address_book.second_address, address_book.state_region,address_book.city,
-                  address_book.postcode, address_book.lat_lon, address_book.about_info
-                  FROM
-                  profile
-                  LEFT JOIN address_book ON address_book.profile_id_profile = profile.id_profile
-                  LEFT JOIN chef ON chef.profile_id_profile = profile.id_profile
-                  WHERE profile.user_id_user = ${id_user}`;
+    Detail(id_post) {
+        this.rs = `SELECT post.id_post, post.name AS post_name, post.description, post.photo AS post_photo, post.location, post.status,
+                   post.privacy, post.time_zone, post.profile_id_profile, post.profile_user_id_user, profile.name AS profile_name, profile.lastname,
+                   profile.photo AS profile_photo, COUNT( CASE WHEN post_like.status = 1 THEN post_like.post_id_post END ) AS likesQty,
+                   COUNT( post_comment.post_id_post ) AS commentQty, 
+                   COUNT( post_share.post_id_post ) AS shareQty 
+                   FROM post
+                   INNER JOIN profile ON post.profile_id_profile = profile.id_profile 
+                   AND post.profile_user_id_user = profile.user_id_user
+                   LEFT JOIN post_like ON post_like.post_id_post = post.id_post
+                   LEFT JOIN post_comment ON post_comment.post_id_post = post.id_post 
+                   LEFT JOIN post_share ON post_share.post_id_post = post.id_post 
+                   WHERE post.id_post = ${id_post} AND post.status = 1 
+                   GROUP BY post.id_post, post.name, post.description, post.photo, post.location, post.status, post.privacy, post.time_zone,
+                   post.profile_id_profile, post.profile_user_id_user`;
+
+        return this.rs;
+    }
+
+    getByProfile(id_user) {
+        this.rs = `SELECT  post.id_post AS post_id,  post.name AS post_name, post.description, post.photo AS post_photo, post.location,
+                   post.status, post.privacy, post.time_zone, post.profile_id_profile, post.profile_user_id_user, profile.name AS profile_name,
+                   profile.lastname, profile.photo AS profile_photo,
+                   (SELECT COUNT(*) FROM post_comment WHERE post_comment.post_id_post = post_id AND post_comment.STATUS = 1) AS commentQty,
+                   (SELECT COUNT(*) FROM post_like WHERE post_like.post_id_post = post_id AND post_like.status = 1) AS likesQty,
+                   (SELECT COUNT(*) FROM post_share WHERE post_share.post_id_post = post_id) AS shareQty 
+                   FROM post
+                   INNER JOIN profile ON post.profile_id_profile = profile.id_profile AND post.profile_user_id_user = profile.user_id_user
+                   LEFT JOIN post_comment ON post_comment.post_id_post = post.id_post
+                   LEFT JOIN post_like ON post_like.post_id_post = post.id_post 
+                   LEFT JOIN post_share ON post_share.post_id_post = post.id_post 
+                   WHERE post.profile_user_id_user = ${id_user} 
+                   GROUP BY post_id, post_name, post_photo, post.description, post.location, post.photo, post.location, post.status, post.privacy,
+                   post.time_zone, post.profile_id_profile, post.profile_user_id_user, profile_name, profile.lastname, profile_photo`;
+
+        return this.rs;
+    }
+
+    getComments(id_post) {
+        this.rs = `SELECT * FROM post_comment where status = 1 and post_id_post = '${id_post}'`;
         return this.rs;
     }
 
