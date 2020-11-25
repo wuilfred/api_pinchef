@@ -51,7 +51,7 @@ class Profile {
         return this.rs;
     }
 
-    Detail(id_profile) {
+    Detail(id_user) {
         this.rs = `SELECT profile.id_profile, profile.name, profile.lastname, profile.birthday, profile.gender, profile.phone,
                   profile.status, profile.photo, profile.address AS profile_address, profile.role, profile.user_id_user,
                   chef.id_chef, chef.short_intro, chef.long_intro, chef.services_name, chef.service_availability, chef.price, chef.position,
@@ -62,7 +62,12 @@ class Profile {
                   profile
                   LEFT JOIN address_book ON address_book.profile_id_profile = profile.id_profile
                   LEFT JOIN chef ON chef.profile_id_profile = profile.id_profile
-                  WHERE profile_id_profile = ${id_profile}`;
+                  WHERE profile.user_id_user = ${id_user}`;
+        return this.rs;
+    }
+
+    CheckProfileExist(id_user) {
+        this.rs = `SELECT count(*) AS userExist FROM profile WHERE user_id_user = ${id_user}`;
         return this.rs;
     }
 

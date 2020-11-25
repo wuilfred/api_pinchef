@@ -5,6 +5,7 @@ const api = express.Router();
 require('./loginRoute')(api);
 //require('./registerRoute')(api);
 require('./profileRoute')(api);
+require('./postRoute')(api);
 
 
 module.exports = api;

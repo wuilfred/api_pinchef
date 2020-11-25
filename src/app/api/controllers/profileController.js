@@ -16,33 +16,46 @@ async function create(req, res, next) {
     try {
         // Step 1 - Save profile
         await validatorProfile(profile);
-        const conn = await pool.getConnection();
-        const result = await conn.query(profileModel.Create(id_user, profile));
-        conn.release();
+        const isProfile = await checkProfileExist(id_user);
 
-        if (result.affectedRows > 0) {
-            const id_profile = result.insertId;
-            // If it's chef save him
-            if (profile.role === Role.Chef) {
-                const create_Chef = await createChef(chef, id_profile);
+        // Check profile not exists
+        if (isProfile[0].userExist === 0) {
+            const conn = await pool.getConnection();
+            const result = await conn.query(profileModel.Create(id_user, profile));
+            conn.release();
+
+            // Continue if profile was inserted
+            if (result.affectedRows > 0) {
+                const id_profile = result.insertId;
+
+                // If it's chef save him
+                if (profile.role === Role.Chef) {
+                    const create_Chef = await createChef(chef, id_profile);
+                }
+                // Step 3 - Save address
+                const create_address = await createAddress(
+                    id_user,
+                    id_profile,
+                    address,
+                    profile.address
+                );
             }
-            // Step 3 - Save address
-            const create_address = await createAddress(
-                id_user,
-                id_profile,
-                address,
-                profile.address
-            );
+
+            res.status(200).json({
+                status: true,
+                message: "Successful Operation",
+                data: result,
+            });
+        } else {
+
+            return res.status(400).json({
+                status: false,
+                message: "Operation failed",
+                details: 'The profile already exists'
+            });
         }
 
-        res.status(200).json({
-            status: true,
-            message: "Successful Operation",
-            data: result,
-        });
-
     } catch (error) {
-        console.log(error);
         return res.status(500).json({
             status: false,
             message: "Operation failed",
@@ -60,7 +73,7 @@ async function detail(req, res, next) {
 
         res.status(200).json({
             status: true,
-            message: result.lenght > 0 ? "Successful Operation" : "Not record found!",
+            message: result.length > 0 ? "Successful Operation" : "Not record found!",
             data: result,
         });
     } catch (error) {
@@ -166,6 +179,18 @@ async function updateChef(chef, id_profile) {
     conn.release();
 }
 
+async function checkProfileExist(id_user) {
+    try {
+        const conn = await pool.getConnection();
+        const result = await conn.query(profileModel.CheckProfileExist(id_user));
+        conn.release();
+
+        return result;
+    } catch (error) {
+        throw new Error(error);
+    }
+}
+
 async function validatorProfile(profile) {
     const schema = Joi.object({
         name: Joi.string().required(),
@@ -181,6 +206,7 @@ async function validatorProfile(profile) {
 
     try {
         const value = await schema.validateAsync(profile);
+        
     } catch (err) {
         throw new Error(err);
     }
