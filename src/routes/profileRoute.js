@@ -1,17 +1,18 @@
 module.exports = (api) => {
     const profileController = require('../app/api/controllers/profileController');
+    const authorize = require('../middleware/authorize');
     
 
 // Create Profile
-    api.post('/profile/create/:id', profileController.create);
+    api.post('/profile/create/:id', authorize, profileController.create);
 
 // Detail Profile
-    api.get('/profile/detail/:id', profileController.detail);
+    api.get('/profile/detail/:id', authorize, profileController.detail);
 
 // Detail Profile
-    api.put('/profile/update/:id', profileController.update);
+    api.put('/profile/update/:id', authorize, profileController.update);
 
 // Delete Profile
-    api.delete('/profile/delete/:id', profileController.delete);
+    api.delete('/profile/delete/:id', authorize, profileController.delete);
 
 };

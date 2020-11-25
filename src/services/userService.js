@@ -25,6 +25,7 @@ module.exports = {
 async function authenticate({ email, password }) {
     const conn = await db.getConnection();
     const account =  await conn.query(userModel.ReadOne(email));
+    conn.release();
 
     if (account.length === 0 || account[0].isVerified === 0 || !(await bcrypt.compare(password, account[0].password))) {
         throw 'Email or password is incorrect';
@@ -74,6 +75,7 @@ async function register(params, origin) {
 
     const conn = await db.getConnection();
     const user = await conn.query(userModel.UserExists(params.email));
+    conn.release();
 
     if (user[0].userExists > 0) {
         return await sendAlreadyRegisteredEmail(params.email, origin);
@@ -86,6 +88,7 @@ async function register(params, origin) {
     newUser.role = params.role;
 
     const userSave = await conn.query(userModel.Create(newUser));
+    conn.release();
     
     if(userSave[0].affectedRows === 1){
         // send email
@@ -97,49 +100,55 @@ async function verifyEmail({ token }) {
 
     const conn = await db.getConnection();
     const user = await conn.query(userModel.GetVerificationToken(token));
+    conn.release();
     if (user[1][0].tokenExists === 0) throw 'Verification failed';
 
     if (user[1][0].tokenExists === 1 ) {
         await conn.query(userModel.VerifyEmail(user[0][0]));
+        conn.release();
     }
 }
 
 async function forgotPassword({ email }, origin) {
-    const account = await db.Account.findOne({ where: { email } });
+    const conn = await db.getConnection();
 
-    // always return ok response to prevent email enumeration
-    if (!account) return;
+    const user = await conn.query(userModel.ReadOne(email));
+    conn.release();
+        
+    if (user.length === 0) return;
+ 
+    if (user.length === 1) {
+        const resetToken = randomTokenString();
 
-    // create reset token that expires after 24 hours
-    account.resetToken = randomTokenString();
-    account.resetTokenExpires = new Date(Date.now() + 24*60*60*1000);
-    await account.save();
-
-    // send email
-    await sendPasswordResetEmail(account, origin);
+        const savedUser = await conn.query(userModel.SetResetToken(user[0], resetToken));
+        conn.release();
+        const account = savedUser[1][0];
+        await sendPasswordResetEmail(account, origin);
+        conn.release();
+    }
 }
 
 async function validateResetToken({ token }) {
-    const account = await db.Account.findOne({
-        where: {
-            resetToken: token,
-            resetTokenExpires: { [Op.gt]: Date.now() }
-        }
-    });
 
-    if (!account) throw 'Invalid token';
+    const conn = await db.getConnection();
 
-    return account;
+    const account = await conn.query(userModel.GetResetToken(token));
+    conn.release();
+
+    if (account.length === 0) throw 'Invalid token';
+
+    return account[0];
 }
 
 async function resetPassword({ token, password }) {
     const account = await validateResetToken({ token });
 
     // update password and remove reset token
-    account.passwordHash = await hash(password);
-    account.passwordReset = Date.now();
-    account.resetToken = null;
-    await account.save();
+    const passwordHash = await hash(password);
+
+    const conn = await db.getConnection();
+    await conn.query(userModel.ChangePassword(account,passwordHash));
+    conn.release();
 }
 
 async function create(params) {
@@ -206,7 +215,7 @@ async function hash(password) {
 
 function generateJwtToken(account) {
     // create a jwt token containing the account id that expires in 24h
-    return jwt.sign({ sub: account.id, id: account.id }, config.secret, { expiresIn: '24h' });
+    return jwt.sign({ _id: account.id_user }, config.secret, { expiresIn: '24h' });
 }
 
 function generateRefreshToken(account, ipAddress) {
