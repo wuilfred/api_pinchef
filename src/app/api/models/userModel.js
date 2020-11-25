@@ -45,6 +45,25 @@ class User {
         return this.rs;
     }
 
+    SetResetToken(user, resetToken){
+        this.rs = `UPDATE user SET resetToken='${resetToken}', resetTokenExpires = DATE_ADD(NOW(), INTERVAL 24 HOUR) WHERE id_user = '${user.id_user}';
+                   SELECT * FROM user where id_user = '${user.id_user}' LIMIT 1`;
+
+        return this.rs;
+    }
+
+    GetResetToken(resetToken){
+        this.rs = `SELECT * FROM user where resetToken = '${resetToken}' AND  resetTokenExpires > now() limit 1;`;
+       
+        return this.rs;
+    }
+
+    ChangePassword(user, passwordHash){
+        this.rs = `UPDATE user SET resetToken='', passwordReset=NOW(), password = '${passwordHash}' WHERE id_user = '${user.id_user}'`;
+
+        return this.rs;
+    }
+
     Update(id, user) {
         this.rs =   `UPDATE user SET email='${user.email}', password='${user.password}', verificationToken='${user.verificationToken}',
                     verified='${user.verified}', resetToken='${user.resetToken}', resetTokenExpires='${user.resetTokenExpires}',

@@ -221,5 +221,9 @@ function setTokenCookie(res, token) {
     refreshToken,
     authenticateSchema,
     verifyEmailSchema,
-    verifyEmail
+    verifyEmail,
+    forgotPasswordSchema,
+    forgotPassword,
+    resetPasswordSchema,
+    resetPassword
 };
