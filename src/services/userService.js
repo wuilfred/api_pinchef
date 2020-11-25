@@ -25,6 +25,7 @@ module.exports = {
 async function authenticate({ email, password }) {
     const conn = await db.getConnection();
     const account =  await conn.query(userModel.ReadOne(email));
+    console.log(account[0]);
 
     if (account.length === 0 || account[0].isVerified === 0 || !(await bcrypt.compare(password, account[0].password))) {
         throw 'Email or password is incorrect';
@@ -206,7 +207,7 @@ async function hash(password) {
 
 function generateJwtToken(account) {
     // create a jwt token containing the account id that expires in 24h
-    return jwt.sign({ sub: account.id, id: account.id }, config.secret, { expiresIn: '24h' });
+    return jwt.sign({ _id: account.id_user }, config.secret, { expiresIn: '24h' });
 }
 
 function generateRefreshToken(account, ipAddress) {
