@@ -10,5 +10,6 @@ require('./likeRoute')(api);
 require('./commentRoute')(api);
 require('./foodServiceRoute')(api);
 require('./reviewRoute')(api);
+require('./masterClassRoute')(api);
 
 module.exports = api;
