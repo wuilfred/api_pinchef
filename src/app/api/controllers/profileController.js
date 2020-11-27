@@ -10,6 +10,15 @@ module.exports = {
     delete: _delete,
 };
 
+/**
+ * @apiDefine token jwtToken
+ * @apiHeader {String} token jwt Token.
+ *
+ * @apiHeaderExample {String} Request-Example:
+ * { "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjMsImlhdCI6MTYwNjUzNjM3NSwiZXhwIjoxNjA2NjIyNzc1fQ.8fMBJSBMAXRc-FNIiBmjaTuYy4_ASLO3CWQVKuo1KYM" }
+ *
+ */
+
 async function create(req, res, next) {
     const id_user = req.params.id;
     const { profile, address, chef } = req.body;

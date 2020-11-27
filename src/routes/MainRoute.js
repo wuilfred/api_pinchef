@@ -13,5 +13,6 @@ require('./reviewRoute')(api);
 require('./masterClassRoute')(api);
 require('./foodItemRoute')(api);
 require('./foodShippingRoute')(api);
+require('./cartRoute')(api);
 
 module.exports = api;
