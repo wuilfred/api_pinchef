@@ -27,7 +27,9 @@ app.use(cookieParser());
 // allow cors requests from any origin and with credentials
 app.use(cors({ origin: (origin, callback) => callback(null, true), credentials: true }));
 
-app.use('/api', routes);
+app.options('*', cors());
+
+app.use('/api',cors(), routes);
 
 // swagger docs route
 app.use('/api-docs', require('./src/helpers/swagger'));
