@@ -8,5 +8,6 @@ require('./profileRoute')(api);
 require('./postRoute')(api);
 require('./likeRoute')(api);
 require('./commentRoute')(api);
+require('./foodServiceRoute')(api);
 
 module.exports = api;
