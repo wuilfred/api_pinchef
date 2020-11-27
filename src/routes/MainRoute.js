@@ -11,5 +11,7 @@ require('./commentRoute')(api);
 require('./foodServiceRoute')(api);
 require('./reviewRoute')(api);
 require('./masterClassRoute')(api);
+require('./foodItemRoute')(api);
+require('./foodShippingRoute')(api);
 
 module.exports = api;
