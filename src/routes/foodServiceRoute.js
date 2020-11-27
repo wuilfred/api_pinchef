@@ -8,7 +8,7 @@ module.exports = (api) => {
     // Detail foodServices
     api.get('/foodService/detail/:id', authorize, foodServiceController.detail);
 
-    // Detail foodServices
+    // Get all foodServices chef
     api.get('/foodService/getAllService/:id', authorize, foodServiceController.getAllService);
 
     // Update foodServices
