@@ -1581,6 +1581,176 @@
   },
   {
     "type": "get",
+    "url": "/cart/detail:/:id",
+    "title": "Cart Order Detail",
+    "version": "0.0.1",
+    "group": "Cart_Order",
+    "name": "Cart_Order_Detail",
+    "description": "<p>Cart Order Detail</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n\"data\": {\n    \"id_cart_order\": 8,\n    \"name\": \"Cart1\",\n    \"description\": \"Cart1\",\n    \"type_payment\": \"Cash\",\n    \"price\": 10,\n    \"quantity\": 3,\n    \"tax\": 6.75,\n    \"shipping\": 5.25,\n    \"total\": 22\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n\"status\": false,\n\"message\": \"cart order don't exists\",\n\"data\": {}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/cartController.js",
+    "groupTitle": "Cart_Order",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/cart/detail:/:id"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/cart/create",
+    "title": "Create Cart Order",
+    "version": "0.0.1",
+    "group": "Cart_Order",
+    "name": "Create_Cart_Order",
+    "description": "<p>Create Cart Order</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "price",
+            "description": "<p>Price</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "quantity",
+            "description": "<p>Quantity</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "tax",
+            "description": "<p>TAX, IVA</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "shipping",
+            "description": "<p>Shipping cost</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "type_payment",
+            "description": "<p>Payment Type</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "total",
+            "description": "<p>Total value</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Order added successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 400 Bad Request\n{\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/cartController.js",
+    "groupTitle": "Cart_Order",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/cart/create"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
     "url": "/profile/delete/:id_user",
     "title": "Delete",
     "version": "0.0.1",
@@ -1591,7 +1761,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n     }\n ]\n}",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n     }\n ]s\n}",
           "type": "json"
         }
       ]
