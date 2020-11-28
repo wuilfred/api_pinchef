@@ -10,15 +10,6 @@ module.exports = {
     delete: _delete,
 };
 
-/**
- * @apiDefine token jwtToken
- * @apiHeader {String} token jwt Token.
- *
- * @apiHeaderExample {String} Request-Example:
- * { "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjMsImlhdCI6MTYwNjUzNjM3NSwiZXhwIjoxNjA2NjIyNzc1fQ.8fMBJSBMAXRc-FNIiBmjaTuYy4_ASLO3CWQVKuo1KYM" }
- *
- */
-
 async function create(req, res, next) {
     const id_user = req.params.id;
     const { profile, address, chef } = req.body;
@@ -73,6 +64,67 @@ async function create(req, res, next) {
     }
 }
 
+/**
+* @api {get} /profile/detail/:id_user  Detail
+* @apiVersion 0.0.1
+* @apiGroup Profile
+* @apiName ProfileDetail
+* @apiUse token
+*
+* @apiDescription Get detail of a profile
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*
+* {
+*    "status": true,
+ "message": "Successful Operation",
+ "data": [
+     {
+         "id_profile": 32,
+         "name": "John",
+         "lastname": "Doe",
+         "birthday": "2020-11-27T23:00:00.000Z",
+         "gender": "male",
+         "phone": 2147483647,
+         "status": 1,
+         "photo": " photo",
+         "profile_address": "SW 8",
+         "role": "User",
+         "user_id_user": 2,
+         "id_chef": 1,
+         "short_intro": "short_intro",
+         "long_intro": "long_description",
+         "services_name": "rt",
+         "service_availability": "service",
+         "price": 4,
+         "position": "senior",
+         "languages": "en",
+         "chef_address": "SW 8",
+         "location_service": "location_example",
+         "banner": "banner_example",
+         "id_address": 8,
+         "country": "USA",
+         "first_address": "SW 8",
+         "second_address": "AVE 8",
+         "state_region": "FLORIDA",
+         "city": "MIAMI",
+         "postcode": "95000",
+         "lat_lon": " test",
+         "about_info": "Lorem Ipsum Dolor"
+     }
+ ]
+* }
+*
+* @apiErrorExample {json} Error-Response:
+*  HTTP/1.1 500 Bad Request
+* {
+*    "status": false
+*    "message": "Operation failed"
+*    "detail": "Error Message"
+*    
+* }
+*/
 async function detail(req, res, next) {
     const id_user = req.params.id;
     try {
@@ -133,6 +185,39 @@ async function update(req, res, next) {
     }
 }
 
+/**
+* @api {get} /profile/delete/:id_user  Delete
+* @apiVersion 0.0.1
+* @apiGroup Profile
+* @apiName ProfileDelete
+* @apiUse token
+*
+* @apiDescription Delete a profile
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*
+* {
+*"status": true,
+ "message": "Successful Operation",
+ "data": [
+     {
+        "affectedRows": 1,
+        "insertId": 0,
+        "warningStatus": 0
+     }
+ ]s
+* }
+*
+* @apiErrorExample {json} Error-Response:
+*  HTTP/1.1 500 Bad Request
+* {
+*    "status": false
+*    "message": "Operation failed"
+*    "detail": "Error Message"
+*    
+* }
+*/
 async function _delete(req, res, next) {
     const id_user = req.params.id;
     try {

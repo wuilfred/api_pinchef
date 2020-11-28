@@ -282,5 +282,113 @@ define({ "api": [
         "url": "http://localhost:8001/api/verify-email"
       }
     ]
+  },
+  {
+    "type": "get",
+    "url": "/profile/delete/:id_user",
+    "title": "Delete",
+    "version": "0.0.1",
+    "group": "Profile",
+    "name": "ProfileDelete",
+    "description": "<p>Delete a profile</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n     }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/profileController.js",
+    "groupTitle": "Profile",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/profile/delete/:id_user"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/profile/detail/:id_user",
+    "title": "Detail",
+    "version": "0.0.1",
+    "group": "Profile",
+    "name": "ProfileDetail",
+    "description": "<p>Get detail of a profile</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n   \"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n         \"id_profile\": 32,\n         \"name\": \"John\",\n         \"lastname\": \"Doe\",\n         \"birthday\": \"2020-11-27T23:00:00.000Z\",\n         \"gender\": \"male\",\n         \"phone\": 2147483647,\n         \"status\": 1,\n         \"photo\": \" photo\",\n         \"profile_address\": \"SW 8\",\n         \"role\": \"User\",\n         \"user_id_user\": 2,\n         \"id_chef\": 1,\n         \"short_intro\": \"short_intro\",\n         \"long_intro\": \"long_description\",\n         \"services_name\": \"rt\",\n         \"service_availability\": \"service\",\n         \"price\": 4,\n         \"position\": \"senior\",\n         \"languages\": \"en\",\n         \"chef_address\": \"SW 8\",\n         \"location_service\": \"location_example\",\n         \"banner\": \"banner_example\",\n         \"id_address\": 8,\n         \"country\": \"USA\",\n         \"first_address\": \"SW 8\",\n         \"second_address\": \"AVE 8\",\n         \"state_region\": \"FLORIDA\",\n         \"city\": \"MIAMI\",\n         \"postcode\": \"95000\",\n         \"lat_lon\": \" test\",\n         \"about_info\": \"Lorem Ipsum Dolor\"\n     }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/profileController.js",
+    "groupTitle": "Profile",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/profile/detail/:id_user"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
   }
 ] });
