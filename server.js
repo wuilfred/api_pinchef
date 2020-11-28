@@ -34,6 +34,11 @@ app.use('/api',cors(), routes);
 // swagger docs route
 app.use('/api-docs', require('./src/helpers/swagger'));
 
+app.use(express.static(__dirname + '/doc'));
+app.get('/doc', (req, res) => {
+    res.sendFile(`${__dirname}/doc/index.html`);
+});
+
 // global error handler
 app.use(errorHandler);
 
