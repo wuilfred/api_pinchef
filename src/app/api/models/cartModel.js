@@ -13,6 +13,13 @@ class Cart {
 
         return this.rs;
     }
+
+    Detail(id_cart_order) {
+        this.rs = `SELECT * FROM cart_order WHERE id_cart_order = '${id_cart_order}'`;
+
+        return this.rs;
+
+    }
     
 
 }

@@ -7,7 +7,7 @@ module.exports = (api) => {
     api.post('/cart/create', authorize, cartController.createSchema, cartController.create);
 
 // Detail cart
-//    api.get('/cart/detail/:id', authorize, cartController.detail);
+    api.get('/cart/detail/:id', authorize, cartController.detail);
 
 // Detail cart
 //    api.put('/cart/update/:id', authorize, cartController.update);
