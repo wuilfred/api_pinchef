@@ -331,7 +331,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -447,7 +447,327 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/chefService/create/",
+    "title": "Create Service",
+    "version": "0.0.1",
+    "group": "ChefService",
+    "name": "CreateService",
+    "description": "<p>Create service</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 5,\n        \"warningStatus\": 0\n    }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/chefServiceController.js",
+    "groupTitle": "ChefService",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/chefService/create/"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/chefService/detail/:id_service",
+    "title": "Detail Service",
+    "version": "0.0.1",
+    "group": "ChefService",
+    "name": "DetailService",
+    "description": "<p>Get detail of a chefService</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n  \"message\": \"Successful Operation\",\n  \"data\": [\n     {\n            \"id\": 2,\n            \"service_name\": \"Lorem\",\n            \"description\": \"Lorem ipsum dolors\",\n            \"created\": \"2020-11-28T21:06:15.000Z\",\n            \"updated\": \"2020-11-28T21:40:55.000Z\",\n            \"status\": 1,\n            \"status_update\": \"2020-11-28T21:06:15.000Z\"\n        }\n ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Not record found!\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/chefServiceController.js",
+    "groupTitle": "ChefService",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/chefService/detail/:id_service"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/chefService/enableOrDisableService/:id_service",
+    "title": "Enable or Disable",
+    "version": "0.0.1",
+    "group": "ChefService",
+    "name": "EnableOrDisableService",
+    "description": "<p>Enablo or disable a service chef</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n    }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/chefServiceController.js",
+    "groupTitle": "ChefService",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/chefService/enableOrDisableService/:id_service"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/chefService/getAllService/",
+    "title": "Get all Service",
+    "version": "0.0.1",
+    "group": "ChefService",
+    "name": "GetAllService",
+    "description": "<p>Get all chefService</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n  \"message\": \"Successful Operation\",\n  \"data\": [\n        {\n            \"id\": 1,\n            \"service_name\": \"a1\",\n            \"description\": \"a1...\",\n            \"created\": \"2020-11-28T21:04:16.000Z\",\n            \"updated\": \"2020-11-28T21:04:16.000Z\",\n            \"status\": 1,\n            \"status_update\": \"2020-11-28T21:06:15.000Z\"\n        },\n        {\n            \"id\": 3,\n            \"service_name\": \"a2\",\n            \"description\": \"a2..\",\n            \"created\": \"2020-11-28T21:07:31.000Z\",\n            \"updated\": \"2020-11-28T21:07:31.000Z\",\n            \"status\": 1,\n            \"status_update\": \"2020-11-28T21:47:58.000Z\"\n        }\n    ]s\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Not record found!\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/chefServiceController.js",
+    "groupTitle": "ChefService",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/chefService/getAllService/"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "put",
+    "url": "/chefService/update/:id_service",
+    "title": "Update Service",
+    "version": "0.0.1",
+    "group": "ChefService",
+    "name": "UpdateService",
+    "description": "<p>Update a chefService</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n    }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/chefServiceController.js",
+    "groupTitle": "ChefService",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/chefService/update/:id_service"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -501,7 +821,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -575,7 +895,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -629,7 +949,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -683,7 +1003,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -757,7 +1077,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -811,7 +1131,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -865,7 +1185,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -919,7 +1239,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -1021,7 +1341,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -1075,7 +1395,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -1134,7 +1454,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -1193,7 +1513,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -1302,7 +1622,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -1404,7 +1724,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -1458,7 +1778,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -1517,7 +1837,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -1576,7 +1896,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -1685,7 +2005,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -1759,7 +2079,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -1868,7 +2188,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -1922,7 +2242,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -1981,7 +2301,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -2040,7 +2360,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -2099,7 +2419,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -2215,7 +2535,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -2269,7 +2589,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
@@ -2328,7 +2648,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
           "type": "String"
         }
       ]
