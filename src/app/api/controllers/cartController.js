@@ -61,6 +61,41 @@ async function service_create(params) {
     conn.release();
 }
 
+/**
+   * @api {get} /cart/detail:/:id Cart Order Detail
+   * @apiVersion 0.0.1
+   * @apiGroup Cart Order
+   * @apiName Cart Order Detail
+   *
+   * @apiDescription Cart Order Detail
+   * 
+   * @apiUse token
+   *
+   * 
+   * @apiSuccessExample Success-Response:
+   * HTTP/1.1 200 OK
+   * {
+   * "status": true,
+   * "data": {
+   *     "id_cart_order": 8,
+   *     "name": "Cart1",
+   *     "description": "Cart1",
+   *     "type_payment": "Cash",
+   *     "price": 10,
+   *     "quantity": 3,
+   *     "tax": 6.75,
+   *     "shipping": 5.25,
+   *     "total": 22
+   * }
+   *
+   * @apiErrorExample {json} Error-Response:
+   *  HTTP/1.1 200 OK
+   * {
+   * "status": false,
+   * "message": "cart order don't exists",
+   * "data": {}
+   * }
+   */
 function detail(req, res, next) {
     const id_cart_order = req.params.id;
     console.log(id_cart_order);
