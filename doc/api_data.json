@@ -1751,6 +1751,242 @@
   },
   {
     "type": "get",
+    "url": "/cousine/detail/:id",
+    "title": "Cousine Detail",
+    "version": "0.0.1",
+    "group": "Cousine",
+    "name": "Cousine_Detail",
+    "description": "<p>Cousine Detail</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n\"data\": {\n    \"id_cousine\": 2,\n    \"cousine\": \"Filette mignon\",\n    \"description\": \"Wonderful food\",\n    \"created\": \"2020-11-28T20:49:12.000Z\",\n    \"updated\": \"2020-11-28T20:49:12.000Z\"\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n\"status\": false,\n\"message\": \"cousine order don't exists\",\n\"data\": {}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/cousineController.js",
+    "groupTitle": "Cousine",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/cousine/detail/:id"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/cousine/create",
+    "title": "Create cousine",
+    "version": "0.0.1",
+    "group": "Cousine",
+    "name": "Create_cousine",
+    "description": "<p>Create cousine</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "cousine",
+            "description": "<p>Cousine Name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Cousine added successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 400 Bad Request\n{\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/cousineController.js",
+    "groupTitle": "Cousine",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/cousine/create"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/cousine/delete/:id",
+    "title": "Delete Cousine",
+    "version": "0.0.1",
+    "group": "Cousine",
+    "name": "Delete_Cousine",
+    "description": "<p>Delete Cousine</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n \"message\": \"Cousine deleted successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 400 Bad request\n{\n  \"Validation error: \\\"id\\\" is required\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/cousineController.js",
+    "groupTitle": "Cousine",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/cousine/delete/:id"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/cousine/update/:id",
+    "title": "Update Cousine",
+    "version": "0.0.1",
+    "group": "Cousine",
+    "name": "Update_Cousine",
+    "description": "<p>Update Cousine</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n\"message\": \"Cousine updated succefully\",\n\"data\": {\n    \"id_cousine\": 2,\n    \"cousine\": \"Filette mignon\",\n    \"description\": \"Wonderful food\",\n    \"created\": \"2020-11-28T20:49:12.000Z\",\n    \"updated\": \"2020-11-28T21:35:49.000Z\"\n }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 400 Bad request\n{\n  \"message\": \"Validation error: \\\"cousine\\\" must be a string\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/cousineController.js",
+    "groupTitle": "Cousine",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/cousine/update/:id"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
     "url": "/profile/delete/:id_user",
     "title": "Delete",
     "version": "0.0.1",

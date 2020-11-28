@@ -22,5 +22,7 @@ require('./masterClassRoute')(api);
 require('./foodItemRoute')(api);
 require('./foodShippingRoute')(api);
 require('./cartRoute')(api);
+require('./cousineRoute')(api);
+require('./dietaryRoute')(api);
 
 module.exports = api;
