@@ -52,10 +52,10 @@ async function service_create(params) {
 /**
    * @api {get} /dietary/detail/:id dietary Detail
    * @apiVersion 0.0.1
-   * @apiGroup dietary 
-   * @apiName dietary Detail
+   * @apiGroup Dietary 
+   * @apiName Dietary Detail
    *
-   * @apiDescription dietary Detail
+   * @apiDescription Dietary Detail
    * 
    * @apiUse token
    *
@@ -117,8 +117,8 @@ function updateSchema(req, res, next) {
 /**
    * @api {get} /dietary/update/:id Update dietary
    * @apiVersion 0.0.1
-   * @apiGroup dietary 
-   * @apiName Update dietary
+   * @apiGroup Dietary 
+   * @apiName Update Dietary
    *
    * @apiDescription Update dietary
    * 
@@ -182,10 +182,10 @@ function deleteSchema(req, res, next) {
 /**
    * @api {get} /dietary/delete/:id Delete dietary
    * @apiVersion 0.0.1
-   * @apiGroup dietary 
-   * @apiName Delete dietary
+   * @apiGroup Dietary 
+   * @apiName Delete Dietary
    *
-   * @apiDescription Delete dietary
+   * @apiDescription Delete Dietary
    * 
    * @apiUse token
    *

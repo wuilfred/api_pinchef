@@ -284,6 +284,648 @@ define({ "api": [
     ]
   },
   {
+    "type": "get",
+    "url": "/cart/detail:/:id",
+    "title": "Cart Order Detail",
+    "version": "0.0.1",
+    "group": "Cart_Order",
+    "name": "Cart_Order_Detail",
+    "description": "<p>Cart Order Detail</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n\"data\": {\n    \"id_cart_order\": 8,\n    \"name\": \"Cart1\",\n    \"description\": \"Cart1\",\n    \"type_payment\": \"Cash\",\n    \"price\": 10,\n    \"quantity\": 3,\n    \"tax\": 6.75,\n    \"shipping\": 5.25,\n    \"total\": 22\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n\"status\": false,\n\"message\": \"cart order don't exists\",\n\"data\": {}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/cartController.js",
+    "groupTitle": "Cart_Order",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/cart/detail:/:id"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/cart/create",
+    "title": "Create Cart Order",
+    "version": "0.0.1",
+    "group": "Cart_Order",
+    "name": "Create_Cart_Order",
+    "description": "<p>Create Cart Order</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "price",
+            "description": "<p>Price</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "quantity",
+            "description": "<p>Quantity</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "tax",
+            "description": "<p>TAX, IVA</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "shipping",
+            "description": "<p>Shipping cost</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "type_payment",
+            "description": "<p>Payment Type</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "total",
+            "description": "<p>Total value</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Order added successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 400 Bad Request\n{\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/cartController.js",
+    "groupTitle": "Cart_Order",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/cart/create"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/cousine/detail/:id",
+    "title": "Cousine Detail",
+    "version": "0.0.1",
+    "group": "Cousine",
+    "name": "Cousine_Detail",
+    "description": "<p>Cousine Detail</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n\"data\": {\n    \"id_cousine\": 2,\n    \"cousine\": \"Filette mignon\",\n    \"description\": \"Wonderful food\",\n    \"created\": \"2020-11-28T20:49:12.000Z\",\n    \"updated\": \"2020-11-28T20:49:12.000Z\"\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n\"status\": false,\n\"message\": \"cousine order don't exists\",\n\"data\": {}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/cousineController.js",
+    "groupTitle": "Cousine",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/cousine/detail/:id"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/cousine/create",
+    "title": "Create cousine",
+    "version": "0.0.1",
+    "group": "Cousine",
+    "name": "Create_cousine",
+    "description": "<p>Create cousine</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "cousine",
+            "description": "<p>Cousine Name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Cousine added successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 400 Bad Request\n{\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/cousineController.js",
+    "groupTitle": "Cousine",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/cousine/create"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/cousine/delete/:id",
+    "title": "Delete Cousine",
+    "version": "0.0.1",
+    "group": "Cousine",
+    "name": "Delete_Cousine",
+    "description": "<p>Delete Cousine</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n \"message\": \"Cousine deleted successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 400 Bad request\n{\n  \"Validation error: \\\"id\\\" is required\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/cousineController.js",
+    "groupTitle": "Cousine",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/cousine/delete/:id"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/cousine/update/:id",
+    "title": "Update Cousine",
+    "version": "0.0.1",
+    "group": "Cousine",
+    "name": "Update_Cousine",
+    "description": "<p>Update Cousine</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n\"message\": \"Cousine updated succefully\",\n\"data\": {\n    \"id_cousine\": 2,\n    \"cousine\": \"Filette mignon\",\n    \"description\": \"Wonderful food\",\n    \"created\": \"2020-11-28T20:49:12.000Z\",\n    \"updated\": \"2020-11-28T21:35:49.000Z\"\n }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 400 Bad request\n{\n  \"message\": \"Validation error: \\\"cousine\\\" must be a string\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/cousineController.js",
+    "groupTitle": "Cousine",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/cousine/update/:id"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/dietary/create",
+    "title": "Create dietary",
+    "version": "0.0.1",
+    "group": "Dietary",
+    "name": "Create_dietary",
+    "description": "<p>Create dietary</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "dietary",
+            "description": "<p>Dietary Name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Dietary added successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 400 Bad Request\n{\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/dietaryController.js",
+    "groupTitle": "Dietary",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/dietary/create"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/dietary/delete/:id",
+    "title": "Delete dietary",
+    "version": "0.0.1",
+    "group": "Dietary",
+    "name": "Delete_Dietary",
+    "description": "<p>Delete Dietary</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n \"message\": \"dietary deleted successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 400 Bad request\n{\n  \"Validation error: \\\"id\\\" is required\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/dietaryController.js",
+    "groupTitle": "Dietary",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/dietary/delete/:id"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/dietary/detail/:id",
+    "title": "dietary Detail",
+    "version": "0.0.1",
+    "group": "Dietary",
+    "name": "Dietary_Detail",
+    "description": "<p>Dietary Detail</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n\"data\": {\n    \"id_dietary\": 2,\n    \"dietary\": \"Filette mignon\",\n    \"description\": \"Wonderful food\",\n    \"created\": \"2020-11-28T20:49:12.000Z\",\n    \"updated\": \"2020-11-28T20:49:12.000Z\"\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n\"status\": false,\n\"message\": \"Dietary order don't exists\",\n\"data\": {}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/dietaryController.js",
+    "groupTitle": "Dietary",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/dietary/detail/:id"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/dietary/update/:id",
+    "title": "Update dietary",
+    "version": "0.0.1",
+    "group": "Dietary",
+    "name": "Update_Dietary",
+    "description": "<p>Update dietary</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n\"message\": \"dietary updated succefully\",\n\"data\": {\n    \"id_dietary\": 2,\n    \"dietary\": \"Filette mignon\",\n    \"description\": \"Wonderful food\",\n    \"created\": \"2020-11-28T20:49:12.000Z\",\n    \"updated\": \"2020-11-28T21:35:49.000Z\"\n }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 400 Bad request\n{\n  \"message\": \"Validation error: \\\"dietary\\\" must be a string\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/dietaryController.js",
+    "groupTitle": "Dietary",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/dietary/update/:id"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
     "type": "post",
     "url": "/foodItem/create/:id_chef",
     "title": "Create",
@@ -1581,412 +2223,6 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/cart/detail:/:id",
-    "title": "Cart Order Detail",
-    "version": "0.0.1",
-    "group": "Cart_Order",
-    "name": "Cart_Order_Detail",
-    "description": "<p>Cart Order Detail</p>",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n\"data\": {\n    \"id_cart_order\": 8,\n    \"name\": \"Cart1\",\n    \"description\": \"Cart1\",\n    \"type_payment\": \"Cash\",\n    \"price\": 10,\n    \"quantity\": 3,\n    \"tax\": 6.75,\n    \"shipping\": 5.25,\n    \"total\": 22\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "error": {
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": " HTTP/1.1 200 OK\n{\n\"status\": false,\n\"message\": \"cart order don't exists\",\n\"data\": {}\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/app/api/controllers/cartController.js",
-    "groupTitle": "Cart_Order",
-    "sampleRequest": [
-      {
-        "url": "http://localhost:8001/api/cart/detail:/:id"
-      }
-    ],
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "token",
-            "description": "<p>jwt Token.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
-          "type": "String"
-        }
-      ]
-    }
-  },
-  {
-    "type": "post",
-    "url": "/cart/create",
-    "title": "Create Cart Order",
-    "version": "0.0.1",
-    "group": "Cart_Order",
-    "name": "Create_Cart_Order",
-    "description": "<p>Create Cart Order</p>",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "name",
-            "description": "<p>Name</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "description",
-            "description": "<p>Description</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": false,
-            "field": "price",
-            "description": "<p>Price</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": false,
-            "field": "quantity",
-            "description": "<p>Quantity</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": false,
-            "field": "tax",
-            "description": "<p>TAX, IVA</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": false,
-            "field": "shipping",
-            "description": "<p>Shipping cost</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": false,
-            "field": "type_payment",
-            "description": "<p>Payment Type</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": false,
-            "field": "total",
-            "description": "<p>Total value</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Order added successfully\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "error": {
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": " HTTP/1.1 400 Bad Request\n{\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/app/api/controllers/cartController.js",
-    "groupTitle": "Cart_Order",
-    "sampleRequest": [
-      {
-        "url": "http://localhost:8001/api/cart/create"
-      }
-    ],
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "token",
-            "description": "<p>jwt Token.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
-          "type": "String"
-        }
-      ]
-    }
-  },
-  {
-    "type": "get",
-    "url": "/cousine/detail/:id",
-    "title": "Cousine Detail",
-    "version": "0.0.1",
-    "group": "Cousine",
-    "name": "Cousine_Detail",
-    "description": "<p>Cousine Detail</p>",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n\"data\": {\n    \"id_cousine\": 2,\n    \"cousine\": \"Filette mignon\",\n    \"description\": \"Wonderful food\",\n    \"created\": \"2020-11-28T20:49:12.000Z\",\n    \"updated\": \"2020-11-28T20:49:12.000Z\"\n   }\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "error": {
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": " HTTP/1.1 200 OK\n{\n\"status\": false,\n\"message\": \"cousine order don't exists\",\n\"data\": {}\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/app/api/controllers/cousineController.js",
-    "groupTitle": "Cousine",
-    "sampleRequest": [
-      {
-        "url": "http://localhost:8001/api/cousine/detail/:id"
-      }
-    ],
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "token",
-            "description": "<p>jwt Token.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
-          "type": "String"
-        }
-      ]
-    }
-  },
-  {
-    "type": "post",
-    "url": "/cousine/create",
-    "title": "Create cousine",
-    "version": "0.0.1",
-    "group": "Cousine",
-    "name": "Create_cousine",
-    "description": "<p>Create cousine</p>",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "cousine",
-            "description": "<p>Cousine Name</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "description",
-            "description": "<p>Description</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Cousine added successfully\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "error": {
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": " HTTP/1.1 400 Bad Request\n{\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/app/api/controllers/cousineController.js",
-    "groupTitle": "Cousine",
-    "sampleRequest": [
-      {
-        "url": "http://localhost:8001/api/cousine/create"
-      }
-    ],
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "token",
-            "description": "<p>jwt Token.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
-          "type": "String"
-        }
-      ]
-    }
-  },
-  {
-    "type": "get",
-    "url": "/cousine/delete/:id",
-    "title": "Delete Cousine",
-    "version": "0.0.1",
-    "group": "Cousine",
-    "name": "Delete_Cousine",
-    "description": "<p>Delete Cousine</p>",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n \"message\": \"Cousine deleted successfully\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "error": {
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": " HTTP/1.1 400 Bad request\n{\n  \"Validation error: \\\"id\\\" is required\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/app/api/controllers/cousineController.js",
-    "groupTitle": "Cousine",
-    "sampleRequest": [
-      {
-        "url": "http://localhost:8001/api/cousine/delete/:id"
-      }
-    ],
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "token",
-            "description": "<p>jwt Token.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
-          "type": "String"
-        }
-      ]
-    }
-  },
-  {
-    "type": "get",
-    "url": "/cousine/update/:id",
-    "title": "Update Cousine",
-    "version": "0.0.1",
-    "group": "Cousine",
-    "name": "Update_Cousine",
-    "description": "<p>Update Cousine</p>",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n\"message\": \"Cousine updated succefully\",\n\"data\": {\n    \"id_cousine\": 2,\n    \"cousine\": \"Filette mignon\",\n    \"description\": \"Wonderful food\",\n    \"created\": \"2020-11-28T20:49:12.000Z\",\n    \"updated\": \"2020-11-28T21:35:49.000Z\"\n }\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "error": {
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": " HTTP/1.1 400 Bad request\n{\n  \"message\": \"Validation error: \\\"cousine\\\" must be a string\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/app/api/controllers/cousineController.js",
-    "groupTitle": "Cousine",
-    "sampleRequest": [
-      {
-        "url": "http://localhost:8001/api/cousine/update/:id"
-      }
-    ],
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "token",
-            "description": "<p>jwt Token.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
-          "type": "String"
-        }
-      ]
-    }
-  },
-  {
-    "type": "get",
     "url": "/profile/delete/:id_user",
     "title": "Delete",
     "version": "0.0.1",
@@ -1997,7 +2233,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n     }\n ]s\n}",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n     }\n ]\n}",
           "type": "json"
         }
       ]
