@@ -6,13 +6,48 @@ module.exports = {
     likeOrDislikePost,
 }
 
+/**
+* @api {post} /like/like_or_dislike_post/:id_post  Like Post 
+* @apiVersion 0.0.1
+* @apiGroup Like
+* @apiName LikeOrDislikePost
+* @apiUse token
+*
+* @apiDescription Action Like or Dislike Post
+*
+* @apiParam {string} type  Type
+* @apiParam {number} id_user  User id
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*
+* {
+*"status": true,
+ "message": "Successful Operation",
+ "data": [
+     {
+        "affectedRows": 1,
+        "insertId": 0,
+        "warningStatus": 0
+     }
+ ]
+* }
+*
+* @apiErrorExample {json} Error-Response:
+*  HTTP/1.1 500 Bad Request
+* {
+*    "status": false
+*    "message": "Operation failed"
+*    "detail": "Error Message"
+*    
+* }
+*/
 async function likeOrDislikePost(req, res, next) {
     const id_post = req.params.id;
     const like = req.body;
 
     try {
         const schema = Joi.object({
-            status: Joi.number(),
             type: Joi.string().required(),
             id_user: Joi.number().required()
         });

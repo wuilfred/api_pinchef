@@ -10,6 +10,46 @@ module.exports = {
     delete: _delete,
 };
 
+/**
+* @api {post} /foodItem/create/:id_chef  Create 
+* @apiVersion 0.0.1
+* @apiGroup FoodItem
+* @apiName CreateFoodItem
+* @apiUse token
+*
+* @apiDescription Create a foodItem
+*
+* @apiParam {string} name  Name
+* @apiParam {string} description  Description
+* @apiParam {date} day  Photo
+* @apiParam {date} hour  Hour
+* @apiParam {price} price   Price
+* @apiParam {string} picture  Picture
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*
+* {
+*"status": true,
+ "message": "Successful Operation",
+ "data": [
+     {
+        "affectedRows": 1,
+        "insertId": 2,
+        "warningStatus": 0
+    }
+ ]
+* }
+*
+* @apiErrorExample {json} Error-Response:
+*  HTTP/1.1 500 Bad Request
+* {
+*    "status": false
+*    "message": "Operation failed"
+*    "detail": "Error Message"
+*    
+* }
+*/
 async function create(req, res, next) {
     const id_chef = req.params.id;
     const foodItem = req.body;
@@ -34,6 +74,47 @@ async function create(req, res, next) {
     }
 }
 
+/**
+* @api {put} /foodItem/update/:id_food_item  Update 
+* @apiVersion 0.0.1
+* @apiGroup FoodItem
+* @apiName UpdateFoodItem
+* @apiUse token
+*
+* @apiDescription Update a foodItem
+*
+* @apiParam {string} name  Name
+* @apiParam {string} description  Description
+* @apiParam {date} day  Photo
+* @apiParam {date} hour  Hour
+* @apiParam {price} price   Price
+* @apiParam {string} picture  Picture
+* @apiParam {number} id_chef  Chef_id
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*
+* {
+*"status": true,
+ "message": "Successful Operation",
+ "data": [
+     {
+        "affectedRows": 1,
+        "insertId": 2,
+        "warningStatus": 0
+    }
+ ]
+* }
+*
+* @apiErrorExample {json} Error-Response:
+*  HTTP/1.1 500 Bad Request
+* {
+*    "status": false
+*    "message": "Operation failed"
+*    "detail": "Error Message"
+*    
+* }
+*/
 async function update(req, res, next) {
     const id_item = req.params.id;
     const foodItem = req.body;
@@ -58,6 +139,56 @@ async function update(req, res, next) {
     }
 }
 
+/**
+* @api {get} /foodItem/detail/:id_food_item  Detail 
+* @apiVersion 0.0.1
+* @apiGroup FoodItem
+* @apiName DetailFoodItem
+* @apiUse token
+*
+* @apiDescription Get a foodItem
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*
+* {
+*"status": true,
+ "message": "Successful Operation",
+ "data": "status": true,
+    "message": "Successful Operation",
+    "data": [
+        {
+            "id_food_item": 5,
+            "name": "Lorem",
+            "description": "Lorem ipsum dolor",
+            "day": 1,
+            "hour": "00:00:04",
+            "price": 55,
+            "picture": "picture",
+            "created": "2020-11-27T21:17:28.000Z",
+            "updated": "2020-11-28T15:11:29.000Z",
+            "chef_id_chef": 1
+        }
+    ]
+* }
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*{
+    "status": true,
+    "message": "Not record found!",
+    "data": []
+}
+*
+* @apiErrorExample {json} Error-Response:
+*  HTTP/1.1 500 Bad Request
+* {
+*    "status": false
+*    "message": "Operation failed"
+*    "detail": "Error Message"
+*    
+* }
+*/
 async function detail(req, res, next) {
     const id_item = req.params.id;
     try {
@@ -80,6 +211,68 @@ async function detail(req, res, next) {
     }
 }
 
+/**
+* @api {get} /foodItem/getItemsByChef/:id_chef  GetItemsByChef 
+* @apiVersion 0.0.1
+* @apiGroup FoodItem
+* @apiName GetItemsByChef
+* @apiUse token
+*
+* @apiDescription Get all foodItem of the chef
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*
+* {
+*"status": true,
+ "message": "Successful Operation",
+ "data": "status": true,
+    "message": "Successful Operation",
+    "data": [
+        {
+            "id_food_item": 5,
+            "name": "Lorem",
+            "description": "Lorem ipsum dolor",
+            "day": 1,
+            "hour": "00:00:04",
+            "price": 55,
+            "picture": "picture",
+            "created": "2020-11-27T21:17:28.000Z",
+            "updated": "2020-11-28T15:11:29.000Z",
+            "chef_id_chef": 1
+        },
+        {
+            "id_food_item": 3,
+            "name": "Lorem",
+            "description": "Lorem ipsum dolor",
+            "day": 1,
+            "hour": "00:00:04",
+            "price": 55,
+            "picture": "picture",
+            "created": "2020-11-27T21:17:28.000Z",
+            "updated": "2020-11-28T15:11:29.000Z",
+            "chef_id_chef": 1
+        }
+    ]
+* }
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*{
+    "status": true,
+    "message": "Not record found!",
+    "data": []
+}
+*
+* @apiErrorExample {json} Error-Response:
+*  HTTP/1.1 500 Bad Request
+* {
+*    "status": false
+*    "message": "Operation failed"
+*    "detail": "Error Message"
+*    
+* }
+*/
 async function getItemsByChef(req, res, next) {
     const id_chef = req.params.id;
     try {
@@ -102,6 +295,38 @@ async function getItemsByChef(req, res, next) {
     }
 }
 
+/**
+* @api {delete} /foodItem/delete/:id_food_item  Delete 
+* @apiVersion 0.0.1
+* @apiGroup FoodItem
+* @apiName DeleteFoodItem
+* @apiUse token
+*
+* @apiDescription Delete a foodItem 
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*
+* {
+*"status": true,
+ "message": "Successful Operation",
+ "data": [
+     {
+        "affectedRows": 1,
+        "insertId": 0,
+        "warningStatus": 0
+     }
+ ]
+* }
+*
+* @apiErrorExample {json} Error-Response:
+*  HTTP/1.1 500 Bad Request
+* {
+*    "status": false
+*    "message": "Operation failed"
+*    "detail": "Error Message"
+* }
+*/
 async function _delete(req, res, next) {
     const id_item = req.params.id;
     try {

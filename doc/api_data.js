@@ -284,6 +284,1302 @@ define({ "api": [
     ]
   },
   {
+    "type": "post",
+    "url": "/foodItem/create/:id_chef",
+    "title": "Create",
+    "version": "0.0.1",
+    "group": "FoodItem",
+    "name": "CreateFoodItem",
+    "description": "<p>Create a foodItem</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "day",
+            "description": "<p>Photo</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "hour",
+            "description": "<p>Hour</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "price",
+            "optional": false,
+            "field": "price",
+            "description": "<p>Price</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "picture",
+            "description": "<p>Picture</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 2,\n        \"warningStatus\": 0\n    }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodItemController.js",
+    "groupTitle": "FoodItem",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodItem/create/:id_chef"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "delete",
+    "url": "/foodItem/delete/:id_food_item",
+    "title": "Delete",
+    "version": "0.0.1",
+    "group": "FoodItem",
+    "name": "DeleteFoodItem",
+    "description": "<p>Delete a foodItem</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n     }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodItemController.js",
+    "groupTitle": "FoodItem",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodItem/delete/:id_food_item"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/foodItem/detail/:id_food_item",
+    "title": "Detail",
+    "version": "0.0.1",
+    "group": "FoodItem",
+    "name": "DetailFoodItem",
+    "description": "<p>Get a foodItem</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": \"status\": true,\n    \"message\": \"Successful Operation\",\n    \"data\": [\n        {\n            \"id_food_item\": 5,\n            \"name\": \"Lorem\",\n            \"description\": \"Lorem ipsum dolor\",\n            \"day\": 1,\n            \"hour\": \"00:00:04\",\n            \"price\": 55,\n            \"picture\": \"picture\",\n            \"created\": \"2020-11-27T21:17:28.000Z\",\n            \"updated\": \"2020-11-28T15:11:29.000Z\",\n            \"chef_id_chef\": 1\n        }\n    ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Not record found!\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodItemController.js",
+    "groupTitle": "FoodItem",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodItem/detail/:id_food_item"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/foodItem/getItemsByChef/:id_chef",
+    "title": "GetItemsByChef",
+    "version": "0.0.1",
+    "group": "FoodItem",
+    "name": "GetItemsByChef",
+    "description": "<p>Get all foodItem of the chef</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": \"status\": true,\n    \"message\": \"Successful Operation\",\n    \"data\": [\n        {\n            \"id_food_item\": 5,\n            \"name\": \"Lorem\",\n            \"description\": \"Lorem ipsum dolor\",\n            \"day\": 1,\n            \"hour\": \"00:00:04\",\n            \"price\": 55,\n            \"picture\": \"picture\",\n            \"created\": \"2020-11-27T21:17:28.000Z\",\n            \"updated\": \"2020-11-28T15:11:29.000Z\",\n            \"chef_id_chef\": 1\n        },\n        {\n            \"id_food_item\": 3,\n            \"name\": \"Lorem\",\n            \"description\": \"Lorem ipsum dolor\",\n            \"day\": 1,\n            \"hour\": \"00:00:04\",\n            \"price\": 55,\n            \"picture\": \"picture\",\n            \"created\": \"2020-11-27T21:17:28.000Z\",\n            \"updated\": \"2020-11-28T15:11:29.000Z\",\n            \"chef_id_chef\": 1\n        }\n    ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Not record found!\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodItemController.js",
+    "groupTitle": "FoodItem",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodItem/getItemsByChef/:id_chef"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "put",
+    "url": "/foodItem/update/:id_food_item",
+    "title": "Update",
+    "version": "0.0.1",
+    "group": "FoodItem",
+    "name": "UpdateFoodItem",
+    "description": "<p>Update a foodItem</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "day",
+            "description": "<p>Photo</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "hour",
+            "description": "<p>Hour</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "price",
+            "optional": false,
+            "field": "price",
+            "description": "<p>Price</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "picture",
+            "description": "<p>Picture</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "id_chef",
+            "description": "<p>Chef_id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 2,\n        \"warningStatus\": 0\n    }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodItemController.js",
+    "groupTitle": "FoodItem",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodItem/update/:id_food_item"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/foodService/create/:id_chef",
+    "title": "Create",
+    "version": "0.0.1",
+    "group": "FoodService",
+    "name": "CreateFoodService",
+    "description": "<p>Create a foodService</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "service_type",
+            "description": "<p>Service Type</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "day",
+            "description": "<p>Day</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "hour",
+            "description": "<p>Hour</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "price",
+            "optional": false,
+            "field": "price",
+            "description": "<p>Price</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "picture",
+            "description": "<p>Picture</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 2,\n        \"warningStatus\": 0\n    }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodServiceController.js",
+    "groupTitle": "FoodService",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodService/create/:id_chef"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "delete",
+    "url": "/foodService/delete/:id_service",
+    "title": "Delete",
+    "version": "0.0.1",
+    "group": "FoodService",
+    "name": "DeleteFoodService",
+    "description": "<p>Delete a foodService</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n     }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodServiceController.js",
+    "groupTitle": "FoodService",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodService/delete/:id_service"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/foodService/detail/:id_service",
+    "title": "Detail",
+    "version": "0.0.1",
+    "group": "FoodService",
+    "name": "FoodServiceDetail",
+    "description": "<p>Get detail of a food service</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n  \"message\": \"Successful Operation\",\n  \"data\": [\n     {\n            \"id_food_service\": 7,\n            \"service_type\": \"service_example\",\n            \"description\": \"ipsum dolor\",\n            \"day\": 6,\n            \"hour\": \"00:00:02\",\n            \"price\": 50,\n            \"picture\": \"service_picture\",\n            \"created\": \"2020-11-27T12:45:05.000Z\",\n            \"updated\": \"2020-11-27T12:45:05.000Z\",\n            \"chef_id_chef\": 1\n        }\n ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Not record found!\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodServiceController.js",
+    "groupTitle": "FoodService",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodService/detail/:id_service"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/foodService/getAllService/:id_chef",
+    "title": "GetAllServiceChef",
+    "version": "0.0.1",
+    "group": "FoodService",
+    "name": "GetAllServiceChef",
+    "description": "<p>Get all servce of a chef</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n  \"message\": \"Successful Operation\",\n  \"data\": [\n     {\n            \"id_food_service\": 7,\n            \"service_type\": \"service_example\",\n            \"description\": \"ipsum dolor\",\n            \"day\": 6,\n            \"hour\": \"00:00:02\",\n            \"price\": 50,\n            \"picture\": \"service_picture\",\n            \"created\": \"2020-11-27T12:45:05.000Z\",\n            \"updated\": \"2020-11-27T12:45:05.000Z\",\n            \"chef_id_chef\": 1\n        },\n        {\n            \"id_food_service\": 8,\n            \"service_type\": \"service_example\",\n            \"description\": \"lorem\",\n            \"day\": 3,\n            \"hour\": \"00:00:02\",\n            \"price\": 50,\n            \"picture\": \"service_picture\",\n            \"created\": \"2020-11-27T12:45:06.000Z\",\n            \"updated\": \"2020-11-27T12:45:06.000Z\",\n            \"chef_id_chef\": 1\n        }\n ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Not record found!\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodServiceController.js",
+    "groupTitle": "FoodService",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodService/getAllService/:id_chef"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "put",
+    "url": "/foodService/update/:id_service",
+    "title": "Update",
+    "version": "0.0.1",
+    "group": "FoodService",
+    "name": "UpdateFoodService",
+    "description": "<p>Update a foodService</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "service_type",
+            "description": "<p>Service Type</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "day",
+            "description": "<p>Day</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "hour",
+            "description": "<p>Hour</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "price",
+            "optional": false,
+            "field": "price",
+            "description": "<p>Price</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "picture",
+            "description": "<p>Picture</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "id_chef",
+            "description": "<p>Chef id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n    }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodServiceController.js",
+    "groupTitle": "FoodService",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodService/update/:id_service"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/like/like_or_dislike_post/:id_post",
+    "title": "Like Post",
+    "version": "0.0.1",
+    "group": "Like",
+    "name": "LikeOrDislikePost",
+    "description": "<p>Action Like or Dislike Post</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "type",
+            "description": "<p>Type</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "id_user",
+            "description": "<p>User id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n     }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/likeController.js",
+    "groupTitle": "Like",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/like/like_or_dislike_post/:id_post"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/post/create/:id_user",
+    "title": "Create",
+    "version": "0.0.1",
+    "group": "Post",
+    "name": "CreatePost",
+    "description": "<p>Create a post</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "photo",
+            "description": "<p>Photo</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "location",
+            "description": "<p>Location</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "privacy",
+            "description": "<p>Privascy</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "time_zone",
+            "description": "<p>Timezone</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "id_profile",
+            "description": "<p>Profile id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 14,\n        \"warningStatus\": 0\n    }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/postController.js",
+    "groupTitle": "Post",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/post/create/:id_user"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "delete",
+    "url": "/post/delete/:id_post",
+    "title": "Delete",
+    "version": "0.0.1",
+    "group": "Post",
+    "name": "DeletePost",
+    "description": "<p>Delete a post</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n     }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/postController.js",
+    "groupTitle": "Post",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/post/delete/:id_post"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/post/detail/:id_post",
+    "title": "Detail",
+    "version": "0.0.1",
+    "group": "Post",
+    "name": "DetailPost",
+    "description": "<p>Get a post</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": \"status\": true,\n    \"message\": \"Successful Operation\",\n    \"data\": [\n        {\n            \"id_post\": 16,\n            \"post_name\": \"Lorem\",\n            \"description\": \"Lorem ipsum Dolor\",\n            \"post_photo\": \"photo\",\n            \"location\": \"Lorem ipsum\",\n            \"status\": 1,\n            \"privacy\": \"public\",\n            \"time_zone\": \"GMT-5\",\n            \"profile_id_profile\": 32,\n            \"profile_user_id_user\": 2,\n            \"profile_name\": \"John\",\n            \"lastname\": \"Doe\",\n            \"profile_photo\": \" photo\",\n            \"likesQty\": 5,\n            \"commentQty\": 12,\n            \"shareQty\": 40\n        }\n    ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Not record found!\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/postController.js",
+    "groupTitle": "Post",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/post/detail/:id_post"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/post/getComment/:id_post",
+    "title": "GetAllCommentsPost",
+    "version": "0.0.1",
+    "group": "Post",
+    "name": "GetAllCommentsPost",
+    "description": "<p>Get all comments of the post</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n    \"data\": [\n         {\n            \"id_post_comment\": 5,\n            \"comment\": \"Lorem ipsum dolor1\",\n            \"status\": 1,\n            \"created\": \"2020-11-28T14:50:30.000Z\",\n            \"updated\": \"2020-11-28T14:50:28.000Z\",\n            \"post_id_post\": 16,\n            \"user_id_user\": 2\n        },\n        {\n            \"id_post_comment\": 5,\n            \"comment\": \"Lorem ipsum dolor2\",\n            \"status\": 1,\n            \"created\": \"2020-11-28T14:50:30.000Z\",\n            \"updated\": \"2020-11-28T14:50:28.000Z\",\n            \"post_id_post\": 16,\n            \"user_id_user\": 12\n        }\n    ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Not record found!\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/postController.js",
+    "groupTitle": "Post",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/post/getComment/:id_post"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/post/getByProfile/:id_profile",
+    "title": "GetByProfile",
+    "version": "0.0.1",
+    "group": "Post",
+    "name": "GetByProfile",
+    "description": "<p>Get all post of the profile</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n    \"data\": [\n        {\n            \"id_post\": 16,\n            \"post_name\": \"Lorem\",\n            \"description\": \"Lorem ipsum Dolor\",\n            \"post_photo\": \"photo\",\n            \"location\": \"Lorem ipsum\",\n            \"status\": 1,\n            \"privacy\": \"public\",\n            \"time_zone\": \"GMT-5\",\n            \"profile_id_profile\": 32,\n            \"profile_user_id_user\": 2,\n            \"profile_name\": \"John\",\n            \"lastname\": \"Doe\",\n            \"profile_photo\": \" photo\",\n            \"likesQty\": 5,\n            \"commentQty\": 12,\n            \"shareQty\": 40\n        },\n        {\n            \"id_post\": 17,\n            \"post_name\": \"Gourmet\",\n            \"description\": \"Lorem ipsum Dolor\",\n            \"post_photo\": \"photo\",\n            \"location\": \"Lorem ipsum\",\n            \"status\": 1,\n            \"privacy\": \"public\",\n            \"time_zone\": \"GMT-5\",\n            \"profile_id_profile\": 32,\n            \"profile_user_id_user\": 2,\n            \"profile_name\": \"John\",\n            \"lastname\": \"Doe\",\n            \"profile_photo\": \" photo\",\n            \"likesQty\": 1,\n            \"commentQty\": 8,\n            \"shareQty\": 74\n        }\n\n    ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Not record found!\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/postController.js",
+    "groupTitle": "Post",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/post/getByProfile/:id_profile"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "put",
+    "url": "/post/update/:id_post",
+    "title": "Update",
+    "version": "0.0.1",
+    "group": "Post",
+    "name": "UpdatePost",
+    "description": "<p>Update a post</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "photo",
+            "description": "<p>Photo</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "location",
+            "description": "<p>Location</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Status</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "privacy",
+            "description": "<p>Privascy</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "time_zone",
+            "description": "<p>Timezone</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "id_profile",
+            "description": "<p>Profile id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n    }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/postController.js",
+    "groupTitle": "Post",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/post/update/:id_post"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU1OTExNSwiZXhwIjoxNjA2NjQ1NTE1fQ.S2nact0nfjqk7Wgyo9yEdA_LoJQhUd9yU7kIq24FbB8\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
     "type": "get",
     "url": "/profile/delete/:id_user",
     "title": "Delete",
@@ -349,7 +1645,12 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n\n{\n   \"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n         \"id_profile\": 32,\n         \"name\": \"John\",\n         \"lastname\": \"Doe\",\n         \"birthday\": \"2020-11-27T23:00:00.000Z\",\n         \"gender\": \"male\",\n         \"phone\": 2147483647,\n         \"status\": 1,\n         \"photo\": \" photo\",\n         \"profile_address\": \"SW 8\",\n         \"role\": \"User\",\n         \"user_id_user\": 2,\n         \"id_chef\": 1,\n         \"short_intro\": \"short_intro\",\n         \"long_intro\": \"long_description\",\n         \"services_name\": \"rt\",\n         \"service_availability\": \"service\",\n         \"price\": 4,\n         \"position\": \"senior\",\n         \"languages\": \"en\",\n         \"chef_address\": \"SW 8\",\n         \"location_service\": \"location_example\",\n         \"banner\": \"banner_example\",\n         \"id_address\": 8,\n         \"country\": \"USA\",\n         \"first_address\": \"SW 8\",\n         \"second_address\": \"AVE 8\",\n         \"state_region\": \"FLORIDA\",\n         \"city\": \"MIAMI\",\n         \"postcode\": \"95000\",\n         \"lat_lon\": \" test\",\n         \"about_info\": \"Lorem Ipsum Dolor\"\n     }\n ]\n}",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n  \"message\": \"Successful Operation\",\n  \"data\": [\n     {\n         \"id_profile\": 32,\n         \"name\": \"John\",\n         \"lastname\": \"Doe\",\n         \"birthday\": \"2020-11-27T23:00:00.000Z\",\n         \"gender\": \"male\",\n         \"phone\": 2147483647,\n         \"status\": 1,\n         \"photo\": \" photo\",\n         \"profile_address\": \"SW 8\",\n         \"role\": \"User\",\n         \"user_id_user\": 2,\n         \"id_chef\": 1,\n         \"short_intro\": \"short_intro\",\n         \"long_intro\": \"long_description\",\n         \"services_name\": \"rt\",\n         \"service_availability\": \"service\",\n         \"price\": 4,\n         \"position\": \"senior\",\n         \"languages\": \"en\",\n         \"chef_address\": \"SW 8\",\n         \"location_service\": \"location_example\",\n         \"banner\": \"banner_example\",\n         \"id_address\": 8,\n         \"country\": \"USA\",\n         \"first_address\": \"SW 8\",\n         \"second_address\": \"AVE 8\",\n         \"state_region\": \"FLORIDA\",\n         \"city\": \"MIAMI\",\n         \"postcode\": \"95000\",\n         \"lat_lon\": \" test\",\n         \"about_info\": \"Lorem Ipsum Dolor\"\n     }\n ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Not record found!\",\n    \"data\": []\n}",
           "type": "json"
         }
       ]

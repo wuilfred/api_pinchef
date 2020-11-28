@@ -27,7 +27,7 @@ class FoodService {
     }
 
     getAllServices(id_chef) {
-        this.rs = `SELECT * FROM food_service WHERE chef_id_chef = '${id_chef}'`;
+        this.rs = `SELECT * FROM food_service WHERE chef_id_chef = ${id_chef}`;
         return this.rs;
     }
 

@@ -77,9 +77,9 @@ async function create(req, res, next) {
 * HTTP/1.1 200 OK
 *
 * {
-*    "status": true,
- "message": "Successful Operation",
- "data": [
+* "status": true,
+  "message": "Successful Operation",
+  "data": [
      {
          "id_profile": 32,
          "name": "John",
@@ -115,6 +115,14 @@ async function create(req, res, next) {
      }
  ]
 * }
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*{
+    "status": true,
+    "message": "Not record found!",
+    "data": []
+}
 *
 * @apiErrorExample {json} Error-Response:
 *  HTTP/1.1 500 Bad Request
@@ -206,7 +214,7 @@ async function update(req, res, next) {
         "insertId": 0,
         "warningStatus": 0
      }
- ]s
+ ]
 * }
 *
 * @apiErrorExample {json} Error-Response:
