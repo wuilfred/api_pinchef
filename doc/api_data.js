@@ -2013,6 +2013,287 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/foodst/create",
+    "title": "Create food service type",
+    "version": "0.0.1",
+    "group": "Food_Service_Type",
+    "name": "Create_foodST",
+    "description": "<p>Create Food Service Type</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "service_type",
+            "description": "<p>Food service type</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Food service type added successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 400 Bad Request\n{\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodSTController.js",
+    "groupTitle": "Food_Service_Type",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodst/create"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/foodst/delete/:id",
+    "title": "Delete Food Service Type",
+    "version": "0.0.1",
+    "group": "Food_Service_Type",
+    "name": "Delete_Food_Service",
+    "description": "<p>Delete Food Service Type</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n \"message\": \"Food Service Type deleted successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 400 Bad request\n{\n  \"Validation error: \\\"id\\\" is required\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodSTController.js",
+    "groupTitle": "Food_Service_Type",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodst/delete/:id"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/foodst/detail/:id",
+    "title": "Food service type Detail",
+    "version": "0.0.1",
+    "group": "Food_Service_Type",
+    "name": "Food_service_type_Detail",
+    "description": "<p>Food service type Detail</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n\"data\": {\n    \"id_food_st\": 2,\n    \"service_type\": \"Fast food\",\n    \"description\": \"Fast food\",\n    \"created\": \"2020-11-28T20:49:12.000Z\",\n    \"updated\": \"2020-11-28T20:49:12.000Z\"\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n\"status\": false,\n\"message\": \"Food service type don't exists\",\n\"data\": {}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodSTController.js",
+    "groupTitle": "Food_Service_Type",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodst/detail/:id"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/foodst",
+    "title": "Get all",
+    "version": "0.0.1",
+    "group": "Food_Service_Type",
+    "name": "Get_All",
+    "description": "<p>Get all Food Service Type</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n     \"status\": true,\n     \"message\": \"Successful operation\",\n     \"data\": [\n        {\n            \"id_food_st\": 3,\n            \"service_type\": \"Back yard camp\",\n            \"description\": \"sunday grill\",\n            \"created\": \"2020-11-29T06:29:40.000Z\",\n            \"updated\": \"2020-11-29T06:36:36.000Z\"\n        },\n        {\n            \"id_food_st\": 4,\n            \"service_type\": \"Home cook\",\n            \"description\": \"Cook at home\",\n            \"created\": \"2020-11-29T06:37:48.000Z\",\n            \"updated\": \"2020-11-29T06:37:48.000Z\"\n        }\n      ]\n    }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodSTController.js",
+    "groupTitle": "Food_Service_Type",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodst"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/foodst/update/:id",
+    "title": "Update Food Service",
+    "version": "0.0.1",
+    "group": "Food_Service_Type",
+    "name": "Update_Food_Service",
+    "description": "<p>Update Food Service</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n\"message\": \"Food Service type updated succefully\",\n\"data\": {\n    \"id_food_st\": 2,\n    \"service_type\": \"Fast food\",\n    \"description\": \"Fast food\",\n    \"created\": \"2020-11-28T20:49:12.000Z\",\n    \"updated\": \"2020-11-28T21:35:49.000Z\"\n }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 400 Bad request\n{\n  \"message\": \"Validation error: \\\"service_type\\\" must be a string\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodSTController.js",
+    "groupTitle": "Food_Service_Type",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodst/update/:id"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
     "url": "/like/like_or_dislike_post/:id_post",
     "title": "Like Post",
     "version": "0.0.1",
