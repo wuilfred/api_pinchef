@@ -26,5 +26,6 @@ require('./cousineRoute')(api);
 require('./dietaryRoute')(api);
 require('./chefServiceRoute')(api);
 require('./foodStRoute')(api);
+require('./locationRoute')(api);
 
 module.exports = api;

@@ -2367,6 +2367,114 @@
     }
   },
   {
+    "type": "get",
+    "url": "/location/getAllCityForCountry/country_iso",
+    "title": "Get Cities",
+    "version": "0.0.1",
+    "group": "Location",
+    "name": "GetCities",
+    "description": "<p>Get all cities of a country</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n\"data\": \"status\": true,\n    \"message\": \"Successful Operation\",\n    \"data\": [\n        {\n            \"iso\": \"AD\",\n            \"name\": \"Andorra\"\n        },\n        {\n            \"iso\": \"AE\",\n            \"name\": \"United Arab Emirates\"\n        },\n        {\n            \"iso\": \"AF\",\n            \"name\": \"Afghanistan\"\n        },\n        {\n            \"iso\": \"AG\",\n            \"name\": \"Antigua and Barbuda\"\n        },...\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/locationController.js",
+    "groupTitle": "Location",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/location/getAllCityForCountry/country_iso"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/location/getAllCountry/",
+    "title": "Get countries",
+    "version": "0.0.1",
+    "group": "Location",
+    "name": "GetContry",
+    "description": "<p>Get all country</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n\"data\": \"status\": true,\n    \"message\": \"Successful Operation\",\n    \"data\": [\n        {\n            \"iso\": \"AD\",\n            \"name\": \"Andorra\"\n        },\n        {\n            \"iso\": \"AE\",\n            \"name\": \"United Arab Emirates\"\n        },\n        {\n            \"iso\": \"AF\",\n            \"name\": \"Afghanistan\"\n        },\n        {\n            \"iso\": \"AG\",\n            \"name\": \"Antigua and Barbuda\"\n        },...\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/locationController.js",
+    "groupTitle": "Location",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/location/getAllCountry/"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
     "type": "post",
     "url": "/post/create/:id_user",
     "title": "Create",
