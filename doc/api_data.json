@@ -774,6 +774,326 @@
     }
   },
   {
+    "type": "post",
+    "url": "/chefPosition/create/",
+    "title": "Create Position",
+    "version": "0.0.1",
+    "group": "Chef_Position",
+    "name": "CreateChefPosition",
+    "description": "<p>Create Position</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 2,\n        \"warningStatus\": 0\n    }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/chefPositionController.js",
+    "groupTitle": "Chef_Position",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/chefPosition/create/"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "delete",
+    "url": "/chefPosition/delete/:id_chef_position",
+    "title": "Delete",
+    "version": "0.0.1",
+    "group": "Chef_Position",
+    "name": "DeleteChefPosition",
+    "description": "<p>Delete a position</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n     }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/chefPositionController.js",
+    "groupTitle": "Chef_Position",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/chefPosition/delete/:id_chef_position"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/chefPosition/detail/:id_chef_position",
+    "title": "Detail",
+    "version": "0.0.1",
+    "group": "Chef_Position",
+    "name": "DetailChefPosition",
+    "description": "<p>Get a Chef Position</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": \"status\": true,\n    \"message\": \"Successful Operation\",\n    \"data\": [\n        {\n            \"id_food_item\": 5,\n            \"name\": \"Lorem\",\n            \"description\": \"Lorem ipsum dolor\",\n            \"day\": 1,\n            \"hour\": \"00:00:04\",\n            \"price\": 55,\n            \"picture\": \"picture\",\n            \"created\": \"2020-11-27T21:17:28.000Z\",\n            \"updated\": \"2020-11-28T15:11:29.000Z\",\n            \"chef_id_chef\": 1\n        }\n    ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Not record found!\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/chefPositionController.js",
+    "groupTitle": "Chef_Position",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/chefPosition/detail/:id_chef_position"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/chefPosition/getAllPosition/",
+    "title": "Get Positions",
+    "version": "0.0.1",
+    "group": "Chef_Position",
+    "name": "GetChefPosition",
+    "description": "<p>Get all positions</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": \"status\": true,\n    \"message\": \"Successful Operation\",\n    \"data\": [\n        {\n            \"id_food_item\": 5,\n            \"name\": \"Lorem\",\n            \"description\": \"Lorem ipsum dolor\",\n            \"day\": 1,\n            \"hour\": \"00:00:04\",\n            \"price\": 55,\n            \"picture\": \"picture\",\n            \"created\": \"2020-11-27T21:17:28.000Z\",\n            \"updated\": \"2020-11-28T15:11:29.000Z\",\n            \"chef_id_chef\": 1\n        },\n        {\n            \"id_food_item\": 3,\n            \"name\": \"Lorem\",\n            \"description\": \"Lorem ipsum dolor\",\n            \"day\": 1,\n            \"hour\": \"00:00:04\",\n            \"price\": 55,\n            \"picture\": \"picture\",\n            \"created\": \"2020-11-27T21:17:28.000Z\",\n            \"updated\": \"2020-11-28T15:11:29.000Z\",\n            \"chef_id_chef\": 1\n        }\n    ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Not record found!\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/chefPositionController.js",
+    "groupTitle": "Chef_Position",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/chefPosition/getAllPosition/"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "put",
+    "url": "/chefPosition/update/:id_chef_position",
+    "title": "Update",
+    "version": "0.0.1",
+    "group": "Chef_Position",
+    "name": "UpdateChefPosition",
+    "description": "<p>Update a Chef Position</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 2,\n        \"warningStatus\": 0\n    }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/chefPositionController.js",
+    "groupTitle": "Chef_Position",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/chefPosition/update/:id_chef_position"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
     "type": "get",
     "url": "/cousine/detail/:id",
     "title": "Cousine Detail",

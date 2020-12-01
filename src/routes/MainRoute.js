@@ -27,5 +27,6 @@ require('./dietaryRoute')(api);
 require('./chefServiceRoute')(api);
 require('./foodStRoute')(api);
 require('./locationRoute')(api);
+require('./chefPositionRoute')(api);
 
 module.exports = api;
