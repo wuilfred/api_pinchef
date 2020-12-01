@@ -8,6 +8,7 @@ module.exports = {
     detail,
     getAllService,
     delete: _delete,
+    getAll
 };
 
 /**
@@ -193,6 +194,27 @@ async function detail(req, res, next) {
     try {
         const conn = await pool.getConnection();
         const result = await conn.query(foodServiceModel.Detail(id_service));
+        conn.release();
+
+        res.status(200).json({
+            status: true,
+            message: result.length > 0 ? "Successful Operation" : "Not record found!",
+            data: result,
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            status: false,
+            message: "Operation failed",
+            details: error.message,
+        });
+    }
+}
+
+async function getAll(req, res, next) {
+    try {
+        const conn = await pool.getConnection();
+        const result = await conn.query(foodServiceModel.getAll());
         conn.release();
 
         res.status(200).json({

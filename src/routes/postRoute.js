@@ -8,6 +8,9 @@ module.exports = (api) => {
     // Detail post
     api.get('/post/detail/:id', authorize, postController.detail);
 
+    // Get all post
+    api.get('/post/getAll/', authorize, postController.getAll);
+
     // Get post by profile
     api.get('/post/getByProfile/:id', authorize, postController.getByProfile);
 

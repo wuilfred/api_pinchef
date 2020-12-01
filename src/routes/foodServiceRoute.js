@@ -11,6 +11,9 @@ module.exports = (api) => {
     // Get all foodServices chef
     api.get('/foodService/getAllService/:id', authorize, foodServiceController.getAllService);
 
+    // Get all foodServices
+    api.get('/foodService/getAll/', authorize, foodServiceController.getAll);
+
     // Update foodServices
     api.put('/foodService/update/:id', authorize, foodServiceController.update);
 

@@ -29,7 +29,12 @@ class MasterClass {
         return this.rs;
     }
 
-    GetAll(id_chef) {
+    GetAll() {
+        this.rs = `SELECT * FROM master_class`;
+        return this.rs;
+    }
+
+    GetAllForChef(id_chef) {
         this.rs = `SELECT * FROM master_class WHERE chef_id_chef = '${id_chef}'`;
         return this.rs;
     }

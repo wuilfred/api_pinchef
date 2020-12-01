@@ -39,6 +39,11 @@ class Post {
         return this.rs;
     }
 
+    getAll() {
+        this.rs = `SELECT * FROM post`;
+        return this.rs;
+    }
+
     getByProfile(id_user) {
         this.rs = `SELECT  post.id_post AS post_id,  post.name AS post_name, post.description, post.photo AS post_photo, post.location,
                    post.status, post.privacy, post.time_zone, post.profile_id_profile, post.profile_user_id_user, profile.name AS profile_name,

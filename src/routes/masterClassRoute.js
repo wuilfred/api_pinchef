@@ -8,8 +8,11 @@ module.exports = (api) => {
     // Detail master_clase
     api.get('/master_clase/detail/:id', authorize, masterClassController.detail);
 
+    // Get all master_clase
+    api.get('/master_clase/getAll/', authorize, masterClassController.getAll);
+
     // Get all master_clase chef
-    api.get('/master_clase/getAll/:id', authorize, masterClassController.getAll);
+    api.get('/master_clase/getAllForChef/:id', authorize, masterClassController.getAllForChef);
 
     // Update master_clase
     api.put('/master_clase/update/:id', authorize, masterClassController.update);

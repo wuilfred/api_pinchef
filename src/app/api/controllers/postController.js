@@ -8,7 +8,8 @@ module.exports = {
     detail,
     getByProfile,
     delete: _delete,
-    getComment
+    getComment,
+    getAll
 };
 
 /**
@@ -203,6 +204,27 @@ async function detail(req, res, next) {
     try {
         const conn = await pool.getConnection();
         const result = await conn.query(postModel.Detail(id_post));
+        conn.release();
+
+        res.status(200).json({
+            status: true,
+            message: result.length > 0 ? "Successful Operation" : "Not record found!",
+            data: result,
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            status: false,
+            message: "Operation failed",
+            details: error.message,
+        });
+    }
+}
+
+async function getAll(req, res, next) {
+    try {
+        const conn = await pool.getConnection();
+        const result = await conn.query(postModel.getAll());
         conn.release();
 
         res.status(200).json({
