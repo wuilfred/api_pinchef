@@ -14,4 +14,7 @@ module.exports = (api) => {
 // Delete Profile
     api.delete('/profile/delete/:id', authorize, profileController.delete);
 
+// Upload Photo
+    api.post('/profile/upload/:id', authorize, profileController.uploadPhoto);
+
 };

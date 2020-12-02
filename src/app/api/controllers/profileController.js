@@ -2,12 +2,14 @@ const pool = require("../../../helpers/db");
 const Role = require("../../../helpers/role");
 const profileModel = require("../models/profileModel");
 const Joi = require("joi");
+const uploadObj = require('../../../helpers/aws-sdk');
 
 module.exports = {
     create,
     detail,
     update,
     delete: _delete,
+    uploadPhoto
 };
 
 async function create(req, res, next) {
@@ -341,4 +343,12 @@ async function validatorChef(chef) {
     });
 
     await schema.validateAsync(chef);
+}
+
+async function uploadPhoto(req,res,next) {
+    const {id} = req.params;
+    const file = req.files.file;
+    uploadObj(id, file, 'chef')
+    .then(({ status, message, ...data}) => {res.json({ status , message, data});})
+    .catch(next);    
 }

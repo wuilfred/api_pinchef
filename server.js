@@ -1,6 +1,7 @@
 
 const express = require('express');
 var bodyParser = require('body-parser');
+var fileUpload = require('express-fileupload');
 const errorHandler = require('./src/middleware/error-handler');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
@@ -21,6 +22,11 @@ app.use(function (req, res, next) {
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json(
     {limit:'50mb'}
+));
+app.use(fileUpload(
+    {
+        useTempFiles: true
+    }
 ));
 app.use(cookieParser());
 
