@@ -17,11 +17,7 @@ s3.listBuckets(function (err, data) {
 })
 
 
-function uploadObj(id, file, type) {
-    try{
-    console.log(id);
-    console.log(type);
-    console.log(`${type}/${id}/`);
+async function uploadObj(id, file, type) {
 
         let params = {
             Bucket: bucket_name, /* required */
@@ -55,26 +51,40 @@ function uploadObj(id, file, type) {
             Key: `${type}/${id}/${f_name}`,
             Body: fs.createReadStream(file.tempFilePath)
         };
-        console.log(uploadParams);
-        s3.upload(uploadParams, (err, data) => {
-            if (err) {
+        try {
+        const result = await s3.upload(uploadParams).promise();
+        if (result) {
+          console.log("Photo Upload Success", result.Location);
+                const location = result.Location;
                 return {
-                    status:false,
-                    message: err
-                  }
+                     status:true,
+                     message: "ok",
+                    location,
+                        
+             }
             }
-            if (data) {
-                console.log("Photo Upload Success", data.Location);
-                const location = data.Location;
-                return {
-                    status:true,
-                    message: "ok",
-                    ...location,
+        } catch (err) {
+        console.log(err)
+        }
+        // await s3.upload(uploadParams, (err, data) => {
+        //     if (err) {
+        //         return {
+        //             status:false,
+        //             message: err
+        //           }
+        //     }
+        //     if (data) {
+        //         console.log("Photo Upload Success", data.Location);
+        //         const location = data.Location;
+        //         return {
+        //             status:true,
+        //             message: "ok",
+        //             ...location,
                     
-                }
-            }
-        });
-}catch(e){}}
+        //         }
+        //     }
+        // }).promise();
+}
 
 
 // let params = {

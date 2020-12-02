@@ -348,7 +348,11 @@ async function validatorChef(chef) {
 async function uploadPhoto(req,res,next) {
     const {id} = req.params;
     const file = req.files.file;
-    uploadObj(id, file, 'chef')
-    .then(({ status, message, ...data}) => {res.json({ status , message, data});})
-    .catch(next);    
+    // const result = await uploadObj(id, file, 'chef');
+    uploadObj(id, file, 'chef').then(({ status, message, location}) => {res.json({ status , message, location});})
+     .catch(next);    
+
+    // uploadObj(id, file, 'chef')
+    // .then(({ status, message, ...data}) => {res.json({ status , message, data});})
+    // .catch(next);    
 }
