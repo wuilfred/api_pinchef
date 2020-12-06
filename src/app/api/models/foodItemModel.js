@@ -5,9 +5,15 @@ class FoodItem {
     }
 
     Create(id_chef, foodItem) {
-        this.rs = `INSERT INTO food_item (name, description, day, hour, price, picture, chef_id_chef, created, updated)
+        this.rs = `INSERT INTO food_item (name, description, day, hour, price, chef_id_chef, created, updated)
                    VALUES ('${foodItem.name}', '${foodItem.description}', '${foodItem.day}', '${foodItem.hour}',
-                  '${foodItem.price}', '${foodItem.picture}', '${id_chef}', now(), now())`;
+                  '${foodItem.price}', '${id_chef}', now(), now())`;
+
+        return this.rs;
+    }
+
+    SavePicture(picture){
+        this.rs = `UPDATE food_item SET picture = '${picture}'`;
 
         return this.rs;
     }

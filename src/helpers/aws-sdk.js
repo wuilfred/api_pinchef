@@ -1,5 +1,6 @@
 require('dotenv').config();
 var AWS = require('aws-sdk');
+const sharp = require("sharp");
 
 const bucket_name = 'pinchef';
 
@@ -17,7 +18,7 @@ s3.listBuckets(function (err, data) {
 })
 
 
-async function uploadObj(id, file, type) {
+async function uploadObj(id, file, type, is_avatar) {
 
         let params = {
             Bucket: bucket_name, /* required */
@@ -43,17 +44,31 @@ async function uploadObj(id, file, type) {
                 status:false,
                 message: "Only .png, .jpg and .jpeg format allowed!"
               }
-        }       
+        }
         
+        const width = 200;   
+        // if (is_avatar) {
+        //   const width = 200;          
+        //   const buffer = await sharp(file.tempFilePath).resize(width).toBuffer();
+        // }
+         
+        const final_file = is_avatar ? await sharp(file.tempFilePath).resize(width).toBuffer() : fs.createReadStream(file.tempFilePath);
+           
         let uploadParams = {
             Bucket: bucket_name, /* required */
             ContentType: f_type,
             Key: `${type}/${id}/${f_name}`,
-            Body: fs.createReadStream(file.tempFilePath)
+            Body: final_file
         };
         try {
         const result = await s3.upload(uploadParams).promise();
         if (result) {
+            fs.unlink(file.tempFilePath, function (err) {
+                if (err) {
+                    console.error(err);
+                }
+                console.log('Temp File Delete');
+            });
           console.log("Photo Upload Success", result.Location);
                 const location = result.Location;
                 return {

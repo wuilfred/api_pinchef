@@ -1,6 +1,7 @@
 const foodServiceModel = require('../models/foodServiceModel');
 const pool = require("../../../helpers/db");
 const Joi = require("joi");
+const uploadObj = require('../../../helpers/aws-sdk');
 
 module.exports = {
     create,
@@ -54,12 +55,23 @@ module.exports = {
 async function create(req, res, next) {
     const id_chef = req.params.id;
     const food_service = req.body;
+    const file = req.files ? req.files.file : false ;
     try {
         await validatorFoodService({...food_service, id_chef});
         const conn = await pool.getConnection();
         const result = await conn.query(foodServiceModel.Create(id_chef, food_service));
         conn.release();
 
+        if (file) {
+          if (result.affectedRows === 1) {
+            const id = result.insertId;
+            await uploadObj(id, file, "food_service", false)
+              .then(async ({ status, message, location }) => {
+                await conn.query(foodServiceModel.SavePicture(location));
+              })
+              .catch(next);
+          }
+        }
         res.status(200).json({
             status: true,
             message: "Successful Operation",
@@ -375,7 +387,7 @@ async function validatorFoodService(serviceChef) {
         day: Joi.date().required(),
         hour: Joi.date().required(),
         price: Joi.number(),
-        picture: Joi.string().required(),
+     //   picture: Joi.string().required(),
         id_chef: Joi.number().required(),
     });
 

@@ -349,7 +349,7 @@ async function uploadPhoto(req,res,next) {
     const {id} = req.params;
     const file = req.files.file;
     // const result = await uploadObj(id, file, 'chef');
-    uploadObj(id, file, 'chef').then(({ status, message, location}) => {res.json({ status , message, location});})
+    await uploadObj(id, file, 'chef', true).then(({ status, message, location}) => {res.json({ status , message, location});})
      .catch(next);    
 
     // uploadObj(id, file, 'chef')
