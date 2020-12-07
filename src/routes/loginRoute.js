@@ -142,4 +142,6 @@ module.exports = (api) => {
    * }
    */
   api.post("/reset-password", loginController.resetPasswordSchema, loginController.resetPassword);
+
+  api.get("/verify-email/:token", loginController.verifyEmail);
 };

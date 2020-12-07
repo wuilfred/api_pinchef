@@ -67,7 +67,9 @@ function registerSchema(req, res, next) {
 }
 
 function register(req, res, next) {
-    service.register(req.body, req.get('origin'))
+   // var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    var Url = req.protocol + '://' + req.get('host');
+    service.register(req.body, Url)
         .then(() => res.json({ message: 'Registration successful, please check your email for verification instructions' }))
         .catch(next);
 }
@@ -80,7 +82,8 @@ function verifyEmailSchema(req, res, next) {
 }
 
 function verifyEmail(req, res, next) {
-    service.verifyEmail(req.body)
+    const token = req.params.token ?  req.params.token : req.body.token;
+    service.verifyEmail(token)
         .then(() => res.json({ message: 'Verification successful, you can now login' }))
         .catch(next);
 }

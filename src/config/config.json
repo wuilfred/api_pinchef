@@ -1,12 +1,13 @@
 {
     "secret": "S3cretW0rd",
-    "emailFrom": "Macie Langosh",
+    "emailFrom": "PINCHEF",
     "smtpOptions": {
-        "host": "smtp.ethereal.email",
+        "service": "gmail",
+        "host": "smtp.gmail.com",
         "port": 587,
         "auth": {
-            "user": "macie.langosh19@ethereal.email",
-            "pass": "vvP5NNfTfG1j7yrKqm"
+            "user": "pinchef2020@gmail.com",
+            "pass": "P1nch3f@"
         }
     }
 }

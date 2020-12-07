@@ -7,6 +7,8 @@ const db = require('../helpers/db');
 const Role = require('../helpers/role');
 const pool = require('../helpers/db');
 const userModel = require('../app/api/models/userModel');
+const gCode = require('../utils/generateCode');
+const { User } = require('../helpers/role');
 
 module.exports = {
     authenticate,
@@ -84,7 +86,8 @@ async function register(params, origin) {
     const newUser = params;
     
     newUser.password =  await hash(params.password);
-    newUser.verificationToken = randomTokenString();
+    //newUser.verificationToken = randomTokenString();
+    newUser.verificationToken = gCode(6,'numeric');
     newUser.role = params.role;
 
     const userSave = await conn.query(userModel.Create(newUser));
@@ -96,7 +99,7 @@ async function register(params, origin) {
     }
 }
 
-async function verifyEmail({ token }) {
+async function verifyEmail(token) {
 
     const conn = await db.getConnection();
     const user = await conn.query(userModel.GetVerificationToken(token));
@@ -240,11 +243,13 @@ function basicDetails(account) {
 async function sendVerificationEmail(account, origin) {
     let message;
     if (origin) {
-        const verifyUrl = `${origin}/account/verify-email?token=${account.verificationToken}`;
+        const verifyUrl = `${origin}/api/verify-email?token=${account.verificationToken}`;
         message = `<p>Please click the below link to verify your email address:</p>
-                   <p><a href="${verifyUrl}">${verifyUrl}</a></p>`;
+                   <p><a href="${verifyUrl}">${verifyUrl}</a></p>
+                   <p>Or use the below token to verify your email address with the <code>/api/verify-email</code> api route:</p>
+                   <p><b><code>${account.verificationToken}</code></b></p>`;
     } else {
-        message = `<p>Please use the below token to verify your email address with the <code>/account/verify-email</code> api route:</p>
+        message = `<p>Please use the below token to verify your email address with the <code>/api/verify-email</code> api route:</p>
                    <p><code>${account.verificationToken}</code></p>`;
     }
 
@@ -260,9 +265,9 @@ async function sendVerificationEmail(account, origin) {
 async function sendAlreadyRegisteredEmail(email, origin) {
     let message;
     if (origin) {
-        message = `<p>If you don't know your password please visit the <a href="${origin}/account/forgot-password">forgot password</a> page.</p>`;
+        message = `<p>If you don't know your password please visit the <a href="${origin}/api/forgot-password">forgot password</a> page.</p>`;
     } else {
-        message = `<p>If you don't know your password you can reset it via the <code>/account/forgot-password</code> api route.</p>`;
+        message = `<p>If you don't know your password you can reset it via the <code>/api/forgot-password</code> api route.</p>`;
     }
 
     await sendEmail({
@@ -281,7 +286,7 @@ async function sendPasswordResetEmail(account, origin) {
         message = `<p>Please click the below link to reset your password, the link will be valid for 1 day:</p>
                    <p><a href="${resetUrl}">${resetUrl}</a></p>`;
     } else {
-        message = `<p>Please use the below token to reset your password with the <code>/account/reset-password</code> api route:</p>
+        message = `<p>Please use the below token to reset your password with the <code>/api/verify-email</code> api route:</p>
                    <p><code>${account.resetToken}</code></p>`;
     }
 
