@@ -4,6 +4,7 @@ const Joi = require("joi");
 
 module.exports = {
     likeOrDislikePost,
+    qtyLikesPost
 }
 
 /**
@@ -85,11 +86,35 @@ async function likeOrDislikePost(req, res, next) {
 async function checklikeExist(id_post, id_user) {
     try {
         const conn = await pool.getConnection();
-        const result = conn.query(likeModel.checklikeExist(id_post, id_user));
+        const result = await conn.query(likeModel.checklikeExist(id_post, id_user));
         conn.release();
 
         return result;
     } catch (error) {
         throw new Error(error);
     }
+}
+
+async function qtyLikesPost(req, res, next) {
+    const id_post = req.params.id;
+    try {
+        const conn = await pool.getConnection();
+        const result = await conn.query(likeModel.getLikesPost(id_post));
+        conn.release();
+        console.log(result);
+
+        res.status(200).json({
+            status: true,
+            message: result.length > 0 ? "Successful Operation" : "Not record found!",
+            data: result,
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            status: false,
+            message: "Operation failed",
+            details: error.message,
+        });
+    }
+
 }

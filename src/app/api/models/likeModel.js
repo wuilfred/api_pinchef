@@ -20,6 +20,11 @@ class Like {
         return this.rs;
     };
 
+    getLikesPost(id_post) {
+        this.rs = `SELECT COUNT (*) AS likesQty FROM post_like WHERE post_id_post = '${id_post}' and status = 1`;
+        return this.rs;
+    }
+
 }
 
 const getLike = new Like();

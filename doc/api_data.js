@@ -3362,5 +3362,262 @@ define({ "api": [
         }
       ]
     }
+  },
+  {
+    "type": "post",
+    "url": "/statusOrder/create/:id_cart_order",
+    "title": "Create Status Order",
+    "version": "0.0.1",
+    "group": "Status_Order",
+    "name": "Create_statusOrder_Order",
+    "description": "<p>Create Status Order</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "type_payment",
+            "description": "<p>Type payment</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "sting",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Status</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "comment",
+            "description": "<p>Comment</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Status Order crated successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 400 Bad Request\n{\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/statusOrderController.js",
+    "groupTitle": "Status_Order",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/statusOrder/create/:id_cart_order"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/statusOrder/delete/:id_status_order",
+    "title": "Delete Status Order",
+    "version": "0.0.1",
+    "group": "Status_Order",
+    "name": "Delete_Status_Order",
+    "description": "<p>Delete Status Order</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n\"status\": true,\n \"message\": \"Status Order deleted successfully\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 400 Bad request\n{\n  \"Validation error: \\\"id\\\" is required\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/statusOrderController.js",
+    "groupTitle": "Status_Order",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/statusOrder/delete/:id_status_order"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/statusOrder/detail/:id",
+    "title": "Status Order Detail",
+    "version": "0.0.1",
+    "group": "Status_Order",
+    "name": "Status_Order_Detail",
+    "description": "<p>Status Order Detail</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"data\": {\n        \"id_status_order\": 6,\n        \"name\": \"status_update\",\n        \"description\": \"ss\",\n        \"type_payment\": \"cash\",\n        \"comment\": \"Pending\",\n        \"created\": \"2020-12-08T04:49:51.000Z\",\n        \"updated\": \"2020-12-08T04:53:29.000Z\",\n        \"cart_order_id_cart_order\": 1\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n\"status\": false,\n\"message\": \"status order don't exists\",\n\"data\": {}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/statusOrderController.js",
+    "groupTitle": "Status_Order",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/statusOrder/detail/:id"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/statusOrder/update/:id_status_order",
+    "title": "Update Status Order",
+    "version": "0.0.1",
+    "group": "Status_Order",
+    "name": "Update_Status_Order",
+    "description": "<p>Update Status Order</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n   {\n    \"status\": true,\n    \"message\": \"Status Order updated succefully\",\n    \"data\": {\n        \"data\": {\n            \"affectedRows\": 1,\n            \"insertId\": 0,\n            \"warningStatus\": 0\n        }\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 400 Bad request\n{\n  \"message\": \"Validation error: \\\"dietary\\\" must be a string\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/statusOrderController.js",
+    "groupTitle": "Status_Order",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/statusOrder/update/:id_status_order"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "type": "String"
+        }
+      ]
+    }
   }
 ] });
