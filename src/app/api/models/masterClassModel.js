@@ -65,7 +65,7 @@ class MasterClass {
                    LEFT JOIN ${this.tableLike} ON mc.id_master_class = ${this.tableLike}.id_master_class
                    LEFT JOIN share ON mc.id_master_class = share.id_master_class
                    LEFT JOIN comment ON mc.id_master_class = comment.id_master_class
-                   ORDER BY created DESC`;
+                   ORDER BY updated DESC limit 500`;
         return this.rs;
     }
 
