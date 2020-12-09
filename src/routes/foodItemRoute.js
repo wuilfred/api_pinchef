@@ -8,8 +8,11 @@ module.exports = (api) => {
     // Detail foodItem
     api.get('/foodItem/detail/:id', authorize, foodItemController.detail);
 
-    // Get all foodItem chef
+    // Get all foodItem to id chef
     api.get('/foodItem/getItemsByChef/:id', authorize, foodItemController.getItemsByChef);
+
+    // Get all foodItem chef
+    api.get('/foodItem/getAllItems', authorize, foodItemController.getAllItems);
 
     // Update foodItem
     api.put('/foodItem/update/:id', authorize, foodItemController.update);
