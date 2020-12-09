@@ -34,13 +34,13 @@ class Post {
                    LEFT JOIN post_share ON post_share.post_id_post = post.id_post 
                    WHERE post.id_post = ${id_post} AND post.status = 1 
                    GROUP BY post.id_post, post.name, post.description, post.photo, post.location, post.status, post.privacy, post.time_zone,
-                   post.profile_id_profile, post.profile_user_id_user`;
+                   post.profile_id_profile, post.profile_user_id_user ORDER BY post_id DESC`;
 
         return this.rs;
     }
 
     getAll() {
-        this.rs = `SELECT * FROM post`;
+        this.rs = `SELECT * FROM post ORDER BY id_post DESC;`;
         return this.rs;
     }
 
@@ -58,13 +58,13 @@ class Post {
                    LEFT JOIN post_share ON post_share.post_id_post = post.id_post 
                    WHERE post.profile_user_id_user = ${id_user} 
                    GROUP BY post_id, post_name, post_photo, post.description, post.location, post.photo, post.location, post.status, post.privacy,
-                   post.time_zone, post.profile_id_profile, post.profile_user_id_user, profile_name, profile.lastname, profile_photo`;
+                   post.time_zone, post.profile_id_profile, post.profile_user_id_user, profile_name, profile.lastname, profile_photo ORDER BY post_id DESC`;
 
         return this.rs;
     }
 
     getComments(id_post) {
-        this.rs = `SELECT * FROM post_comment where status = 1 and post_id_post = '${id_post}'`;
+        this.rs = `SELECT * FROM post_comment WHERE status = 1 AND post_id_post = '${id_post}' ORDER BY id_post_comment DESC`;
         return this.rs;
     }
 
