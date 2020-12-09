@@ -316,7 +316,7 @@ async function getItemsByChef(req, res, next) {
 * @apiName GetAllItems
 * @apiUse token
 *
-* @apiDescription Get all foodItem of the chef
+* @apiDescription Get all foodItem
 *
 * @apiSuccessExample Success-Response:
 * HTTP/1.1 200 OK
