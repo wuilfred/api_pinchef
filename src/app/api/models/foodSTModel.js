@@ -29,7 +29,7 @@ class FoodST {
     }
 
     GetAll() {
-        this.rs = `SELECT * from food_st`;
+        this.rs = `SELECT * from food_st ORDER BY id_food_st DESC;`;
         return this.rs;
     }
     
