@@ -6,7 +6,7 @@ const api = express.Router();
  * @apiDefine token jwtToken
  * @apiHeader {String} token jwt Token.
  * @apiHeaderExample {String} Request-Example:
- * { "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY" }
+ * { "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM" }
  *
  */
 

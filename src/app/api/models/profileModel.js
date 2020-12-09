@@ -84,6 +84,17 @@ class Profile {
         this.rs = `DELETE FROM profile WHERE user_id_user = ${id_user}`;
         return this.rs;
     }
+
+    SavePictureProfile(id_profile, picture) {
+        this.rs = `UPDATE profile SET photo = '${picture}' WHERE id_profile = '${id_profile}'`;
+        return this.rs;
+    }
+
+    SavePictureChef(id_chef, description, photo_url, photo_name) {
+        this.rs = `INSERT INTO chef_photo (name, description, photo_url, chef_id_chef, created, updated)
+                   VALUES ('${photo_name}', '${description}',  '${photo_url}', '${id_chef}', now(), now())`;
+        return this.rs;
+    }
 }
 
 const getProfile = new Profile();

@@ -2,26 +2,27 @@ class Like {
 
     constructor() {
         this.rs = '';
+        this.table = '`like`';
     }
 
-    checklikeExist(id_post, id_user) {
-        this.rs = `SELECT * FROM post_like WHERE post_id_post = ${id_post} AND user_id_user = ${id_user}`;
+    checklikeExist(id, id_user, type) {
+        this.rs = `SELECT * FROM ${this.table} WHERE type = '${type}' AND id_${type} = '${id}' AND user_id_user = '${id_user}'`;
         return this.rs;
     };
 
-    createLikePost(id_post, like) {
-        this.rs = `INSERT INTO post_like (type, post_id_post, user_id_user, status, created , updated)
-                   VALUES('${like.type}', '${id_post}', '${like.id_user}', 1, now(), now())`;
+    createLike(id, like) {
+        this.rs = `INSERT INTO ${this.table} (type, id_${like.type}, user_id_user, status, created , updated)
+                   VALUES('${like.type}', '${id}', '${like.id_user}', 1, now(), now())`;
         return this.rs;
     };
 
-    changeActionLikePost(id_post, id_user, status) {
-        this.rs = `UPDATE post_like SET status = ${status} WHERE post_id_post = ${id_post} AND user_id_user = ${id_user}`;
+    changeActionLike(id, status) {
+        this.rs = `UPDATE ${this.table}v SET status = '${status}' WHERE id_like = '${id}'`;
         return this.rs;
     };
 
-    getLikesPost(id_post) {
-        this.rs = `SELECT COUNT (*) AS likesQty FROM post_like WHERE post_id_post = '${id_post}' and status = 1`;
+    getLikes(id, type) {
+        this.rs = `SELECT COUNT (*) AS likesQty FROM ${this.table} WHERE id_${type} = '${id}' and status = 1`;
         return this.rs;
     }
 

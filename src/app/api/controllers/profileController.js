@@ -9,7 +9,8 @@ module.exports = {
     detail,
     update,
     delete: _delete,
-    uploadPhoto
+    uploadPhotoProfile,
+    uploadPhotoChef
 };
 
 async function create(req, res, next) {
@@ -345,14 +346,101 @@ async function validatorChef(chef) {
     await schema.validateAsync(chef);
 }
 
-async function uploadPhoto(req,res,next) {
-    const {id} = req.params;
-    const file = req.files.file;
-    // const result = await uploadObj(id, file, 'chef');
-    await uploadObj(id, file, 'chef', true).then(({ status, message, location}) => {res.json({ status , message, location});})
-     .catch(next);    
-
-    // uploadObj(id, file, 'chef')
-    // .then(({ status, message, ...data}) => {res.json({ status , message, data});})
-    // .catch(next);    
+/**
+* @api {post} /profile/upload/picture_profile/:id_profile  Upload profile photo
+* @apiVersion 0.0.1
+* @apiGroup Profile
+* @apiName uploadProfilePhoto
+* @apiUse token
+*
+* @apiDescription Upload profile photo
+* @apiParam {file} file  Photo file
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*
+{
+    "status": true,
+    "message": "ok",
+    "location": "https://pinchef.s3.amazonaws.com/profile/1/avengers_infinity_war_2018_movie_doctor_strange-wallpaper-3840x2160.jpg"
 }
+*
+* @apiErrorExample {json} Error-Response:
+*  HTTP/1.1 500 Bad Request
+* {
+*    "status": false
+*    "message": "Operation failed"
+*    "detail": "Error Message"
+*    
+* }
+*/
+async function uploadPhotoProfile(req, res, next) {
+    const { id } = req.params;
+    const file = req.files.file;
+    try {
+        const response = await uploadObj(id, file, 'profile', true);
+        const conn = await pool.getConnection();
+        const result = await conn.query(profileModel.SavePictureProfile(id, response.location));
+        conn.release();
+        if (result.affectedRows > 0) {
+            res.status(200).json(response);
+        }
+    } catch (error) {
+        res.status(500).json({
+            status: false,
+            message: "Operation failed",
+            details: error.message,
+        });
+    }
+}
+
+/**
+* @api {post} /profile/upload/picture_chef/:id_chef  Upload chef photo
+* @apiVersion 0.0.1
+* @apiGroup Profile
+* @apiName uploadChefPhoto
+* @apiUse token
+*
+* @apiDescription Upload chef photo
+* @apiParam {file} file  Photo file
+* @apiParam {string} description  Description
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*
+{
+    "status": true,
+    "message": "ok",
+    "location": "https://pinchef.s3.amazonaws.com/chef/1/avengers_infinity_war_2018_movie_doctor_strange-wallpaper-3840x2160.jpg"
+}
+*
+* @apiErrorExample {json} Error-Response:
+*  HTTP/1.1 500 Bad Request
+* {
+*    "status": false
+*    "message": "Operation failed"
+*    "detail": "Error Message"
+*    
+* }
+*/
+async function uploadPhotoChef(req, res, next) {
+    const { id } = req.params;
+    const file = req.files.file;
+    const { description } = req.body;
+    try {
+        const response = await uploadObj(id, file, 'chef', true);
+        const conn = await pool.getConnection();
+        const result = await conn.query(profileModel.SavePictureChef(id, description, response.location, file.name));
+        conn.release();
+        if (result.affectedRows > 0) {
+            res.status(200).json(response);
+        }
+    } catch (error) {
+        res.status(500).json({
+            status: false,
+            message: "Operation failed",
+            details: error.message,
+        });
+    }
+}
+

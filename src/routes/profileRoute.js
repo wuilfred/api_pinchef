@@ -14,7 +14,10 @@ module.exports = (api) => {
 // Delete Profile
     api.delete('/profile/delete/:id', authorize, profileController.delete);
 
-// Upload Photo
-    api.post('/profile/upload/:id', authorize, profileController.uploadPhoto);
+// Upload Photo Profile
+    api.post('/profile/upload/picture_profile/:id', authorize, profileController.uploadPhotoProfile);
+
+// Upload Photo Chef
+    api.post('/profile/upload/picture_chef/:id', authorize, profileController.uploadPhotoChef);
 
 };

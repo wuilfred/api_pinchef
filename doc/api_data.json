@@ -331,7 +331,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -447,7 +447,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -521,7 +521,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -580,7 +580,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -634,7 +634,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -693,7 +693,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -767,7 +767,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -841,7 +841,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -895,7 +895,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -954,7 +954,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -1013,7 +1013,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -1087,7 +1087,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -1141,7 +1141,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -1215,7 +1215,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -1269,7 +1269,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -1323,7 +1323,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -1397,7 +1397,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -1451,7 +1451,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -1505,7 +1505,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -1559,7 +1559,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -1661,7 +1661,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -1715,7 +1715,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -1774,7 +1774,66 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/foodItem/getAllItems",
+    "title": "GetAllItems",
+    "version": "0.0.1",
+    "group": "FoodItem",
+    "name": "GetAllItems",
+    "description": "<p>Get all foodItem of the chef</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": \"status\": true,\n    \"message\": \"Successful Operation\",\n     \"data\": [\n        {\n            \"id_food_item\": 6,\n            \"name\": \"Food title\",\n            \"description\": \"Idjidhidh, sijwihwi, sojw8he8h, sihsibs, sihsihdihs, sibsihsih,\",\n            \"day\": null,\n            \"hour\": \"00:00:05\",\n            \"price\": 35,\n            \"picture\": \"https://pinchef.s3.amazonaws.com/food_item/8/IMG_1684.JPG\",\n            \"created\": \"2020-12-09T05:22:44.000Z\",\n            \"updated\": \"2020-12-09T05:22:44.000Z\",\n            \"chef_id_chef\": 6\n        },\n        {\n            \"id_food_item\": 7,\n            \"name\": \"cerdo\",\n            \"description\": \"Cedo asado\",\n            \"day\": null,\n            \"hour\": \"00:00:03\",\n            \"price\": 46,\n            \"picture\": \"https://pinchef.s3.amazonaws.com/food_item/8/IMG_1684.JPG\",\n            \"created\": \"2020-12-09T05:24:40.000Z\",\n            \"updated\": \"2020-12-09T05:24:40.000Z\",\n            \"chef_id_chef\": 6\n        },\n        {\n            \"id_food_item\": 8,\n            \"name\": \"askdjb sandasnd \",\n            \"description\": \"Cedo asadodf sdf dsfsdfsdf fsfsfasaf\",\n            \"day\": null,\n            \"hour\": \"00:00:03\",\n            \"price\": 46,\n            \"picture\": \"https://pinchef.s3.amazonaws.com/food_item/8/IMG_1684.JPG\",\n            \"created\": \"2020-12-09T05:25:21.000Z\",\n            \"updated\": \"2020-12-09T05:25:21.000Z\",\n            \"chef_id_chef\": 6\n        }\n    ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Not record found!\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodItemController.js",
+    "groupTitle": "FoodItem",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodItem/getAllItems"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -1833,7 +1892,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -1942,7 +2001,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -2044,7 +2103,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -2098,7 +2157,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -2157,7 +2216,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -2216,7 +2275,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -2325,7 +2384,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -2399,7 +2458,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -2453,7 +2512,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -2507,7 +2566,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -2552,7 +2611,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -2606,7 +2665,74 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/like/getLikes/:id",
+    "title": "Get Likes",
+    "version": "0.0.1",
+    "group": "Like",
+    "name": "GetLikes",
+    "description": "<p>Get likes</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "type",
+            "description": "<p>Type (chef | master_class | food_item | food_service | post)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n    \"status\": true,\n    \"message\": \"Successful Operation\",\n    \"data\": [\n        {\n            \"likesQty\": 1\n        }\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/likeController.js",
+    "groupTitle": "Like",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/like/getLikes/:id"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -2614,11 +2740,11 @@
   },
   {
     "type": "post",
-    "url": "/like/like_or_dislike_post/:id_post",
+    "url": "/like/like_or_dislike_post/:id",
     "title": "Like Post",
     "version": "0.0.1",
     "group": "Like",
-    "name": "LikeOrDislikePost",
+    "name": "LikeOrDislike",
     "description": "<p>Action Like or Dislike Post</p>",
     "parameter": {
       "fields": {
@@ -2628,14 +2754,14 @@
             "type": "string",
             "optional": false,
             "field": "type",
-            "description": "<p>Type</p>"
+            "description": "<p>Type (chef | master_class | food_item | food_service | post)</p>"
           },
           {
             "group": "Parameter",
             "type": "number",
             "optional": false,
-            "field": "id_user",
-            "description": "<p>User id</p>"
+            "field": "id",
+            "description": "<p>Id according to type</p>"
           }
         ]
       }
@@ -2662,7 +2788,7 @@
     "groupTitle": "Like",
     "sampleRequest": [
       {
-        "url": "http://localhost:8001/api/like/like_or_dislike_post/:id_post"
+        "url": "http://localhost:8001/api/like/like_or_dislike_post/:id"
       }
     ],
     "header": {
@@ -2680,7 +2806,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -2734,7 +2860,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -2788,7 +2914,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -2897,7 +3023,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -2951,7 +3077,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -3010,7 +3136,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -3069,7 +3195,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -3128,7 +3254,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -3244,7 +3370,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -3298,7 +3424,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -3357,7 +3483,148 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/profile/upload/picture_chef/:id_chef",
+    "title": "Upload chef photo",
+    "version": "0.0.1",
+    "group": "Profile",
+    "name": "uploadChefPhoto",
+    "description": "<p>Upload chef photo</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "file",
+            "optional": false,
+            "field": "file",
+            "description": "<p>Photo file</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n    \"status\": true,\n    \"message\": \"ok\",\n    \"location\": \"https://pinchef.s3.amazonaws.com/chef/1/avengers_infinity_war_2018_movie_doctor_strange-wallpaper-3840x2160.jpg\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/profileController.js",
+    "groupTitle": "Profile",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/profile/upload/picture_chef/:id_chef"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/profile/upload/picture_profile/:id_profile",
+    "title": "Upload profile photo",
+    "version": "0.0.1",
+    "group": "Profile",
+    "name": "uploadProfilePhoto",
+    "description": "<p>Upload profile photo</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "file",
+            "optional": false,
+            "field": "file",
+            "description": "<p>Photo file</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n    \"status\": true,\n    \"message\": \"ok\",\n    \"location\": \"https://pinchef.s3.amazonaws.com/profile/1/avengers_infinity_war_2018_movie_doctor_strange-wallpaper-3840x2160.jpg\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/profileController.js",
+    "groupTitle": "Profile",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/profile/upload/picture_profile/:id_profile"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -3452,7 +3719,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -3506,7 +3773,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -3560,7 +3827,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]
@@ -3614,7 +3881,7 @@
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjIsImlhdCI6MTYwNjU5ODg5MywiZXhwIjoxNjA2Njg1MjkzfQ.I3HSVZBh6WfwwDUPmq24E3LIgaivKkwrHkyA7tKLEzY\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
           "type": "String"
         }
       ]

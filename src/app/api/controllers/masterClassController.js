@@ -1,6 +1,7 @@
 const masterClassModel = require('../models/masterClassModel');
 const pool = require("../../../helpers/db");
 const Joi = require("joi");
+const uploadObj = require('../../../helpers/aws-sdk');
 
 module.exports = {
     create,
@@ -14,18 +15,28 @@ module.exports = {
 async function create(req, res, next) {
     const id_chef = req.params.id;
     const masterClass = req.body;
+    const file = req.files ? req.files.file : false;
+
     try {
         await validatorMasterClass({ ...masterClass, id_chef });
         const conn = await pool.getConnection();
         const result = await conn.query(masterClassModel.Create(id_chef, masterClass));
         conn.release();
 
-        res.status(200).json({
-            status: true,
-            message: "Successful Operation",
-            data: result,
-        });
+        if (result.affectedRows === 1) {
+            const id = result.insertId;
+            await uploadObj(id, file, "master_class", false)
+                .then(async ({ status, message, location }) => {
+                    await conn.query(masterClassModel.SavePicture(id, location));
+                })
+                .catch(next);
 
+            res.status(200).json({
+                status: true,
+                message: "Successful Operation",
+                data: result,
+            });
+        }
     } catch (error) {
         res.status(500).json({
             status: false,
@@ -68,7 +79,7 @@ async function detail(req, res, next) {
 
         res.status(200).json({
             status: true,
-            message: result.length > 0 ? "Successful Operation" : "Not record found!",
+            message: result.length > 0 ? "Successful Operation" : "Record not found!",
             data: result,
         });
 
@@ -89,7 +100,7 @@ async function getAll(req, res, next) {
 
         res.status(200).json({
             status: true,
-            message: result.length > 0 ? "Successful Operation" : "Not record found!",
+            message: result.length > 0 ? "Successful Operation" : "Record not found!",
             data: result,
         });
 
@@ -111,7 +122,7 @@ async function getAllForChef(req, res, next) {
 
         res.status(200).json({
             status: true,
-            message: result.length > 0 ? "Successful Operation" : "Not record found!",
+            message: result.length > 0 ? "Successful Operation" : "Record not found!",
             data: result,
         });
 
