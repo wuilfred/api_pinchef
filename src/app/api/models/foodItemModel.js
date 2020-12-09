@@ -37,6 +37,11 @@ class FoodItem {
         return this.rs;
     }
 
+    getAllItems() {
+        this.rs = `SELECT * FROM food_item limit 500`;
+        return this.rs;
+    }
+
     Delete(id_item) {
         this.rs = `DELETE FROM food_item WHERE id_food_item = ${id_item}`;
         return this.rs;

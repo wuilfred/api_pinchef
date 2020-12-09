@@ -8,6 +8,7 @@ module.exports = {
     update,
     detail,
     getItemsByChef,
+    getAllItems,
     delete: _delete,
 };
 
@@ -307,6 +308,103 @@ async function getItemsByChef(req, res, next) {
         });
     }
 }
+
+/**
+* @api {get} /foodItem/getAllItems  GetAllItems 
+* @apiVersion 0.0.1
+* @apiGroup FoodItem
+* @apiName GetAllItems
+* @apiUse token
+*
+* @apiDescription Get all foodItem of the chef
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*
+* {
+*"status": true,
+ "message": "Successful Operation",
+ "data": "status": true,
+    "message": "Successful Operation",
+     "data": [
+        {
+            "id_food_item": 6,
+            "name": "Food title",
+            "description": "Idjidhidh, sijwihwi, sojw8he8h, sihsibs, sihsihdihs, sibsihsih,",
+            "day": null,
+            "hour": "00:00:05",
+            "price": 35,
+            "picture": "https://pinchef.s3.amazonaws.com/food_item/8/IMG_1684.JPG",
+            "created": "2020-12-09T05:22:44.000Z",
+            "updated": "2020-12-09T05:22:44.000Z",
+            "chef_id_chef": 6
+        },
+        {
+            "id_food_item": 7,
+            "name": "cerdo",
+            "description": "Cedo asado",
+            "day": null,
+            "hour": "00:00:03",
+            "price": 46,
+            "picture": "https://pinchef.s3.amazonaws.com/food_item/8/IMG_1684.JPG",
+            "created": "2020-12-09T05:24:40.000Z",
+            "updated": "2020-12-09T05:24:40.000Z",
+            "chef_id_chef": 6
+        },
+        {
+            "id_food_item": 8,
+            "name": "askdjb sandasnd ",
+            "description": "Cedo asadodf sdf dsfsdfsdf fsfsfasaf",
+            "day": null,
+            "hour": "00:00:03",
+            "price": 46,
+            "picture": "https://pinchef.s3.amazonaws.com/food_item/8/IMG_1684.JPG",
+            "created": "2020-12-09T05:25:21.000Z",
+            "updated": "2020-12-09T05:25:21.000Z",
+            "chef_id_chef": 6
+        }
+    ]
+* }
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*{
+    "status": true,
+    "message": "Not record found!",
+    "data": []
+}
+*
+* @apiErrorExample {json} Error-Response:
+*  HTTP/1.1 500 Bad Request
+* {
+*    "status": false
+*    "message": "Operation failed"
+*    "detail": "Error Message"
+*    
+* }
+*/
+async function getAllItems(req, res, next) {
+    
+    try {
+        const conn = await pool.getConnection();
+        const result = await conn.query(foodItemModel.getAllItems());
+        conn.release();
+
+        res.status(200).json({
+            status: true,
+            message: result.length > 0 ? "Successful Operation" : "Not record found!",
+            data: result,
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            status: false,
+            message: "Operation failed",
+            details: error.message,
+        });
+    }
+}
+
 
 /**
 * @api {delete} /foodItem/delete/:id_food_item  Delete 
