@@ -7,8 +7,8 @@ class Post {
     }
 
     Create(id_user, post) {
-        this.rs = `INSERT INTO post (name, description, photo, location, privacy, time_zone, profile_id_profile, profile_user_id_user, status)
-                   VALUES ('${post.name}', '${post.description}', '${post.photo}', '${post.location}', '${post.privacy}', '${post.time_zone}',
+        this.rs = `INSERT INTO post (name, description, location, privacy, time_zone, profile_id_profile, profile_user_id_user, status)
+                   VALUES ('${post.name}', '${post.description}', '${post.location}', '${post.privacy}', '${post.time_zone}',
                    '${post.id_profile}', '${id_user}', 1)`;
 
         return this.rs;

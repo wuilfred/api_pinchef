@@ -134,17 +134,28 @@ async function create(req, res, next) {
 async function update(req, res, next) {
     const id_post = req.params.id;
     const post = req.body;
+    const file = req.files !== null ? req.files.file : null;
+
     try {
         await validatorPost(post);
         const conn = await pool.getConnection();
-        const result = await conn.query(postModel.Update(id_post, post));
+        const resultUpdate = await conn.query(postModel.Update(id_post, post));
         conn.release();
 
-        res.status(200).json({
-            status: true,
-            message: "Successful Operation",
-            data: result,
-        });
+        if (resultUpdate.affectedRows === 1) {
+            if (file !== null) {
+                const response = await uploadObj(id_post, file, 'post', true);
+                const conn = await pool.getConnection();
+                const result = await conn.query(postModel.SavePicturePost(id_post, response.location));
+                conn.release();
+            }
+
+            res.status(200).json({
+                status: true,
+                message: "Successful Operation",
+                data: resultUpdate,
+            });
+        }
 
     } catch (error) {
         res.status(500).json({
