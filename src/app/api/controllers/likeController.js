@@ -8,13 +8,13 @@ module.exports = {
 }
 
 /**
-* @api {post} /like/like_or_dislike_post/:id  Like Post 
+* @api {post} /like/like_or_dislike_post/:id  Like or Dislike Action 
 * @apiVersion 0.0.1
 * @apiGroup Like
 * @apiName LikeOrDislike
 * @apiUse token
 *
-* @apiDescription Action Like or Dislike Post
+* @apiDescription Action Like or Dislike 
 *
 * @apiParam {string} type  Type (chef | master_class | food_item | food_service | post)
 * @apiParam {number} id  Id according to type

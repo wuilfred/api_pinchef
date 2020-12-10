@@ -1787,7 +1787,7 @@
     "version": "0.0.1",
     "group": "FoodItem",
     "name": "GetAllItems",
-    "description": "<p>Get all foodItem of the chef</p>",
+    "description": "<p>Get all foodItem</p>",
     "success": {
       "examples": [
         {
@@ -2741,11 +2741,11 @@
   {
     "type": "post",
     "url": "/like/like_or_dislike_post/:id",
-    "title": "Like Post",
+    "title": "Like or Dislike Action",
     "version": "0.0.1",
     "group": "Like",
     "name": "LikeOrDislike",
-    "description": "<p>Action Like or Dislike Post</p>",
+    "description": "<p>Action Like or Dislike</p>",
     "parameter": {
       "fields": {
         "Parameter": [

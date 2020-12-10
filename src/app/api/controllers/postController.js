@@ -1,6 +1,7 @@
 const postModel = require('../models/postModel');
 const pool = require("../../../helpers/db");
 const Joi = require("joi");
+const uploadObj = require('../../../helpers/aws-sdk');
 
 module.exports = {
     create,
@@ -56,17 +57,28 @@ module.exports = {
 async function create(req, res, next) {
     const id_user = req.params.id;
     const post = req.body;
+    const file = req.files.file;
     try {
         await validatorPost(post);
         const conn = await pool.getConnection();
-        const result = await conn.query(postModel.Create(id_user, post));
+        const resultCreate = await conn.query(postModel.Create(id_user, post));
         conn.release();
 
-        res.status(200).json({
-            status: true,
-            message: "Successful Operation",
-            data: result,
-        });
+        if (resultCreate.affectedRows === 1) {
+            const id = resultCreate.insertId;
+            const response = await uploadObj(id, file, 'post', true);
+            const conn = await pool.getConnection();
+            const result = await conn.query(postModel.SavePicturePost(id, response.location));
+            conn.release();
+            if (result.affectedRows > 0) {
+
+                res.status(200).json({
+                    status: true,
+                    message: "Successful Operation",
+                    data: result,
+                });
+            }
+        }
 
     } catch (error) {
         res.status(500).json({
@@ -472,7 +484,6 @@ async function validatorPost(post) {
     const schema = Joi.object({
         name: Joi.string().required(),
         description: Joi.string().required(),
-        photo: Joi.string().required(),
         location: Joi.string().required(),
         status: Joi.number(),
         privacy: Joi.string().required(),
