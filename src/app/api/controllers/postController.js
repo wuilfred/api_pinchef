@@ -57,28 +57,28 @@ module.exports = {
 async function create(req, res, next) {
     const id_user = req.params.id;
     const post = req.body;
-    const file = req.files.file;
+    const file = req.files !== null ? req.files.file : null;
     try {
         await validatorPost(post);
         const conn = await pool.getConnection();
         const resultCreate = await conn.query(postModel.Create(id_user, post));
         conn.release();
 
-        if (resultCreate.affectedRows === 1) {
-            const id = resultCreate.insertId;
-            const response = await uploadObj(id, file, 'post', true);
-            const conn = await pool.getConnection();
-            const result = await conn.query(postModel.SavePicturePost(id, response.location));
-            conn.release();
-            if (result.affectedRows > 0) {
-
-                res.status(200).json({
-                    status: true,
-                    message: "Successful Operation",
-                    data: result,
-                });
+        if (file !== null) {
+            if (resultCreate.affectedRows === 1) {
+                const id = resultCreate.insertId;
+                const response = await uploadObj(id, file, 'post', true);
+                const conn = await pool.getConnection();
+                const result = await conn.query(postModel.SavePicturePost(id, response.location));
+                conn.release();
             }
         }
+
+        res.status(200).json({
+            status: true,
+            message: "Successful Operation",
+            data: resultCreate,
+        });
 
     } catch (error) {
         res.status(500).json({

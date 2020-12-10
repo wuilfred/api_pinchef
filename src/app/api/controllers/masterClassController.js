@@ -15,28 +15,30 @@ module.exports = {
 async function create(req, res, next) {
     const id_chef = req.params.id;
     const masterClass = req.body;
-    const file = req.files ? req.files.file : false;
+    const file = req.files !== null ? req.files.file : null;
 
     try {
         await validatorMasterClass({ ...masterClass, id_chef });
         const conn = await pool.getConnection();
-        const result = await conn.query(masterClassModel.Create(id_chef, masterClass));
+        const resultCreate = await conn.query(masterClassModel.Create(id_chef, masterClass));
         conn.release();
 
-        if (result.affectedRows === 1) {
-            const id = result.insertId;
-            await uploadObj(id, file, "master_class", false)
-                .then(async ({ status, message, location }) => {
-                    await conn.query(masterClassModel.SavePicture(id, location));
-                })
-                .catch(next);
-
-            res.status(200).json({
-                status: true,
-                message: "Successful Operation",
-                data: result,
-            });
+        if (file !== null) {
+            if (resultCreate.affectedRows === 1) {
+                const id = resultCreate.insertId;
+                const response = await uploadObj(id, file, 'master_class', true);
+                const conn = await pool.getConnection();
+                const result = await conn.query(masterClassModel.SavePicture(id, response.location));
+                conn.release();
+            }
         }
+
+        res.status(200).json({
+            status: true,
+            message: "Successful Operation",
+            data: resultCreate,
+        });
+
     } catch (error) {
         res.status(500).json({
             status: false,
@@ -52,14 +54,23 @@ async function update(req, res, next) {
     try {
         await validatorMasterClass(masterClass);
         const conn = await pool.getConnection();
-        const result = await conn.query(masterClassModel.Update(id_masterClass, masterClass));
+        const resultUpdate = await conn.query(masterClassModel.Update(id_masterClass, masterClass));
         conn.release();
 
-        res.status(200).json({
-            status: true,
-            message: "Successful Operation",
-            data: result,
-        });
+        if (resultUpdate.affectedRows === 1) {
+            if (file !== null) {
+                const response = await uploadObj(id_masterClass, file, 'master_class', true);
+                const conn = await pool.getConnection();
+                const result = await conn.query(masterClassModel.SavePicture(id_masterClass, response.location));
+                conn.release();
+            }
+
+            res.status(200).json({
+                status: true,
+                message: "Successful Operation",
+                data: resultUpdate,
+            });
+        }
 
     } catch (error) {
         res.status(500).json({

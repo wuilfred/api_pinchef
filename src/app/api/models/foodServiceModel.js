@@ -13,8 +13,8 @@ class FoodService {
         return this.rs;
     }
 
-    SavePicture(picture) {
-        this.rs = `UPDATE food_service SET picture = '${picture}'`;
+    SavePicture(id, picture) {
+        this.rs = `UPDATE food_service SET picture = '${picture}' WHERE id_food_service = '${id}'`;
 
         return this.rs;
     }

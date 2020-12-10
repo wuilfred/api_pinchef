@@ -13,8 +13,8 @@ class FoodItem {
         return this.rs;
     }
 
-    SavePicture(picture){
-        this.rs = `UPDATE food_item SET picture = '${picture}'`;
+    SavePicture(id, picture){
+        this.rs = `UPDATE food_item SET picture = '${picture}' WHERE id_food_item = '${id}'`;
 
         return this.rs;
     }

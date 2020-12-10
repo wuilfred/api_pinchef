@@ -55,22 +55,20 @@ module.exports = {
 async function create(req, res, next) {
     const id_chef = req.params.id;
     const food_service = req.body;
-    const file = req.files ? req.files.file : false ;
+    const file = req.files !== null ? req.files.file : null;
     try {
-        await validatorFoodService({...food_service, id_chef});
+        await validatorFoodService({ ...food_service, id_chef });
         const conn = await pool.getConnection();
         const result = await conn.query(foodServiceModel.Create(id_chef, food_service));
         conn.release();
 
-        if (file) {
-          if (result.affectedRows === 1) {
-            const id = result.insertId;
-            await uploadObj(id, file, "food_service", false)
-              .then(async ({ status, message, location }) => {
-                await conn.query(foodServiceModel.SavePicture(location));
-              })
-              .catch(next);
-          }
+        if (file !== null) {
+            if (result.affectedRows === 1) {
+                const id = result.insertId;
+                const upload = await uploadObj(id, file, "food_service", false);
+                const response = await conn.query(foodServiceModel.SavePicture(id, upload.location));
+                conn.release();
+            }
         }
         res.status(200).json({
             status: true,
@@ -131,18 +129,28 @@ async function create(req, res, next) {
 async function update(req, res, next) {
     const id_service = req.params.id;
     const food_service = req.body;
-    console.log(id_service);
+    const file = req.files !== null ? req.files.file : null;
+
     try {
         await validatorFoodService(food_service);
         const conn = await pool.getConnection();
-        const result = await conn.query(foodServiceModel.Update(id_service, food_service));
+        const resultUpdate = await conn.query(foodServiceModel.Update(id_service, food_service));
         conn.release();
 
-        res.status(200).json({
-            status: true,
-            message: "Successful Operation",
-            data: result,
-        });
+        if (resultUpdate.affectedRows === 1) {
+            if (file !== null) {
+                const response = await uploadObj(id_service, file, 'food_sevice', true);
+                const conn = await pool.getConnection();
+                const result = await conn.query(foodServiceModel.SavePicture(id_service, response.location));
+                conn.release();
+            }
+
+            res.status(200).json({
+                status: true,
+                message: "Successful Operation",
+                data: resultUpdate,
+            });
+        }
 
     } catch (error) {
         res.status(500).json({
@@ -387,7 +395,7 @@ async function validatorFoodService(serviceChef) {
         day: Joi.date().required(),
         hour: Joi.date().required(),
         price: Joi.number(),
-     //   picture: Joi.string().required(),
+        //   picture: Joi.string().required(),
         id_chef: Joi.number().required(),
     });
 

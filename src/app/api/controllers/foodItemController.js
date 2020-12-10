@@ -55,28 +55,27 @@ module.exports = {
 async function create(req, res, next) {
     const id_chef = req.params.id;
     const foodItem = req.body;
-    const file = req.files ? req.files.file : false ;
+    const file = req.files !== null ? req.files.file : null;
+
     try {
-        await validatorFoodItem({...foodItem, id_chef});
+        await validatorFoodItem({ ...foodItem, id_chef });
         const conn = await pool.getConnection();
-        const result = await conn.query(foodItemModel.Create(id_chef, foodItem));
+        const resultCreate = await conn.query(foodItemModel.Create(id_chef, foodItem));
         conn.release();
 
-        if (file) {
-          if (result.affectedRows === 1) {
-            const id = result.insertId;
-            await uploadObj(id, file, "food_item", false)
-              .then(async ({ status, message, location }) => {
-                await conn.query(foodItemModel.SavePicture(location));
+        if (file !== null) {
+            if (resultCreate.affectedRows === 1) {
+                const id = resultCreate.insertId;
+                const response = await uploadObj(id, file, 'post', true);
+                const conn = await pool.getConnection();
+                const result = await conn.query(foodItemModel.SavePicture(id, response.location));
                 conn.release();
-              })
-              .catch(next);
-          }
+            }
         }
         res.status(200).json({
             status: true,
             message: "Successful Operation",
-            data: result,
+            data: resultCreate,
         });
 
     } catch (error) {
@@ -132,17 +131,28 @@ async function create(req, res, next) {
 async function update(req, res, next) {
     const id_item = req.params.id;
     const foodItem = req.body;
+    const file = req.files !== null ? req.files.file : null;
+
     try {
         await validatorFoodItem(foodItem);
         const conn = await pool.getConnection();
-        const result = await conn.query(foodItemModel.Update(id_item, foodItem));
+        const resultUpdate = await conn.query(foodItemModel.Update(id_item, foodItem));
         conn.release();
 
-        res.status(200).json({
-            status: true,
-            message: "Successful Operation",
-            data: result,
-        });
+        if (resultUpdate.affectedRows === 1) {
+            if (file !== null) {
+                const response = await uploadObj(id_item, file, 'food_item', true);
+                const conn = await pool.getConnection();
+                const result = await conn.query(foodItemModel.SavePicture(id_item, response.location));
+                conn.release();
+            }
+
+            res.status(200).json({
+                status: true,
+                message: "Successful Operation",
+                data: resultUpdate,
+            });
+        }
 
     } catch (error) {
         res.status(500).json({
@@ -384,7 +394,7 @@ async function getItemsByChef(req, res, next) {
 * }
 */
 async function getAllItems(req, res, next) {
-    
+
     try {
         const conn = await pool.getConnection();
         const result = await conn.query(foodItemModel.getAllItems());
