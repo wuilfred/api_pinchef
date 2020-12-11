@@ -2,6 +2,7 @@ const foodItemModel = require('../models/foodItemModel');
 const pool = require("../../../helpers/db");
 const Joi = require("joi");
 const uploadObj = require('../../../helpers/aws-sdk');
+var moment = require('moment'); 
 
 module.exports = {
     create,
@@ -56,27 +57,38 @@ async function create(req, res, next) {
     const id_chef = req.params.id;
     const foodItem = req.body;
     const file = req.files !== null ? req.files.file : null;
+    const isDay = moment(`${req.body.day}`, "YYYY-MM-DD", true).isValid();
+    const isHour = moment(`${req.body.hour}`, "HH:mm", true).isValid();
 
     try {
         await validatorFoodItem({ ...foodItem, id_chef });
-        const conn = await pool.getConnection();
-        const resultCreate = await conn.query(foodItemModel.Create(id_chef, foodItem));
-        conn.release();
+        if(isDay == isHour){
+            const conn = await pool.getConnection();
+            const resultCreate = await conn.query(foodItemModel.Create(id_chef, foodItem));
+            conn.release();
 
-        if (file !== null) {
-            if (resultCreate.affectedRows === 1) {
-                const id = resultCreate.insertId;
-                const response = await uploadObj(id, file, 'post', true);
-                const conn = await pool.getConnection();
-                const result = await conn.query(foodItemModel.SavePicture(id, response.location));
-                conn.release();
+            if (file !== null) {
+                if (resultCreate.affectedRows === 1) {
+                    const id = resultCreate.insertId;
+                    const response = await uploadObj(id, file, 'post', true);
+                    const conn = await pool.getConnection();
+                    const result = await conn.query(foodItemModel.SavePicture(id, response.location));
+                    conn.release();
+                }
             }
+            res.status(200).json({
+                status: true,
+                message: "Successful Operation",
+                data: resultCreate,
+            });
+        }else{
+            res.status(400).json({
+                status: true,
+                message: "Successful Operation",
+                data: 'Date or Hour is invalid',
+            });
         }
-        res.status(200).json({
-            status: true,
-            message: "Successful Operation",
-            data: resultCreate,
-        });
+        
 
     } catch (error) {
         res.status(500).json({
@@ -132,28 +144,38 @@ async function update(req, res, next) {
     const id_item = req.params.id;
     const foodItem = req.body;
     const file = req.files !== null ? req.files.file : null;
+    const isDay = moment(`${req.body.day}`, "YYYY-MM-DD", true).isValid();
+    const isHour = moment(`${req.body.hour}`, "HH:mm", true).isValid();
 
     try {
         await validatorFoodItem(foodItem);
-        const conn = await pool.getConnection();
-        const resultUpdate = await conn.query(foodItemModel.Update(id_item, foodItem));
-        conn.release();
+        if(isDay == isHour){
+            const conn = await pool.getConnection();
+            const resultUpdate = await conn.query(foodItemModel.Update(id_item, foodItem));
+            conn.release();
 
-        if (resultUpdate.affectedRows === 1) {
-            if (file !== null) {
-                const response = await uploadObj(id_item, file, 'food_item', true);
-                const conn = await pool.getConnection();
-                const result = await conn.query(foodItemModel.SavePicture(id_item, response.location));
-                conn.release();
+            if (resultUpdate.affectedRows === 1) {
+                if (file !== null) {
+                    const response = await uploadObj(id_item, file, 'food_item', true);
+                    const conn = await pool.getConnection();
+                    const result = await conn.query(foodItemModel.SavePicture(id_item, response.location));
+                    conn.release();
+                }
+
+                res.status(200).json({
+                    status: true,
+                    message: "Successful Operation",
+                    data: resultUpdate,
+                });
             }
-
-            res.status(200).json({
+        }else{
+            res.status(400).json({
                 status: true,
                 message: "Successful Operation",
-                data: resultUpdate,
+                data: 'Date or Hour is invalid',
             });
         }
-
+        
     } catch (error) {
         res.status(500).json({
             status: false,
@@ -474,9 +496,9 @@ async function validatorFoodItem(foodItem) {
     const schema = Joi.object({
         name: Joi.string().required(),
         description: Joi.string().required(),
-        day: Joi.date().required(),
-        hour: Joi.date().required(),
-        price: Joi.number(),
+        day: Joi.date().raw().required(),
+        hour: Joi.string().regex(/^([0-9]{2})\:([0-9]{2})$/),
+        price: Joi.number().positive().greater(0).required(),
         //picture: Joi.string().required(),
         id_chef: Joi.number().required(),
     });

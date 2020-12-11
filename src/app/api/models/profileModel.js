@@ -58,11 +58,17 @@ class Profile {
                   chef.languages, chef.address AS chef_address, chef.location_service, chef.banner, address_book.id_address,
                   address_book.country, address_book.first_address,  address_book.second_address, address_book.state_region,address_book.city,
                   address_book.postcode, address_book.lat_lon, address_book.about_info
-                  FROM
-                  profile
+                  FROM profile
                   LEFT JOIN address_book ON address_book.profile_id_profile = profile.id_profile
                   LEFT JOIN chef ON chef.profile_id_profile = profile.id_profile
                   WHERE profile.user_id_user = ${id_user}`;
+        return this.rs;
+    }
+
+    AllUsers(type_user){
+        this.rs =   `SELECT * FROM profile
+                    INNER JOIN chef ON chef.profile_id_profile = profile.id_profile
+                    WHERE profile.role=${type_user}`;
         return this.rs;
     }
 
