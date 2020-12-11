@@ -8,6 +8,9 @@ module.exports = (api) => {
 // Detail Profile
     api.get('/profile/detail/:id', authorize, profileController.detail);
 
+// AllUsers Profile
+    api.get('/profile/all_users', authorize, profileController.allUsers);
+
 // Update Profile
     api.put('/profile/update/:id', authorize, profileController.update);
 

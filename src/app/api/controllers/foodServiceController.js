@@ -2,6 +2,7 @@ const foodServiceModel = require('../models/foodServiceModel');
 const pool = require("../../../helpers/db");
 const Joi = require("joi");
 const uploadObj = require('../../../helpers/aws-sdk');
+var moment = require('moment'); 
 
 module.exports = {
     create,
@@ -54,27 +55,41 @@ module.exports = {
 */
 async function create(req, res, next) {
     const id_chef = req.params.id;
-    const food_service = req.body;
-    const file = req.files !== null ? req.files.file : null;
+    const food_service = req.body; ///moment(`${req.body.day}`, "YYYY-MM-DD", true).isValid() ;
+    const file = req.files ? req.files.file : false ;
+    const isDay = moment(`${req.body.day}`, "YYYY-MM-DD", true).isValid();
+    const isHour = moment(`${req.body.hour}`, "HH:mm", true).isValid();
     try {
-        await validatorFoodService({ ...food_service, id_chef });
-        const conn = await pool.getConnection();
-        const result = await conn.query(foodServiceModel.Create(id_chef, food_service));
-        conn.release();
-
-        if (file !== null) {
-            if (result.affectedRows === 1) {
-                const id = result.insertId;
-                const upload = await uploadObj(id, file, "food_service", false);
-                const response = await conn.query(foodServiceModel.SavePicture(id, upload.location));
-                conn.release();
-            }
+        
+        await validatorFoodService({...food_service, id_chef});
+        if(isDay == isHour){
+            const conn   = await pool.getConnection();
+            const result = await conn.query(foodServiceModel.Create(id_chef, food_service)) ;
+            conn.release();
+            if (file) {
+        
+                if (result.affectedRows === 1) {
+                    const id = result.insertId;
+                    await uploadObj(id, file, "food_service", false)
+                        .then(async ({ status, message, location }) => {
+                        //await conn.query(foodServiceModel.SavePicture(location));
+                        })
+                        .catch(next);
+                }
+            }    
+              
+            res.status(200).json({
+                status: true,
+                message: "Successful Operation",
+                data: result,
+            });
+        }else{
+            res.status(400).json({
+                status: true,
+                message: "Successful Operation",
+                data: 'Date or Hour is invalid',
+            });
         }
-        res.status(200).json({
-            status: true,
-            message: "Successful Operation",
-            data: result,
-        });
 
     } catch (error) {
         res.status(500).json({
@@ -129,26 +144,25 @@ async function create(req, res, next) {
 async function update(req, res, next) {
     const id_service = req.params.id;
     const food_service = req.body;
-    const file = req.files !== null ? req.files.file : null;
-
+    const isDay = moment(`${req.body.day}`, "YYYY-MM-DD", true).isValid();
+    const isHour = moment(`${req.body.hour}`, "HH:mm", true).isValid();
     try {
         await validatorFoodService(food_service);
-        const conn = await pool.getConnection();
-        const resultUpdate = await conn.query(foodServiceModel.Update(id_service, food_service));
-        conn.release();
-
-        if (resultUpdate.affectedRows === 1) {
-            if (file !== null) {
-                const response = await uploadObj(id_service, file, 'food_sevice', true);
-                const conn = await pool.getConnection();
-                const result = await conn.query(foodServiceModel.SavePicture(id_service, response.location));
-                conn.release();
-            }
+        if(isDay == isHour){
+            const conn = await pool.getConnection();
+            const result = await conn.query(foodServiceModel.Update(id_service, food_service));
+            conn.release();
 
             res.status(200).json({
                 status: true,
                 message: "Successful Operation",
-                data: resultUpdate,
+                data: result,
+            });
+        }else{
+            res.status(400).json({
+                status: true,
+                message: "Successful Operation",
+                data: 'Date or Hour is invalid',
             });
         }
 
@@ -392,10 +406,10 @@ async function validatorFoodService(serviceChef) {
     const schema = Joi.object({
         service_type: Joi.string().required(),
         description: Joi.string().required(),
-        day: Joi.date().required(),
-        hour: Joi.date().required(),
-        price: Joi.number(),
-        //   picture: Joi.string().required(),
+        day: Joi.date().raw().required(),
+        hour: Joi.string().regex(/^([0-9]{2})\:([0-9]{2})$/),
+        price: Joi.number().positive().greater(0).required(),
+     //   picture: Joi.string().required(),
         id_chef: Joi.number().required(),
     });
 

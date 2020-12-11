@@ -7,6 +7,7 @@ const uploadObj = require('../../../helpers/aws-sdk');
 module.exports = {
     create,
     detail,
+    allUsers,
     update,
     delete: _delete,
     uploadPhotoProfile,
@@ -141,6 +142,29 @@ async function detail(req, res, next) {
     try {
         const conn = await pool.getConnection();
         const result = await conn.query(profileModel.Detail(id_user));
+        conn.release();
+
+        res.status(200).json({
+            status: true,
+            message: result.length > 0 ? "Successful Operation" : "Not record found!",
+            data: result,
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            status: false,
+            message: "Operation failed",
+            details: error.message,
+        });
+    }
+}
+
+
+async function allUsers(req, res, next) {
+    const type_user = req.body;
+    try {
+        const conn = await pool.getConnection();
+        const result = await conn.query(profileModel.AllUsers(type_user));
         conn.release();
 
         res.status(200).json({
@@ -383,7 +407,10 @@ async function uploadPhotoProfile(req, res, next) {
         const result = await conn.query(profileModel.SavePictureProfile(id, response.location));
         conn.release();
         if (result.affectedRows > 0) {
-            res.status(200).json(response);
+            res.status(200).json({
+                info: response,
+                result: result
+            });
         }
     } catch (error) {
         res.status(500).json({
@@ -433,7 +460,10 @@ async function uploadPhotoChef(req, res, next) {
         const result = await conn.query(profileModel.SavePictureChef(id, description, response.location, file.name));
         conn.release();
         if (result.affectedRows > 0) {
-            res.status(200).json(response);
+            res.status(200).json({
+                info: response,
+                result: result
+            });
         }
     } catch (error) {
         res.status(500).json({
