@@ -84,7 +84,7 @@ function verifyEmailSchema(req, res, next) {
 function verifyEmail(req, res, next) {
     const token = req.params.token ?  req.params.token : req.body.token;
     service.verifyEmail(token)
-        .then(() => res.json({ message: 'Verification successful, you can now login' }))
+        .then((user) => res.json({ message: 'Verification successful, you can now login' , id_user: user.id_user}))
         .catch(next);
 }
 

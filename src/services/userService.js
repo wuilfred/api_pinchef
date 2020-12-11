@@ -109,6 +109,7 @@ async function verifyEmail(token) {
     if (user[1][0].tokenExists === 1 ) {
         await conn.query(userModel.VerifyEmail(user[0][0]));
         conn.release();
+        return user[0][0];
     }
 }
 
