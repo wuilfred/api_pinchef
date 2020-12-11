@@ -3,7 +3,6 @@ class Post {
     constructor() {
         this.rs = '';
         this.tableLike = '`like`';
-        this.tableComment = '`comment`';
     }
 
     Create(id_user, post) {
