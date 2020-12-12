@@ -66,8 +66,8 @@ async function create(req, res, next) {
             const conn   = await pool.getConnection();
             const result = await conn.query(foodServiceModel.Create(id_chef, food_service)) ;
             conn.release();
-            if (file) {
-        
+
+            if (file !== null) {
                 if (result.affectedRows === 1) {
                     const id = result.insertId;
                     await uploadObj(id, file, "food_service", false)
@@ -76,13 +76,20 @@ async function create(req, res, next) {
                         })
                         .catch(next);
                 }
+                res.status(200).json({
+                    status: true,
+                    message: "Successful Operation",
+                    data: result,
+                });
+            }else{
+                res.status(200).json({
+                    status: true,
+                    message: "Successful Operation",
+                    data: result,
+                });
             }    
               
-            res.status(200).json({
-                status: true,
-                message: "Successful Operation",
-                data: result,
-            });
+            
         }else{
             res.status(400).json({
                 status: true,

@@ -72,13 +72,20 @@ async function create(req, res, next) {
                 const result = await conn.query(postModel.SavePicturePost(id, response.location));
                 conn.release();
             }
+            res.status(200).json({
+                status: true,
+                message: "Successful Operation",
+                data: resultCreate,
+            });
+        }else{
+            res.status(200).json({
+                status: true,
+                message: "Successful Operation",
+                data: resultCreate,
+            });   
         }
 
-        res.status(200).json({
-            status: true,
-            message: "Successful Operation",
-            data: resultCreate,
-        });
+        
 
     } catch (error) {
         res.status(500).json({

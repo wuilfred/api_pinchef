@@ -57,10 +57,11 @@ class Profile {
                   chef.id_chef, chef.short_intro, chef.long_intro, chef.services_name, chef.service_availability, chef.price, chef.position,
                   chef.languages, chef.address AS chef_address, chef.location_service, chef.banner, address_book.id_address,
                   address_book.country, address_book.first_address,  address_book.second_address, address_book.state_region,address_book.city,
-                  address_book.postcode, address_book.lat_lon, address_book.about_info
+                  address_book.postcode, address_book.lat_lon, address_book.about_info, user.email
                   FROM profile
                   LEFT JOIN address_book ON address_book.profile_id_profile = profile.id_profile
                   LEFT JOIN chef ON chef.profile_id_profile = profile.id_profile
+                  LEFT JOIN user ON user.id_user=profile.user_id_user
                   WHERE profile.user_id_user = ${id_user}`;
         return this.rs;
     }
