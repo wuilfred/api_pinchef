@@ -13,8 +13,7 @@ class Post {
     }
 
     Update(id_post, post) {
-        const photo =  post.photo == null || post.photo == undefined ? null : post.photo;
-        this.rs = `UPDATE post SET name = '${post.name}', description = '${post.description}', photo = '${photo}', location = '${post.location}',
+        this.rs = `UPDATE post SET name = '${post.name}', description = '${post.description}', photo = '${post.photo}', location = '${post.location}',
                    privacy = '${post.privacy}', time_zone = '${post.time_zone}', status = '${post.status}', updated = now()
                    WHERE id_post = ${id_post};`;
         console.log(this.rs);
