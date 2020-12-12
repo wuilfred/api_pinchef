@@ -142,7 +142,6 @@ async function update(req, res, next) {
     const id_post = req.params.id;
     const post = req.body;
     const file = req.files !== null ? req.files.file : null;
-    
     try {
         await validatorPost(post);
         const conn = await pool.getConnection();
