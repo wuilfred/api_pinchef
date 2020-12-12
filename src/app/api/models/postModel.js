@@ -13,10 +13,11 @@ class Post {
     }
 
     Update(id_post, post) {
-        this.rs = `UPDATE post SET name = '${post.name}', description = '${post.description}', photo = '${post.photo}', location = '${post.location}',
+        var photo = post.photo == null ? '' : `photo = '${post.photo}',`;
+        this.rs = `UPDATE post SET name = '${post.name}', description = '${post.description}', ${photo} location = '${post.location}',
                    privacy = '${post.privacy}', time_zone = '${post.time_zone}', status = '${post.status}', updated = now()
                    WHERE id_post = ${id_post};`;
-        console.log(this.rs);
+
         return this.rs;
     }
 
@@ -45,7 +46,17 @@ class Post {
     }
 
     getAll() {
-        this.rs = `SELECT * FROM post ORDER BY id_post DESC;`;
+        this.rs = `SELECT 
+                    (SELECT COUNT(*) FROM comment WHERE comment.id_post = post.id_post AND comment.STATUS = 1) AS commentQty,
+                    (SELECT COUNT(*) FROM ${this.tableLike} WHERE ${this.tableLike}.id_post = post.id_post AND ${this.tableLike}.status = 1) AS likesQty,
+                    (SELECT COUNT(*) FROM share WHERE share.id_post = post.id_post) AS shareQty,
+                    post.*
+                    FROM post
+                    INNER JOIN profile ON post.profile_id_profile = profile.id_profile 
+                    AND post.profile_user_id_user = profile.user_id_user
+                    LEFT JOIN ${this.tableLike} ON post.id_post = ${this.tableLike}.id_post
+                    LEFT JOIN share ON post.id_post = share.id_post
+                    LEFT JOIN comment ON post.id_post = comment.id_post`;
         return this.rs;
     }
 
