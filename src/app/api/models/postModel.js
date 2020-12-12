@@ -66,7 +66,6 @@ class Post {
                    WHERE post.profile_user_id_user = ${id_user} 
                    GROUP BY post_id, post_name, post_photo, post.description, post.location, post.photo, post.location, post.status, post.privacy,
                    post.time_zone, post.profile_id_profile, post.profile_user_id_user, profile_name, profile.lastname, profile_photo ORDER BY post_id DESC`;
-        console.log(this.rs);
         return this.rs;
     }
 
