@@ -7,27 +7,28 @@ class MasterClass {
 
     Create(id_chef, master) {
         this.rs = `INSERT INTO master_class (title, cousine, dietary, description, ingredient_list, start_date, class_duration,
-                   ticket_count, ticket_price, notified, chef_id_chef, created, updated)
+                   ticket_count, ticket_price, notified, img, link, chef_id_chef, created, updated)
                    VALUES ('${master.title}', '${master.cousine}', '${master.dietary}', '${master.description}',
                   '${master.ingredient_list}', '${master.start_date}','${master.class_duration}','${master.ticket_count}',
-                  '${master.ticket_price}', '${master.notified}', '${id_chef}', now(), now())`;
+                  '${master.ticket_price}', '${master.notified}', '${master.img}', '${master.link}', '${id_chef}', now(), now())`;
 
         return this.rs;
     }
 
     Update(id_masterClass, master) {
+        var image = master.img == null || master.img == 'null' ? '' : `img = '${master.img}',`;
+        var link = master.link == null || master.link == 'null' ? '' : `link = '${master.link}',`;
         this.rs = `UPDATE master_class SET title = '${master.title}', cousine = '${master.cousine}', dietary = '${master.dietary}',
                    description = '${master.description}', ingredient_list = '${master.ingredient_list}', start_date = '${master.start_date}', 
                    class_duration = '${master.class_duration}', ticket_count = '${master.ticket_count}', ticket_price = '${master.ticket_price}',
-                   notified = '${master.notified}', img = '${master.img}', updated = now()
+                   notified = '${master.notified}', ${image} ${link} updated = now()
                    WHERE id_master_class = '${id_masterClass}'`;
-
         return this.rs;
     }
 
     Detail(id_masterClass) {
         this.rs = `SELECT  mc.id_master_class, mc.title, mc.cousine, mc.dietary, mc.description, mc.ingredient_list, mc.start_date, mc.class_duration,
-                   mc.ticket_count, mc.ticket_price, mc.notified, mc.img AS master_class_photo, mc.chef_id_chef AS id_chef, mc.created, mc.updated,
+                   mc.ticket_count, mc.ticket_price, mc.notified, mc.img AS master_class_photo, mc.link, mc.chef_id_chef AS id_chef, mc.created, mc.updated,
                    chef.profile_id_profile AS id_profile, chef.position, chef_photo.photo_url AS chef_photo, profile.user_id_user AS id_user,
                    profile.name, profile.lastname,
                    (SELECT COUNT(*) FROM ${this.tableLike} WHERE ${this.tableLike}.id_master_class = mc.id_master_class AND ${this.tableLike}.status = 1)
@@ -49,7 +50,7 @@ class MasterClass {
 
     GetAll() {
         this.rs = `SELECT  mc.id_master_class, mc.title, mc.cousine, mc.dietary, mc.description, mc.ingredient_list, mc.start_date, mc.class_duration,
-                   mc.ticket_count, mc.ticket_price, mc.notified, mc.img AS master_class_photo, mc.chef_id_chef AS id_chef, mc.created,  mc.updated,
+                   mc.ticket_count, mc.ticket_price, mc.notified, mc.img AS master_class_photo, mc.link, mc.chef_id_chef AS id_chef, mc.created,  mc.updated,
                    chef.profile_id_profile AS id_profile, chef.position, chef_photo.photo_url AS chef_photo, profile.user_id_user  AS id_user,
                    profile.name, profile.lastname,
                    (SELECT COUNT(*) FROM ${this.tableLike} WHERE ${this.tableLike}.id_master_class = mc.id_master_class AND ${this.tableLike}.status = 1)
@@ -71,7 +72,7 @@ class MasterClass {
 
     GetAllForChef(id_chef) {
         this.rs = `SELECT  mc.id_master_class, mc.title, mc.cousine, mc.dietary, mc.description, mc.ingredient_list, mc.start_date, mc.class_duration,
-                   mc.ticket_count, mc.ticket_price, mc.notified, mc.img AS mc_photo, mc.chef_id_chef AS id_chef, mc.created,  mc.updated,
+                   mc.ticket_count, mc.ticket_price, mc.notified, mc.img AS mc_photo, mc.link, mc.chef_id_chef AS id_chef, mc.created,  mc.updated,
                    chef.profile_id_profile AS id_profile, chef.position, chef_photo.photo_url AS chef_photo, profile.user_id_user AS id_user,
                    profile.name, profile.lastname,
                    (SELECT COUNT(*) FROM ${this.tableLike} WHERE ${this.tableLike}.id_master_class = mc.id_master_class AND ${this.tableLike}.status = 1)
@@ -100,6 +101,11 @@ class MasterClass {
     SavePicture(id_master, picture) {
         this.rs = `UPDATE master_class SET img = '${picture}' WHERE id_master_class =  '${id_master}' `;
 
+        return this.rs;
+    }
+
+    SaveLink(id_master, link) {
+        this.rs = `UPDATE master_class SET link = '${link}' WHERE id_master_class =  '${id_master}' `;
         return this.rs;
     }
 }

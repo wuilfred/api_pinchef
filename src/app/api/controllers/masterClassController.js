@@ -56,12 +56,13 @@ async function create(req, res, next) {
 async function update(req, res, next) {
     const id_masterClass = req.params.id;
     const masterClass = req.body;
+    const file = req.files !== null ? req.files.file : null;
     try {
         await validatorMasterClass(masterClass);
         const conn = await pool.getConnection();
         const resultUpdate = await conn.query(masterClassModel.Update(id_masterClass, masterClass));
         conn.release();
-
+        
         if (resultUpdate.affectedRows === 1) {
             if (file !== null) {
                 const response = await uploadObj(id_masterClass, file, 'master_class', true);
@@ -76,6 +77,11 @@ async function update(req, res, next) {
                 data: resultUpdate,
             });
         }
+        res.status(200).json({
+            status: true,
+            message: "Successful Operation",
+            data: resultUpdate,
+        });
 
     } catch (error) {
         res.status(500).json({
@@ -191,13 +197,14 @@ async function validatorMasterClass(review) {
         cousine: Joi.string().required(),
         dietary: Joi.string().required(),
         description: Joi.string().required(),
+        link: Joi.string().required(),
         ingredient_list: Joi.string().required(),
         start_date: Joi.date().required(),
         class_duration: Joi.date().required(),
         ticket_count: Joi.number().required(),
         ticket_price: Joi.number().required(),
-        notified: Joi.number().required(),
-        id_chef: Joi.number().required()
+        notified: Joi.number().required()
+        //id_master_class: Joi.number().required()
     });
 
     await schema.validateAsync(review);
