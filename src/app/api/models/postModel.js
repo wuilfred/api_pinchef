@@ -57,7 +57,7 @@ class Post {
                    (SELECT COUNT(*) FROM comment WHERE comment.id_post = post_id AND comment.STATUS = 1) AS commentQty,
                    (SELECT COUNT(*) FROM ${this.tableLike} WHERE ${this.tableLike}.id_post = post_id AND ${this.tableLike}.status = 1) AS likesQty,
                    (SELECT COUNT(*) FROM share WHERE share.id_post = post_id) AS shareQty,
-                   post.created, post.update
+                   post.created, post.updated
                    FROM post
                    INNER JOIN profile ON post.profile_id_profile = profile.id_profile AND post.profile_user_id_user = profile.user_id_user
                    LEFT JOIN comment ON comment.id_post = post.id_post
@@ -66,7 +66,6 @@ class Post {
                    WHERE post.profile_user_id_user = ${id_user} 
                    GROUP BY post_id, post_name, post_photo, post.description, post.location, post.photo, post.location, post.status, post.privacy,
                    post.time_zone, post.profile_id_profile, post.profile_user_id_user, profile_name, profile.lastname, profile_photo ORDER BY post_id DESC`;
-        console.log(this.rs);
         return this.rs;
     }
 
