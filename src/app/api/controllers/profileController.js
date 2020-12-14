@@ -340,14 +340,14 @@ async function validatorProfile(profile) {
 
 async function validatorAddress(address) {
     const schema = Joi.object({
-        first_address: Joi.string().required(),
-        second_address: Joi.string().required(),
-        country: Joi.string().required(),
-        state_region: Joi.string().required(),
-        city: Joi.string().required(),
-        postcode: Joi.number().required(),
-        lat_lon: Joi.string().required(),
-        about_info: Joi.string().required()
+        first_address: Joi.string(),
+        second_address: Joi.string(),
+        country: Joi.string(),
+        state_region: Joi.string(),
+        city: Joi.string(),
+        postcode: Joi.number(),
+        lat_lon: Joi.string(),
+        about_info: Joi.string()
     });
 
     await schema.validateAsync(address);
