@@ -326,13 +326,13 @@ async function validatorProfile(profile) {
     const schema = Joi.object({
         name: Joi.string().required(),
         lastname: Joi.string().required(),
-        birthday: Joi.date().required(),
-        gender: Joi.string().required(),
-        phone: Joi.number().required(),
+        birthday: Joi.date(),
+        gender: Joi.string(),
+        phone: Joi.number(),
         status: Joi.number(),
-        photo: Joi.string().required(),
+        photo: Joi.string(),
         role: Joi.any().valid(Role.Chef, Role.User).required(),
-        address: Joi.string().required(),
+        address: Joi.string(),
     });
 
     await schema.validateAsync(profile);
