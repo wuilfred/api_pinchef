@@ -78,25 +78,30 @@ async function register(params, origin) {
     const conn = await db.getConnection();
     const user = await conn.query(userModel.UserExists(params.email));
     conn.release();
-
-    if (user[0].userExists > 0) {
-        return await sendAlreadyRegisteredEmail(params.email, origin);
-    }
-
     const newUser = params;
+    if(newUser.isSocialAuth==null || newUser.isSocialAuth==''){
+        if (user[0].userExists > 0) {
+            return await sendAlreadyRegisteredEmail(newUser.email, origin);
+        }
+        newUser.password =  await hash(newUser.password);
+        //newUser.verificationToken = randomTokenString();
+        newUser.verificationToken = gCode(6,'numeric');
+        newUser.role = params.role;
     
-    newUser.password =  await hash(params.password);
-    //newUser.verificationToken = randomTokenString();
-    newUser.verificationToken = gCode(6,'numeric');
-    newUser.role = params.role;
-
+        //const userSave = await conn.query(userModel.Create(newUser));
+        //conn.release();
+        
+        if(userSave[0].affectedRows === 1){
+            // send email
+            await sendVerificationEmail(newUser, origin);
+        }
+    }else{
+        if (user[0].userExists > 0) {
+            return await sendRegisteredEmailSocial(newUser.email, origin);
+        }
+    }
     const userSave = await conn.query(userModel.Create(newUser));
     conn.release();
-    
-    if(userSave[0].affectedRows === 1){
-        // send email
-        await sendVerificationEmail(newUser, origin);
-    }
 }
 
 async function verifyEmail(token) {
@@ -219,7 +224,7 @@ async function hash(password) {
 
 function generateJwtToken(account) {
     // create a jwt token containing the account id that expires in 24h
-    return jwt.sign({ _id: account.id_user }, config.secret, { expiresIn: '24h' });
+    return jwt.sign({ _id: account.id_user }, config.secret, { expiresIn: '365d' });
 }
 
 function generateRefreshToken(account, ipAddress) {
@@ -279,6 +284,22 @@ async function sendAlreadyRegisteredEmail(email, origin) {
                ${message}`
     });
 }
+
+async function sendRegisteredEmailSocial(email, origin) {
+    let message;
+    if (origin) {
+        message = `<p>Hi Welcome <strong>${email}</strong> to Pinchef to visited app</p>`;
+    } 
+
+    await sendEmail({
+        to: email,
+        subject: 'Sign-up Verification API - Email Already Registered',
+        html: `<h4>Email Already Registered</h4>
+               <p>Your email <strong>${email}</strong> is already registered.</p>
+               ${message}`
+    });
+}
+
 
 async function sendPasswordResetEmail(account, origin) {
     let message;

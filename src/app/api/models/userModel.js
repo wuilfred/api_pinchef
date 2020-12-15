@@ -7,11 +7,59 @@ class User {
     }
 
     Create(user) {
-
-        this.rs =   `INSERT INTO user (email, password, verificationToken, verified, role, acceptTerms, passwordReset, created, updated, isVerified)
-        VALUES ('${user.email}', '${user.password}', '${user.verificationToken}','${user.verified}', '${user.role}', '${user.acceptTerms}', '${user.passwordReset}', now(),  now(), '${user.isVerified}');
-        SELECT LAST_INSERT_ID() AS userId`;
-
+        if(user.isSocialAuth == null){
+            this.rs =   `INSERT INTO user ( email, 
+                                            password, 
+                                            verificationToken, 
+                                            verified, 
+                                            role, 
+                                            acceptTerms, 
+                                            passwordReset, 
+                                            created, 
+                                            updated, 
+                                            isVerified,
+                                            is_social_auth,
+                                            id_social_hash)
+                    VALUES ('${user.email}',
+                    '${user.password}',
+                    '${user.verificationToken}',
+                    '${user.verified}',
+                    '${user.role}',
+                    '${user.acceptTerms}',
+                    '${user.passwordReset}', 
+                    now(),  
+                    now(), 
+                    '${user.isVerified}',
+                    'null',
+                    'null');
+                    SELECT LAST_INSERT_ID() AS userId`;   
+        }else{
+            this.rs =   `INSERT INTO user ( email, 
+                                            password, 
+                                            verificationToken, 
+                                            verified, 
+                                            role, 
+                                            acceptTerms, 
+                                            passwordReset, 
+                                            created, 
+                                            updated, 
+                                            isVerified,
+                                            is_social_auth,
+                                            id_social_hash)
+                    VALUES ('${user.email}',
+                    '${user.password}',
+                    '${user.verificationToken}',
+                    '${user.verified}',
+                    '${user.role}',
+                    '${user.acceptTerms}',
+                    '${user.passwordReset}', 
+                    now(),  
+                    now(), 
+                    '${user.isVerified}',
+                    '${user.isSocialAuth}',
+                    '${user.idSocialHash}');
+                    SELECT LAST_INSERT_ID() AS userId`;   
+        }
         return this.rs;
     }
 

@@ -17,6 +17,8 @@ module.exports = {
 async function create(req, res, next) {
     const id_user = req.params.id;
     const { profile, address, chef } = req.body;
+    const file = req.files !== null ? req.files.file : null;
+
     try {
         // Step 1 - Save profile
         await validatorProfile(profile);
@@ -43,6 +45,17 @@ async function create(req, res, next) {
                     address,
                     profile.address
                 );
+                if(file !== null){
+                    const response = await uploadObj(id_profile, file, 'profile', true);
+                    const conn = await pool.getConnection();
+                    const result = await conn.query(postModel.SavePicturePost(id, response.location));
+                    conn.release();
+                    res.status(200).json({
+                        status: true,
+                        message: "Successful Operation",
+                        data: result,
+                    });
+                }
             }
 
             res.status(200).json({
