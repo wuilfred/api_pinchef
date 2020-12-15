@@ -88,8 +88,8 @@ async function register(params, origin) {
         newUser.verificationToken = gCode(6,'numeric');
         newUser.role = params.role;
     
-        //const userSave = await conn.query(userModel.Create(newUser));
-        //conn.release();
+        const userSave = await conn.query(userModel.Create(newUser));
+        conn.release();
         
         if(userSave[0].affectedRows === 1){
             // send email
@@ -99,9 +99,10 @@ async function register(params, origin) {
         if (user[0].userExists > 0) {
             return await sendRegisteredEmailSocial(newUser.email, origin);
         }
+        const userSave = await conn.query(userModel.Create(newUser));
+        conn.release();
     }
-    const userSave = await conn.query(userModel.Create(newUser));
-    conn.release();
+    
 }
 
 async function verifyEmail(token) {
