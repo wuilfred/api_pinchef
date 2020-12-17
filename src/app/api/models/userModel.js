@@ -48,8 +48,8 @@ class User {
                                             id_social_hash)
                     VALUES ('${user.email}',
                     '${user.password}',
-                    '${user.verificationToken}',
-                    '${user.verified}',
+                    '',
+                    now(),
                     '${user.role}',
                     '${user.acceptTerms}',
                     '${user.passwordReset}', 

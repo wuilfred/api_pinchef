@@ -14,6 +14,80 @@ module.exports = {
     uploadPhotoChef
 };
 
+/**
+* @api {post} /profile/create/:id_user  Created
+* @apiVersion 0.0.1
+* @apiGroup Profile
+* @apiName ProfileCreated
+* @apiUse token
+*
+* @apiDescription Post create of a profile
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*
+* {
+* "status": true,
+  "message": "Successful Operation",
+  "data": [
+     {
+    "profile": {
+        "name": "CHEF1",
+        "lastname": "CHEFCITO",
+        "role": "User",
+        "birthday": "01/01/1997",
+        "gender": "male",
+        "phone": 5851559,
+        "photo": "photo",
+        "address": "Emiliano Corrales #8 INT"
+    },
+    "chef": {
+    	"short_intro": "Lorem ipsum dolor",
+    	"long_intro": "Lorem ipsum dolor....",
+    	"services_name": "Chef Gourmet",
+    	"service_availability": "Fast Food",
+    	"price": 80,
+    	"position": "Senior",
+    	"languages": "Spanish and English",
+    	"address": "Su casa",
+    	"location_service": "Su casa....",
+    	"banner": "Banner Test"
+    },
+    "address": {
+        "second_address": "La Playa",
+        "country": "CUBA",
+        "state_region": "GTMO",
+        "city": "Baracoa",
+        "postcode": 95000,
+        "lat_lon": "test",
+        "about_info": "Lorem Ipsum Dolor"
+    }
+}
+ ]
+* }
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*{
+    "status": true,
+    "message": "Successful Operation",
+    "data": {
+        "affectedRows": 1,
+        "insertId": 56,
+        "warningStatus": 1
+    }
+}
+*
+* @apiErrorExample {json} Error-Response:
+*  HTTP/1.1 500 Bad Request
+* {
+*    "status": false
+*    "message": "Operation failed"
+*    "detail": "Error Message"
+*    
+* }
+*/
+
 async function create(req, res, next) {
     const id_user = req.params.id;
     const { profile, address, chef } = req.body;
@@ -160,13 +234,99 @@ async function detail(req, res, next) {
 }
 
 
+
+/**
+* @api {get} /profile/detail/:id_user  Detail
+* @apiVersion 0.0.1
+* @apiGroup Profile
+* @apiName ProfileDetail
+* @apiUse token
+*
+* @apiDescription Get detail of a profile
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*
+* {
+* "status": true,
+  "message": "Successful Operation",
+  "data": [
+     {
+         "id_profile": 32,
+         "name": "John",
+         "lastname": "Doe",
+         "birthday": "2020-11-27T23:00:00.000Z",
+         "gender": "male",
+         "phone": 2147483647,
+         "status": 1,
+         "photo": " photo",
+         "profile_address": "SW 8",
+         "role": "User",
+         "user_id_user": 2,
+         "id_chef": 1,
+         "short_intro": "short_intro",
+         "long_intro": "long_description",
+         "services_name": "rt",
+         "service_availability": "service",
+         "price": 4,
+         "position": "senior",
+         "languages": "en",
+         "chef_address": "SW 8",
+         "location_service": "location_example",
+         "banner": "banner_example",
+         "id_address": 8,
+         "country": "USA",
+         "first_address": "SW 8",
+         "second_address": "AVE 8",
+         "state_region": "FLORIDA",
+         "city": "MIAMI",
+         "postcode": "95000",
+         "lat_lon": " test",
+         "about_info": "Lorem Ipsum Dolor"
+     }
+ ]
+* }
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*{
+    "status": true,
+    "message": "Not record found!",
+    "data": []
+}
+*
+* @apiErrorExample {json} Error-Response:
+*  HTTP/1.1 500 Bad Request
+* "status": true,
+*    "message": "Successful Operation",
+*    "data": [
+*        {
+*            "commentQty": 0,
+*            "likesQty": 0,
+*            "shareQty": 0,
+*            "id_post": 64,
+*            "name": "First Post",
+*            "description": "Jdiwifbwi iwiwhf sid8f w",
+*            "photo": "https://pinchef.s3.amazonaws.com/post/64/570ab9d7-528e-4854-85c7-63a15493f69f.jpg",
+*            "location": ".",
+*            "status": 1,
+*            "privacy": "public",
+*            "time_zone": "Gmt-5",
+*            "created": "2020-12-15T20:41:22.000Z",
+*            "updated": null,
+*            "profile_id_profile": 53,
+*            "profile_user_id_user": 44
+*        }
+*/
 async function allUsers(req, res, next) {
-    const type_user = req.body;
+    const { type_user } = req.body;
     try {
+        await validatorRole(type_user);
         const conn = await pool.getConnection();
         const result = await conn.query(profileModel.AllUsers(type_user));
+        
         conn.release();
-
+        console.log(result);
         res.status(200).json({
             status: true,
             message: result.length > 0 ? "Successful Operation" : "Not record found!",
@@ -321,6 +481,15 @@ async function checkProfileExist(id_user) {
         throw new Error(error);
     }
 }
+
+async function validatorRole(role) {
+    const schema = Joi.object({
+        role: Joi.any().valid(Role.Chef, Role.User).required(),
+    });
+
+    await schema.validateAsync(role);
+}
+
 
 async function validatorProfile(profile) {
     const schema = Joi.object({
