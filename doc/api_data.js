@@ -331,7 +331,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -447,7 +447,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -521,7 +521,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -580,7 +580,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -634,7 +634,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -693,7 +693,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -767,7 +767,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -841,7 +841,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -895,7 +895,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -954,7 +954,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -1013,7 +1013,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -1087,7 +1087,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -1141,7 +1141,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -1215,7 +1215,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -1269,7 +1269,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -1323,7 +1323,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -1397,7 +1397,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -1451,7 +1451,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -1505,7 +1505,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -1559,7 +1559,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -1661,7 +1661,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -1715,7 +1715,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -1774,7 +1774,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -1833,7 +1833,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -1892,7 +1892,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -2001,7 +2001,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -2103,7 +2103,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -2157,7 +2157,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -2216,7 +2216,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -2275,7 +2275,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -2384,7 +2384,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -2458,7 +2458,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -2512,7 +2512,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -2566,7 +2566,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -2611,7 +2611,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -2665,7 +2665,341 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/foodShipping/create/:id_food_item",
+    "title": "Create Food Shipping",
+    "version": "0.0.1",
+    "group": "Food_Shipping",
+    "name": "CreateFoodShipping",
+    "description": "<p>Create Food Shipping</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "price",
+            "description": "<p>Price</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 14,\n        \"warningStatus\": 0\n    }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodShippingController.js",
+    "groupTitle": "Food_Shipping",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodShipping/create/:id_food_item"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "delete",
+    "url": "/foodShipping/delete/:id_shipping",
+    "title": "Delete Food Shipping",
+    "version": "0.0.1",
+    "group": "Food_Shipping",
+    "name": "DeleteFoodShipping",
+    "description": "<p>Delete Food Shipping</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n     }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodShippingController.js",
+    "groupTitle": "Food_Shipping",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodShipping/delete/:id_shipping"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/foodShipping/detail/:id_shipping",
+    "title": "Detail Food Shipping",
+    "version": "0.0.1",
+    "group": "Food_Shipping",
+    "name": "DetailFoodShipping",
+    "description": "<p>Get Food Shipping</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n    \"status\": true,\n    \"message\": \"Successful Operation\",\n    \"data\": [\n        {\n            \"id_shipping\": 1,\n            \"name\": \"example\",\n            \"description\": \"lorem ipsum dolor\",\n            \"price\": 22,\n            \"created\": \"2020-12-17T05:57:16.000Z\",\n            \"updated\": \"2020-12-17T05:57:18.000Z\",\n            \"food_item_id_foot_item\": 6\n        }\n    ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Not record found!\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodShippingController.js",
+    "groupTitle": "Food_Shipping",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodShipping/detail/:id_shipping"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/foodShipping/getShippingByItem/:id_food_item",
+    "title": "Get Food Shipping by food item",
+    "version": "0.0.1",
+    "group": "Food_Shipping",
+    "name": "GetFoodShipping",
+    "description": "<p>Get Food Shipping by food item</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n    \"status\": true,\n    \"message\": \"Successful Operation\",\n    \"data\": [\n        {\n            \"id_shipping\": 1,\n            \"name\": \"example\",\n            \"description\": \"lorem ipsum dolor\",\n            \"price\": 22,\n            \"created\": \"2020-12-17T05:57:16.000Z\",\n            \"updated\": \"2020-12-17T05:57:18.000Z\",\n            \"food_item_id_foot_item\": 6\n        },\n        {\n            \"id_shipping\": 2,\n            \"name\": \"example2\",\n            \"description\": \"lorem ipsum dolor2\",\n            \"price\": 22,\n            \"created\": \"2020-12-17T05:57:16.000Z\",\n            \"updated\": \"2020-12-17T05:57:18.000Z\",\n            \"food_item_id_foot_item\": 6\n        }\n    ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Not record found!\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodShippingController.js",
+    "groupTitle": "Food_Shipping",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/foodShipping/getShippingByItem/:id_food_item"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "put",
+    "url": "/review/update/:id_shipping",
+    "title": "Update Food Shipping",
+    "version": "0.0.1",
+    "group": "Food_Shipping",
+    "name": "UpdateFoodShipping",
+    "description": "<p>Update Food Shipping</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "price",
+            "description": "<p>Price</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n    }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/foodShippingController.js",
+    "groupTitle": "Food_Shipping",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/review/update/:id_shipping"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -2732,7 +3066,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -2806,7 +3140,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -2860,7 +3194,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -2914,7 +3248,526 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/master_clase/create/:id_chef",
+    "title": "Create  Master Class",
+    "version": "0.0.1",
+    "group": "Master_Class",
+    "name": "CreateMasterClass",
+    "description": "<p>Create Master Class</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "title",
+            "description": "<p>title</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "cousine",
+            "description": "<p>cousine</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "dietary",
+            "description": "<p>dietary</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>description</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "link",
+            "description": "<p>link</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "ingredient_list",
+            "description": "<p>ingredient list</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "start_date",
+            "description": "<p>start date</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "class_duration",
+            "description": "<p>class duration</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "ticket_count",
+            "description": "<p>ticket count</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "ticket_price",
+            "description": "<p>ticket price</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "notified",
+            "description": "<p>notified</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "file",
+            "optional": false,
+            "field": "file",
+            "description": "<p>picture (is optional)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 14,\n        \"warningStatus\": 0\n    }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/masterClassController.js",
+    "groupTitle": "Master_Class",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/master_clase/create/:id_chef"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "delete",
+    "url": "/master_clase/delete/:id_masterClass",
+    "title": "Delete",
+    "version": "0.0.1",
+    "group": "Master_Class",
+    "name": "DeleteMasterClass",
+    "description": "<p>Delete master class</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n     }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/masterClassController.js",
+    "groupTitle": "Master_Class",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/master_clase/delete/:id_masterClass"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/master_clase/detail/:id_masterClass",
+    "title": "Detail Master Class",
+    "version": "0.0.1",
+    "group": "Master_Class",
+    "name": "DetailMasterClass",
+    "description": "<p>Get Master Class</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n    \"status\": true,\n    \"message\": \"Successful Operation\",\n    \"data\": [\n        {\n            \"id_master_class\": 7,\n            \"title\": \"master-title07\",\n            \"cousine\": \"gourmet2\",\n            \"dietary\": \"verduras\",\n            \"description\": \"lorem ipsum dolor\",\n            \"ingredient_list\": \"ingredientes\",\n            \"start_date\": \"2020-11-27T05:00:00.000Z\",\n            \"class_duration\": \"00:00:15\",\n            \"ticket_count\": 25,\n            \"ticket_price\": 60,\n            \"notified\": \"1\",\n            \"master_class_photo\": \"https://pinchef.s3.amazonaws.com/master_class/7/avengers_infinity_war_2018_movie_doctor_strange-wallpaper-3840x2160.jpg\",\n            \"link\": null,\n            \"id_chef\": 1,\n            \"created\": \"2020-12-09T06:56:42.000Z\",\n            \"updated\": \"2020-12-09T06:56:42.000Z\",\n            \"id_profile\": 32,\n            \"position\": \"senior\",\n            \"chef_photo\": \"https://pinchef.s3.amazonaws.com/chef/1/avengers_infinity_war_2018_movie_doctor_strange-wallpaper-3840x2160.jpg\",\n            \"id_user\": 2,\n            \"name\": \"John\",\n            \"lastname\": \"Doe\",\n            \"likesQty\": 1,\n            \"shareQty\": 0,\n            \"commentQty\": 0\n        }\n    ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Not record found!\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/masterClassController.js",
+    "groupTitle": "Master_Class",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/master_clase/detail/:id_masterClass"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/master_clase/getAllForChef/:id_chef",
+    "title": "Get All for chef",
+    "version": "0.0.1",
+    "group": "Master_Class",
+    "name": "GetAllForChef",
+    "description": "<p>Get All for chef</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n    \"status\": true,\n    \"message\": \"Successful Operation\",\n    \"data\": [\n        {\n            \"id_master_class\": 7,\n            \"title\": \"master-title07\",\n            \"cousine\": \"gourmet2\",\n            \"dietary\": \"verduras\",\n            \"description\": \"lorem ipsum dolor\",\n            \"ingredient_list\": \"ingredientes\",\n            \"start_date\": \"2020-11-27T05:00:00.000Z\",\n            \"class_duration\": \"00:00:15\",\n            \"ticket_count\": 25,\n            \"ticket_price\": 60,\n            \"notified\": \"1\",\n            \"mc_photo\": \"https://pinchef.s3.amazonaws.com/master_class/7/avengers_infinity_war_2018_movie_doctor_strange-wallpaper-3840x2160.jpg\",\n            \"link\": null,\n            \"id_chef\": 1,\n            \"created\": \"2020-12-09T06:56:42.000Z\",\n            \"updated\": \"2020-12-09T06:56:42.000Z\",\n            \"id_profile\": 32,\n            \"position\": \"senior\",\n            \"chef_photo\": \"https://pinchef.s3.amazonaws.com/chef/1/avengers_infinity_war_2018_movie_doctor_strange-wallpaper-3840x2160.jpg\",\n            \"id_user\": 2,\n            \"name\": \"John\",\n            \"lastname\": \"Doe\",\n            \"likesQty\": 1,\n            \"shareQty\": 0,\n            \"commentQty\": 0\n        },\n        {\n            \"id_master_class\": 6,\n            \"title\": \"master-title2\",\n            \"cousine\": \"gourmet2\",\n            \"dietary\": \"verduras\",\n            \"description\": \"lorem ipsum dolor\",\n            \"ingredient_list\": \"ingredientes\",\n            \"start_date\": \"2020-11-27T05:00:00.000Z\",\n            \"class_duration\": \"00:00:15\",\n            \"ticket_count\": 25,\n            \"ticket_price\": 60,\n            \"notified\": \"1\",\n            \"mc_photo\": null,\n            \"link\": null,\n            \"id_chef\": 1,\n            \"created\": \"2020-12-09T06:55:42.000Z\",\n            \"updated\": \"2020-12-09T06:55:42.000Z\",\n            \"id_profile\": 32,\n            \"position\": \"senior\",\n            \"chef_photo\": \"https://pinchef.s3.amazonaws.com/chef/1/avengers_infinity_war_2018_movie_doctor_strange-wallpaper-3840x2160.jpg\",\n            \"id_user\": 2,\n            \"name\": \"John\",\n            \"lastname\": \"Doe\",\n            \"likesQty\": 0,\n            \"shareQty\": 0,\n            \"commentQty\": 0\n        },\n        {\n            \"id_master_class\": 5,\n            \"title\": \"master-title2\",\n            \"cousine\": \"gourmet2\",\n            \"dietary\": \"verduras\",\n            \"description\": \"lorem ipsum dolor\",\n            \"ingredient_list\": \"ingredientes\",\n            \"start_date\": \"2020-11-27T05:00:00.000Z\",\n            \"class_duration\": \"00:00:15\",\n            \"ticket_count\": 25,\n            \"ticket_price\": 60,\n            \"notified\": \"1\",\n            \"mc_photo\": \"https://pinchef.s3.amazonaws.com/master_class/5/avengers_infinity_war_2018_movie_doctor_strange-wallpaper-3840x2160.jpg\",\n            \"link\": null,\n            \"id_chef\": 1,\n            \"created\": \"2020-12-09T05:34:30.000Z\",\n            \"updated\": \"2020-12-09T05:34:30.000Z\",\n            \"id_profile\": 32,\n            \"position\": \"senior\",\n            \"chef_photo\": \"https://pinchef.s3.amazonaws.com/chef/1/avengers_infinity_war_2018_movie_doctor_strange-wallpaper-3840x2160.jpg\",\n            \"id_user\": 2,\n            \"name\": \"John\",\n            \"lastname\": \"Doe\",\n            \"likesQty\": 0,\n            \"shareQty\": 0,\n            \"commentQty\": 0\n        }\n    ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Not record found!\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/masterClassController.js",
+    "groupTitle": "Master_Class",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/master_clase/getAllForChef/:id_chef"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/master_clase/getAll/",
+    "title": "Get All Master Class",
+    "version": "0.0.1",
+    "group": "Master_Class",
+    "name": "GetAllMasterClass",
+    "description": "<p>Get All Master Class</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n    \"status\": true,\n    \"message\": \"Successful Operation\",\n    \"data\": [\n        {\n            \"id_master_class\": 7,\n            \"title\": \"master-title07\",\n            \"cousine\": \"gourmet2\",\n            \"dietary\": \"verduras\",\n            \"description\": \"lorem ipsum dolor\",\n            \"ingredient_list\": \"ingredientes\",\n            \"start_date\": \"2020-11-27T05:00:00.000Z\",\n            \"class_duration\": \"00:00:15\",\n            \"ticket_count\": 25,\n            \"ticket_price\": 60,\n            \"notified\": \"1\",\n            \"mc_photo\": \"https://pinchef.s3.amazonaws.com/master_class/7/avengers_infinity_war_2018_movie_doctor_strange-wallpaper-3840x2160.jpg\",\n            \"link\": null,\n            \"id_chef\": 1,\n            \"created\": \"2020-12-09T06:56:42.000Z\",\n            \"updated\": \"2020-12-09T06:56:42.000Z\",\n            \"id_profile\": 32,\n            \"position\": \"senior\",\n            \"chef_photo\": \"https://pinchef.s3.amazonaws.com/chef/1/avengers_infinity_war_2018_movie_doctor_strange-wallpaper-3840x2160.jpg\",\n            \"id_user\": 2,\n            \"name\": \"John\",\n            \"lastname\": \"Doe\",\n            \"likesQty\": 1,\n            \"shareQty\": 0,\n            \"commentQty\": 0\n        },\n        {\n            \"id_master_class\": 6,\n            \"title\": \"master-title2\",\n            \"cousine\": \"gourmet2\",\n            \"dietary\": \"verduras\",\n            \"description\": \"lorem ipsum dolor\",\n            \"ingredient_list\": \"ingredientes\",\n            \"start_date\": \"2020-11-27T05:00:00.000Z\",\n            \"class_duration\": \"00:00:15\",\n            \"ticket_count\": 25,\n            \"ticket_price\": 60,\n            \"notified\": \"1\",\n            \"mc_photo\": null,\n            \"link\": null,\n            \"id_chef\": 1,\n            \"created\": \"2020-12-09T06:55:42.000Z\",\n            \"updated\": \"2020-12-09T06:55:42.000Z\",\n            \"id_profile\": 32,\n            \"position\": \"senior\",\n            \"chef_photo\": \"https://pinchef.s3.amazonaws.com/chef/1/avengers_infinity_war_2018_movie_doctor_strange-wallpaper-3840x2160.jpg\",\n            \"id_user\": 2,\n            \"name\": \"John\",\n            \"lastname\": \"Doe\",\n            \"likesQty\": 0,\n            \"shareQty\": 0,\n            \"commentQty\": 0\n        },\n        {\n            \"id_master_class\": 5,\n            \"title\": \"master-title2\",\n            \"cousine\": \"gourmet2\",\n            \"dietary\": \"verduras\",\n            \"description\": \"lorem ipsum dolor\",\n            \"ingredient_list\": \"ingredientes\",\n            \"start_date\": \"2020-11-27T05:00:00.000Z\",\n            \"class_duration\": \"00:00:15\",\n            \"ticket_count\": 25,\n            \"ticket_price\": 60,\n            \"notified\": \"1\",\n            \"mc_photo\": \"https://pinchef.s3.amazonaws.com/master_class/5/avengers_infinity_war_2018_movie_doctor_strange-wallpaper-3840x2160.jpg\",\n            \"link\": null,\n            \"id_chef\": 1,\n            \"created\": \"2020-12-09T05:34:30.000Z\",\n            \"updated\": \"2020-12-09T05:34:30.000Z\",\n            \"id_profile\": 32,\n            \"position\": \"senior\",\n            \"chef_photo\": \"https://pinchef.s3.amazonaws.com/chef/1/avengers_infinity_war_2018_movie_doctor_strange-wallpaper-3840x2160.jpg\",\n            \"id_user\": 2,\n            \"name\": \"John\",\n            \"lastname\": \"Doe\",\n            \"likesQty\": 0,\n            \"shareQty\": 0,\n            \"commentQty\": 0\n        }\n    ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Not record found!\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/masterClassController.js",
+    "groupTitle": "Master_Class",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/master_clase/getAll/"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "put",
+    "url": "/master_clase/update/:id_masterClass",
+    "title": "Update Master Class",
+    "version": "0.0.1",
+    "group": "Master_Class",
+    "name": "UpdateMasterClass",
+    "description": "<p>Update Master Class</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "title",
+            "description": "<p>title</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "cousine",
+            "description": "<p>cousine</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "dietary",
+            "description": "<p>dietary</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>description</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "link",
+            "description": "<p>link</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "ingredient_list",
+            "description": "<p>ingredient list</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "start_date",
+            "description": "<p>start date</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "date",
+            "optional": false,
+            "field": "class_duration",
+            "description": "<p>class duration</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "ticket_count",
+            "description": "<p>ticket count</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "ticket_price",
+            "description": "<p>ticket price</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "notified",
+            "description": "<p>notified</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "file",
+            "optional": false,
+            "field": "file",
+            "description": "<p>picture (is optional)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n    }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/masterClassController.js",
+    "groupTitle": "Master_Class",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/master_clase/update/:id_masterClass"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -3023,7 +3876,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -3077,7 +3930,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -3136,7 +3989,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -3195,7 +4048,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -3254,7 +4107,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -3370,7 +4223,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -3424,7 +4277,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -3483,7 +4336,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -3557,7 +4410,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -3624,7 +4477,324 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/review/create/:id_chef",
+    "title": "Create review",
+    "version": "0.0.1",
+    "group": "Review",
+    "name": "CreateReview",
+    "description": "<p>Create review</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "raiting",
+            "description": "<p>Raiting</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "followers",
+            "description": "<p>Followers</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "share",
+            "description": "<p>Share</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "likes",
+            "description": "<p>Likes</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 14,\n        \"warningStatus\": 0\n    }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/reviewController.js",
+    "groupTitle": "Review",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/review/create/:id_chef"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "delete",
+    "url": "/review/delete/:id",
+    "title": "Delete Review",
+    "version": "0.0.1",
+    "group": "Review",
+    "name": "DeleteReview",
+    "description": "<p>Delete review</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n     }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/reviewController.js",
+    "groupTitle": "Review",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/review/delete/:id"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/review/detail/:id_chef",
+    "title": "Detail Review",
+    "version": "0.0.1",
+    "group": "Review",
+    "name": "DetailReview",
+    "description": "<p>Get review</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n    \"status\": true,\n    \"message\": \"Successful Operation\",\n    \"data\": [\n        {\n            \"id_chef_reviews\": 4,\n            \"name\": \"mmhh\",\n            \"description\": \"mmhh\",\n            \"raiting\": \"5\",\n            \"followers\": \"5\",\n            \"share\": \"5\",\n            \"likes\": 5,\n            \"created\": \"2020-11-27T19:44:28.000Z\",\n            \"updated\": \"2020-12-17T04:35:32.000Z\",\n            \"chef_id_chef\": 1\n        }\n    ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n    \"status\": true,\n    \"message\": \"Not record found!\",\n    \"data\": []\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/reviewController.js",
+    "groupTitle": "Review",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/review/detail/:id_chef"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "type": "put",
+    "url": "/review/update/:id_chef",
+    "title": "Update Review",
+    "version": "0.0.1",
+    "group": "Review",
+    "name": "UpdateReview",
+    "description": "<p>Update review</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Description</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "raiting",
+            "description": "<p>Raiting</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "followers",
+            "description": "<p>Followers</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "share",
+            "description": "<p>Share</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "likes",
+            "description": "<p>Likes</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n\"status\": true,\n \"message\": \"Successful Operation\",\n \"data\": [\n     {\n        \"affectedRows\": 1,\n        \"insertId\": 0,\n        \"warningStatus\": 0\n    }\n ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": " HTTP/1.1 500 Bad Request\n{\n   \"status\": false\n   \"message\": \"Operation failed\"\n   \"detail\": \"Error Message\"\n   \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/app/api/controllers/reviewController.js",
+    "groupTitle": "Review",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8001/api/review/update/:id_chef"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>jwt Token.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -3719,7 +4889,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -3773,7 +4943,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -3827,7 +4997,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]
@@ -3881,7 +5051,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwNzUyOTA1NCwiZXhwIjoxNjA3NjE1NDU0fQ.5t9lQCMPYO38-8uAnYax5c9lVb2s29i6fjeXWJ-jmrM\" }",
+          "content": "{ \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjQsImlhdCI6MTYwODE3ODY3OCwiZXhwIjoxNjM5NzE0Njc4fQ.Qp7sSJJmoGIPPDbUZL5SG4jVQATJ_epclxNfe1sggRk\" }",
           "type": "String"
         }
       ]

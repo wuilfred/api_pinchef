@@ -10,6 +10,43 @@ module.exports = {
     delete: _delete,
 };
 
+/**
+* @api {post} /foodShipping/create/:id_food_item  Create Food Shipping
+* @apiVersion 0.0.1
+* @apiGroup Food Shipping
+* @apiName CreateFoodShipping
+* @apiUse token
+*
+* @apiDescription Create Food Shipping
+*
+* @apiParam {string} name  Name
+* @apiParam {string} description  Description
+* @apiParam {number} price  Price
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*
+* {
+*"status": true,
+ "message": "Successful Operation",
+ "data": [
+     {
+        "affectedRows": 1,
+        "insertId": 14,
+        "warningStatus": 0
+    }
+ ]
+* }
+*
+* @apiErrorExample {json} Error-Response:
+*  HTTP/1.1 500 Bad Request
+* {
+*    "status": false
+*    "message": "Operation failed"
+*    "detail": "Error Message"
+*    
+* }
+*/
 async function create(req, res, next) {
     const id_food_item = req.params.id;
     const foodShipping = req.body;
@@ -34,6 +71,43 @@ async function create(req, res, next) {
     }
 }
 
+/**
+* @api {put} /review/update/:id_shipping  Update Food Shipping
+* @apiVersion 0.0.1
+* @apiGroup Food Shipping
+* @apiName UpdateFoodShipping
+* @apiUse token
+*
+* @apiDescription Update Food Shipping
+*
+* @apiParam {string} name  Name
+* @apiParam {string} description  Description
+* @apiParam {number} price  Price
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*
+* {
+*"status": true,
+ "message": "Successful Operation",
+ "data": [
+     {
+        "affectedRows": 1,
+        "insertId": 0,
+        "warningStatus": 0
+    }
+ ]
+* }
+*
+* @apiErrorExample {json} Error-Response:
+*  HTTP/1.1 500 Bad Request
+* {
+*    "status": false
+*    "message": "Operation failed"
+*    "detail": "Error Message"
+*    
+* }
+*/
 async function update(req, res, next) {
     const id_shipping = req.params.id;
     const foodShipping = req.body;
@@ -58,6 +132,51 @@ async function update(req, res, next) {
     }
 }
 
+/**
+* @api {get} /foodShipping/detail/:id_shipping  Detail Food Shipping
+* @apiVersion 0.0.1
+* @apiGroup Food Shipping
+* @apiName DetailFoodShipping
+* @apiUse token
+*
+* @apiDescription Get Food Shipping
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*
+{
+    "status": true,
+    "message": "Successful Operation",
+    "data": [
+        {
+            "id_shipping": 1,
+            "name": "example",
+            "description": "lorem ipsum dolor",
+            "price": 22,
+            "created": "2020-12-17T05:57:16.000Z",
+            "updated": "2020-12-17T05:57:18.000Z",
+            "food_item_id_foot_item": 6
+        }
+    ]
+}
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*{
+    "status": true,
+    "message": "Not record found!",
+    "data": []
+}
+*
+* @apiErrorExample {json} Error-Response:
+*  HTTP/1.1 500 Bad Request
+* {
+*    "status": false
+*    "message": "Operation failed"
+*    "detail": "Error Message"
+*    
+* }
+*/
 async function detail(req, res, next) {
     const id_shipping = req.params.id;
     try {
@@ -80,6 +199,60 @@ async function detail(req, res, next) {
     }
 }
 
+/**
+* @api {get} /foodShipping/getShippingByItem/:id_food_item  Get Food Shipping by food item
+* @apiVersion 0.0.1
+* @apiGroup Food Shipping
+* @apiName GetFoodShipping
+* @apiUse token
+*
+* @apiDescription Get Food Shipping by food item
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*
+{
+    "status": true,
+    "message": "Successful Operation",
+    "data": [
+        {
+            "id_shipping": 1,
+            "name": "example",
+            "description": "lorem ipsum dolor",
+            "price": 22,
+            "created": "2020-12-17T05:57:16.000Z",
+            "updated": "2020-12-17T05:57:18.000Z",
+            "food_item_id_foot_item": 6
+        },
+        {
+            "id_shipping": 2,
+            "name": "example2",
+            "description": "lorem ipsum dolor2",
+            "price": 22,
+            "created": "2020-12-17T05:57:16.000Z",
+            "updated": "2020-12-17T05:57:18.000Z",
+            "food_item_id_foot_item": 6
+        }
+    ]
+}
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*{
+    "status": true,
+    "message": "Not record found!",
+    "data": []
+}
+*
+* @apiErrorExample {json} Error-Response:
+*  HTTP/1.1 500 Bad Request
+* {
+*    "status": false
+*    "message": "Operation failed"
+*    "detail": "Error Message"
+*    
+* }
+*/
 async function getShippingByItem(req, res, next) {
     const id_food_item = req.params.id;
     try {
@@ -102,6 +275,38 @@ async function getShippingByItem(req, res, next) {
     }
 }
 
+/**
+* @api {delete} /foodShipping/delete/:id_shipping  Delete Food Shipping
+* @apiVersion 0.0.1
+* @apiGroup Food Shipping
+* @apiName DeleteFoodShipping
+* @apiUse token
+*
+* @apiDescription Delete Food Shipping 
+*
+* @apiSuccessExample Success-Response:
+* HTTP/1.1 200 OK
+*
+* {
+*"status": true,
+ "message": "Successful Operation",
+ "data": [
+     {
+        "affectedRows": 1,
+        "insertId": 0,
+        "warningStatus": 0
+     }
+ ]
+* }
+*
+* @apiErrorExample {json} Error-Response:
+*  HTTP/1.1 500 Bad Request
+* {
+*    "status": false
+*    "message": "Operation failed"
+*    "detail": "Error Message"
+* }
+*/
 async function _delete(req, res, next) {
     const id_shipping = req.params.id;
     try {
