@@ -67,9 +67,9 @@ class Profile {
     }
 
     AllUsers(type_user){
-        this.rs =   `SELECT * FROM profile
+        this.rs = `SELECT * FROM profile
                     INNER JOIN chef ON chef.profile_id_profile = profile.id_profile
-                    WHERE profile.role=${type_user}`;
+                    WHERE profile.role='${type_user}'`;
         return this.rs;
     }
 

@@ -24,12 +24,11 @@ module.exports = {
     delete: _delete
 };
 
-async function authenticate({ email, password }) {
+async function authenticate({ email, password, isSocialAuth }) {
     const conn = await db.getConnection();
     const account =  await conn.query(userModel.ReadOne(email));
     conn.release();
-
-    if (account.length === 0 || account[0].isVerified === 0 || !(await bcrypt.compare(password, account[0].password))) {
+    if(account.length === 0 || account[0].isVerified === 0 || !(await bcrypt.compare(password, account[0].password))) {
         throw 'Email or password is incorrect';
     }
     // authentication successful so generate jwt and refresh tokens
@@ -99,6 +98,9 @@ async function register(params, origin) {
         if (user[0].userExists > 0) {
             return await sendRegisteredEmailSocial(newUser.email, origin);
         }
+        newUser.password =  await hash(newUser.password);
+        newUser.isVerified = 1;
+        newUser.role = params.role;
         const userSave = await conn.query(userModel.Create(newUser));
         conn.release();
     }
