@@ -72,7 +72,10 @@ function register(req, res, next) {
    // var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
     var Url = req.protocol + '://' + req.get('host');
     service.register(req.body, Url)
-        .then(() => res.json({ message: 'Registration successful, please check your email for verification instructions' }))
+        .then((exist) => res.json({ 
+            message: exist
+            //message: 'Registration successful, please check your email for verification instructions' 
+        }))
         .catch(next);
 }
 
