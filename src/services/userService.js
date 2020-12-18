@@ -80,7 +80,8 @@ async function register(params, origin) {
     const newUser = params;
     if(newUser.isSocialAuth==null || newUser.isSocialAuth==''){
         if (user[0].userExists > 0) {
-            return await sendAlreadyRegisteredEmail(newUser.email, origin);
+            
+            return await sendAlreadyRegisteredEmail(newUser.email, origin), user[0];
         }
         newUser.password =  await hash(newUser.password);
         //newUser.verificationToken = randomTokenString();
@@ -92,11 +93,12 @@ async function register(params, origin) {
         
         if(userSave[0].affectedRows === 1){
             // send email
-            await sendVerificationEmail(newUser, origin);
+            return await sendVerificationEmail(newUser, origin), user[0];
         }
     }else{
         if (user[0].userExists > 0) {
-            return await sendRegisteredEmailSocial(newUser.email, origin);
+            
+            return await sendRegisteredEmailSocial(newUser.email, origin), user[0];
         }
         newUser.password =  await hash(newUser.password);
         newUser.isVerified = 1;
